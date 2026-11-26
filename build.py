@@ -125,8 +125,8 @@ CLAUDE_CODE_COLOURS = {
     "pink_FOR_SUBAGENTS_ONLY": "ansi.bright.1",
     "planMode": "ansi.normal.6",
     "professionalBlue": "status.info",
-    "promptBorder": "ui.border_strong",
-    "promptBorderShimmer": "ui.quiet",
+    "promptBorder": "ui.quiet",
+    "promptBorderShimmer": "ui.muted",
     "purple_FOR_SUBAGENTS_ONLY": "ansi.normal.5",
     "rainbow_blue": "ansi.normal.6",
     "rainbow_blue_shimmer": "ansi.bright.6",
@@ -168,14 +168,23 @@ CLAUDE_CODE_TEXT_PAIRS = [
     ("bashBorder", "bashMessageBackgroundColor"),
     ("inactive", "userMessageBackground"),
     ("inactive", "userMessageBackgroundHover"),
+    ("inverseText", "claude"),
+    ("inverseText", "error"),
+    ("inverseText", "success"),
+    ("inverseText", "warning"),
     ("remember", "memoryBackgroundColor"),
     ("text", "bashMessageBackgroundColor"),
+    ("text", "composerSidebarBackground"),
+    ("text", "diffAdded"),
+    ("text", "diffAddedDimmed"),
+    ("text", "diffRemoved"),
+    ("text", "diffRemovedDimmed"),
     ("text", "memoryBackgroundColor"),
     ("text", "userMessageBackground"),
     ("text", "userMessageBackgroundHover"),
 ]
-# Fills, borders, and text drawn on a colour; every other token is text on the background.
-CLAUDE_CODE_OFF_BACKGROUND = {
+# Fills, and text drawn on a colour; every other token is text on the background.
+CLAUDE_CODE_NOT_TEXT_ON_BACKGROUND = {
     "bashMessageBackgroundColor",
     "composerSidebarBackground",
     "diffAdded",
@@ -186,8 +195,6 @@ CLAUDE_CODE_OFF_BACKGROUND = {
     "diffRemovedWord",
     "inverseText",
     "memoryBackgroundColor",
-    "promptBorder",
-    "promptBorderShimmer",
     "rate_limit_empty",
     "rate_limit_fill",
     "selectionBg",
@@ -1418,7 +1425,7 @@ def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
     pairs += [
         (f"Claude Code's {token} on the background", colour, background)
         for token, colour in colours.items()
-        if token not in CLAUDE_CODE_OFF_BACKGROUND
+        if token not in CLAUDE_CODE_NOT_TEXT_ON_BACKGROUND
     ]
     return pairs
 
