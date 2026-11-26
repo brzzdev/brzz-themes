@@ -1,6 +1,6 @@
 # Brzz Themes
 
-Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop app, JetBrains IDEs, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed, in two families:
+Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop app, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed, in two families:
 
 - **Geist**: Geist Dark and Geist Light, built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal).
 - **Ayu**: Ayu Dark Contrast, the accents of [ayu](https://github.com/ayu-theme/ayu-colors)'s dark theme on a neutral black with brighter text, for easier focus.
@@ -76,21 +76,6 @@ cp herdr-app/*.json ~/.config/herdr-app/themes/
 ```
 
 Then pick a dark theme, such as **geist dark** or **ayu dark contrast**, and **geist light** as the light one in Settings → Look. Each layout keeps its own pair, so pick them in every layout you use. Herdr follows the system appearance between the two.
-
-### JetBrains IDEs
-
-For Rider, IntelliJ IDEA, WebStorm and the other JetBrains IDEs, 2026.1 or later. Download the `.jar` from the [latest release](https://github.com/brzzdev/brzz-themes/releases/latest), or build it from the repository root, where it reports version `0.0.0-dev`:
-
-```sh
-python3 -m zipfile -c brzz-themes.jar jetbrains/*
-```
-
-Brzz Themes replaces the earlier Geist Themes plugin, so uninstall that first if you have it. Then install the jar with Settings → Plugins → ⚙ → **Install Plugin from Disk…**, and pick **Geist Dark**, **Geist Light**, or **Ayu Dark Contrast** under Appearance & Behavior → Appearance → Theme. Each theme switches the editor to its matching colour scheme.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/jetbrains-dark.webp">
-  <img alt="IntelliJ IDEA in Geist, editing build.py" src="docs/screenshots/jetbrains-light.webp">
-</picture>
 
 ### NetNewsWire
 
