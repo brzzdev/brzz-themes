@@ -257,52 +257,52 @@ HERDR_APP_TEXT_PAIRS = [
 HERDR_TABLES = {"dark": "theme.custom", "light": "theme.custom.light"}
 
 ZED_SYNTAX = {
-    "attribute": ("attribute", None),
-    "boolean": ("constant", None),
-    "comment": ("comment", "italic"),
-    "comment.doc": ("comment", "italic"),
-    "concept": ("type", None),
-    "constant": ("constant", None),
-    "constructor": ("type", None),
-    "diff.delta": ("function", None),
-    "diff.minus": ("tag", None),
-    "diff.plus": ("string", None),
-    "emphasis": ("plain", "italic"),
-    "emphasis.strong": ("plain", "bold"),
-    "enum": ("type", None),
-    "function": ("function", None),
-    "function.builtin": ("function_system", None),
-    "function.macro": ("attribute", None),
-    "keyword": ("keyword", None),
-    "label": ("attribute", None),
-    "lifetime": ("type_parameter", None),
-    "link_text": ("link", None),
-    "link_uri": ("link", None),
-    "markup.heading": ("plain", "bold"),
-    "module": ("namespace", None),
-    "namespace": ("namespace", None),
-    "number": ("number", None),
-    "operator": ("punctuation", None),
-    "preproc": ("attribute", None),
-    "property": ("variable", None),
-    "punctuation": ("punctuation", None),
-    "selector": ("attribute", None),
-    "string": ("string", None),
-    "string.escape": ("number", None),
-    "string.regex": ("regex", None),
-    "string.special": ("string", None),
-    "string.special.symbol": ("constant", None),
-    "tag": ("tag", None),
-    "text.literal": ("literal", None),
-    "title": ("plain", "bold"),
-    "type": ("type", None),
-    "type.builtin": ("type_system", None),
-    "type.parameter": ("type_parameter", None),
-    "variable": ("variable", None),
-    "variable.builtin": ("keyword", None),
-    "variable.parameter": ("variable", None),
-    "variable.special": ("keyword", None),
-    "variant": ("constant", None),
+    "attribute": ("syntax.attribute", None),
+    "boolean": ("syntax.constant", None),
+    "comment": ("syntax.comment", "italic"),
+    "comment.doc": ("syntax.comment", "italic"),
+    "concept": ("syntax.type", None),
+    "constant": ("syntax.constant", None),
+    "constructor": ("syntax.type", None),
+    "diff.delta": ("ansi.normal.4", None),
+    "diff.minus": ("ansi.bright.1", None),
+    "diff.plus": ("ansi.normal.2", None),
+    "emphasis": ("syntax.plain", "italic"),
+    "emphasis.strong": ("syntax.plain", "bold"),
+    "enum": ("syntax.type", None),
+    "function": ("syntax.function", None),
+    "function.builtin": ("syntax.function_system", None),
+    "function.macro": ("syntax.attribute", None),
+    "keyword": ("syntax.keyword", None),
+    "label": ("syntax.attribute", None),
+    "lifetime": ("syntax.type_parameter", None),
+    "link_text": ("syntax.link", None),
+    "link_uri": ("syntax.link", None),
+    "markup.heading": ("syntax.plain", "bold"),
+    "module": ("syntax.namespace", None),
+    "namespace": ("syntax.namespace", None),
+    "number": ("syntax.number", None),
+    "operator": ("syntax.punctuation", None),
+    "preproc": ("syntax.attribute", None),
+    "property": ("syntax.variable", None),
+    "punctuation": ("syntax.punctuation", None),
+    "selector": ("syntax.attribute", None),
+    "string": ("syntax.string", None),
+    "string.escape": ("syntax.number", None),
+    "string.regex": ("syntax.regex", None),
+    "string.special": ("syntax.string", None),
+    "string.special.symbol": ("syntax.constant", None),
+    "tag": ("syntax.tag", None),
+    "text.literal": ("syntax.literal", None),
+    "title": ("syntax.plain", "bold"),
+    "type": ("syntax.type", None),
+    "type.builtin": ("syntax.type_system", None),
+    "type.parameter": ("syntax.type_parameter", None),
+    "variable": ("syntax.variable", None),
+    "variable.builtin": ("syntax.keyword", None),
+    "variable.parameter": ("syntax.variable", None),
+    "variable.special": ("syntax.keyword", None),
+    "variant": ("syntax.constant", None),
 }
 
 NETNEWSWIRE_VARIABLES = {
@@ -1224,7 +1224,7 @@ def zed_syntax_style(colour: str, style: str | None) -> dict[str, Any]:
 
 
 def zed_style(palette: Palette) -> dict[str, Any]:
-    ui, ansi, syntax = palette["ui"], palette["ansi"], palette["syntax"]
+    ui, ansi = palette["ui"], palette["ansi"]
     status, tints = palette["status"], palette["tint"]
     thumb, hover_thumb = scrollbar_thumbs(palette)
     style = {
@@ -1296,8 +1296,8 @@ def zed_style(palette: Palette) -> dict[str, Any]:
         "status_bar.background": ui["panel"],
         "surface.background": ui["panel"],
         "syntax": {
-            token: zed_syntax_style(syntax[role], font)
-            for token, (role, font) in ZED_SYNTAX.items()
+            token: zed_syntax_style(palette_colour(palette, path), font)
+            for token, (path, font) in ZED_SYNTAX.items()
         },
         "tab.active_background": ui["background"],
         "tab.inactive_background": ui["panel"],
@@ -2004,6 +2004,12 @@ def contrast_failures(palette: Palette) -> list[str]:
             palette_colour(palette, ground),
         )
         for text, ground in TEXT_PAIRS
+    ]
+    pairs += [
+        (f"Zed's {path} on {name}", palette_colour(palette, path), ground)
+        for name, ground in syntax_grounds(palette).items()
+        for path in {path for path, _ in ZED_SYNTAX.values()}
+        if not path.startswith("syntax.")
     ]
     pairs += claude_code_contrast_pairs(palette)
     pairs += herdr_app_contrast_pairs(palette)

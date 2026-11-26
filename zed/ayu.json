@@ -181,13 +181,13 @@
             "color": "#59c2ff"
           },
           "diff.delta": {
-            "color": "#ffb454"
+            "color": "#17acf2"
           },
           "diff.minus": {
-            "color": "#39bae6"
+            "color": "#f07178"
           },
           "diff.plus": {
-            "color": "#aad94c"
+            "color": "#97c142"
           },
           "emphasis": {
             "color": "#f3efe3",
