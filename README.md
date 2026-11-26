@@ -140,7 +140,7 @@ Copy `zed/geist.json` into `~/.config/zed/themes/`, then pick **Geist Dark** or 
 
 ## Changing colours
 
-Every theme, and each palette card under `docs/`, is generated from `palettes/`. Each theme has its own folder there: `theme.toml` holds its name and the identifiers its packages ship under, and every other `.toml` is one of its palettes. Edit a palette, then regenerate:
+Every theme, and each palette card under `docs/`, is generated from `palettes/`. Each family of themes has its own folder there: `family.toml` holds the family's name, the package name its identifiers derive from, its source credit, and its disclaimer; every other `.toml` is one theme's palette. Edit a palette, then regenerate:
 
 ```sh
 ./build.py

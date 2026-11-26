@@ -4,6 +4,10 @@ Editor and terminal themes in Geist Dark and Geist Light, all generated from one
 
 ## Language
 
+**Family**:
+A set of themes that share a name and ship in the same packages, such as Geist, whose themes are Geist Dark and Geist Light. Each family has a folder under `palettes/`, holding one palette per theme.
+_Avoid_: Theme, for the set
+
 **Selection**:
 The background behind the active text selection in an editor.
 
