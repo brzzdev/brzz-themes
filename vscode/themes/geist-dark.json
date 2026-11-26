@@ -174,6 +174,31 @@
     "menu.background": "#0a0a0a",
     "menu.border": "#2e2e2e",
     "minimap.errorHighlight": "#e5484d",
+    "modernActivityBar.background": "#0a0a0a",
+    "modernActivityBar.border": "#2e2e2e",
+    "modernActivityBar.inactiveBackground": "#0a0a0a",
+    "modernActivityBarItem.activeBackground": "#1a1a1a",
+    "modernActivityBarItem.activeForeground": "#ededed",
+    "modernActivityBarItem.hoverBackground": "#111111",
+    "modernActivityBarItem.hoverForeground": "#ededed",
+    "modernEditorTab.activeActionBackground": "#1f1f1f",
+    "modernEditorTab.activeBackground": "#1a1a1a",
+    "modernEditorTab.activeForeground": "#ededed",
+    "modernEditorTab.activeHoverActionBackground": "#1f1f1f",
+    "modernEditorTab.activeHoverBackground": "#1a1a1a",
+    "modernEditorTab.hoverActionBackground": "#1f1f1f",
+    "modernEditorTab.hoverBackground": "#111111",
+    "modernEditorTab.hoverForeground": "#ededed",
+    "modernEditorTab.inactiveBackground": "#00000000",
+    "modernEditorTab.selectedActionBackground": "#1f1f1f",
+    "modernPanel.border": "#2e2e2e",
+    "modernSash.gripForeground": "#454545",
+    "modernTab.activeBackground": "#1a1a1a",
+    "modernTab.activeForeground": "#ededed",
+    "modernTab.hoverBackground": "#111111",
+    "modernTab.hoverForeground": "#ededed",
+    "modernUI.inactiveShellBackground": "#0a0a0a",
+    "modernUI.shellBackground": "#0a0a0a",
     "multiDiffEditor.border": "#2e2e2e",
     "multiDiffEditor.headerBackground": "#0a0a0a",
     "panel.background": "#0a0a0a",
@@ -229,6 +254,9 @@
     "statusBarItem.warningBackground": "#f1a10d",
     "statusBarItem.warningForeground": "#000000",
     "strongForeground": "#ededed",
+    "surface.background": "#000000",
+    "surface.border": "#2e2e2e",
+    "surface.foreground": "#a0a0a0",
     "symbolIcon.classForeground": "#0ac5b3",
     "symbolIcon.constructorForeground": "#52a9ff",
     "symbolIcon.enumeratorForeground": "#0ac5b3",
@@ -322,6 +350,9 @@
     {
       "scope": [
         "constant.language",
+        "meta.diff",
+        "punctuation.definition.from-file.diff",
+        "punctuation.definition.to-file.diff",
         "support.constant",
         "variable.other.enummember"
       ],
@@ -493,6 +524,33 @@
       ],
       "settings": {
         "foreground": "#ededed"
+      }
+    },
+    {
+      "scope": [
+        "markup.changed",
+        "punctuation.definition.changed.diff"
+      ],
+      "settings": {
+        "foreground": "#52a9ff"
+      }
+    },
+    {
+      "scope": [
+        "markup.deleted",
+        "punctuation.definition.deleted.diff"
+      ],
+      "settings": {
+        "foreground": "#fe7573"
+      }
+    },
+    {
+      "scope": [
+        "markup.inserted",
+        "punctuation.definition.inserted.diff"
+      ],
+      "settings": {
+        "foreground": "#63c174"
       }
     }
   ],
