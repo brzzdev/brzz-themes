@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="888" height="620" viewBox="0 0 888 620" style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px">
+  <title>Ayu Dark Contrast palette</title>
+  <rect width="100%" height="100%" rx="12" fill="#0a0a0a" />
+  <text x="24" y="44" fill="#a3a3a3">UI</text>
+  <rect x="24" y="68" width="32" height="32" rx="6" fill="#0a0a0a" stroke="#262626" />
+  <text x="66" y="81" fill="#f3efe3">background</text>
+  <text x="66" y="97" fill="#a3a3a3">#0a0a0a</text>
+  <rect x="234" y="68" width="32" height="32" rx="6" fill="#f3efe3" stroke="#262626" />
+  <text x="276" y="81" fill="#f3efe3">foreground</text>
+  <text x="276" y="97" fill="#a3a3a3">#f3efe3</text>
+  <rect x="444" y="68" width="32" height="32" rx="6" fill="#e6b450" stroke="#262626" />
+  <text x="486" y="81" fill="#f3efe3">accent</text>
+  <text x="486" y="97" fill="#a3a3a3">#e6b450</text>
+  <text x="24" y="132" fill="#a3a3a3">Syntax</text>
+  <rect x="24" y="156" width="32" height="32" rx="6" fill="#e6c08a" stroke="#262626" />
+  <text x="66" y="169" fill="#f3efe3">attribute</text>
+  <text x="66" y="185" fill="#a3a3a3">#e6c08a</text>
+  <rect x="234" y="156" width="32" height="32" rx="6" fill="#a3a3a3" stroke="#262626" />
+  <text x="276" y="169" fill="#f3efe3">comment</text>
+  <text x="276" y="185" fill="#a3a3a3">#a3a3a3</text>
+  <rect x="444" y="156" width="32" height="32" rx="6" fill="#bdbdbd" stroke="#262626" />
+  <text x="486" y="169" fill="#f3efe3">comment_emphasized</text>
+  <text x="486" y="185" fill="#a3a3a3">#bdbdbd</text>
+  <rect x="654" y="156" width="32" height="32" rx="6" fill="#d2a6ff" stroke="#262626" />
+  <text x="696" y="169" fill="#f3efe3">constant</text>
+  <text x="696" y="185" fill="#a3a3a3">#d2a6ff</text>
+  <rect x="24" y="200" width="32" height="32" rx="6" fill="#ffb454" stroke="#262626" />
+  <text x="66" y="213" fill="#f3efe3">function</text>
+  <text x="66" y="229" fill="#a3a3a3">#ffb454</text>
+  <rect x="234" y="200" width="32" height="32" rx="6" fill="#ffcb8f" stroke="#262626" />
+  <text x="276" y="213" fill="#f3efe3">function_system</text>
+  <text x="276" y="229" fill="#a3a3a3">#ffcb8f</text>
+  <rect x="444" y="200" width="32" height="32" rx="6" fill="#ff8f40" stroke="#262626" />
+  <text x="486" y="213" fill="#f3efe3">keyword</text>
+  <text x="486" y="229" fill="#a3a3a3">#ff8f40</text>
+  <rect x="654" y="200" width="32" height="32" rx="6" fill="#39bae6" stroke="#262626" />
+  <text x="696" y="213" fill="#f3efe3">link</text>
+  <text x="696" y="229" fill="#a3a3a3">#39bae6</text>
+  <rect x="24" y="244" width="32" height="32" rx="6" fill="#d2a6ff" stroke="#262626" />
+  <text x="66" y="257" fill="#f3efe3">literal</text>
+  <text x="66" y="273" fill="#a3a3a3">#d2a6ff</text>
+  <rect x="234" y="244" width="32" height="32" rx="6" fill="#e6c08a" stroke="#262626" />
+  <text x="276" y="257" fill="#f3efe3">namespace</text>
+  <text x="276" y="273" fill="#a3a3a3">#e6c08a</text>
+  <rect x="444" y="244" width="32" height="32" rx="6" fill="#d2a6ff" stroke="#262626" />
+  <text x="486" y="257" fill="#f3efe3">number</text>
+  <text x="486" y="273" fill="#a3a3a3">#d2a6ff</text>
+  <rect x="654" y="244" width="32" height="32" rx="6" fill="#f3efe3" stroke="#262626" />
+  <text x="696" y="257" fill="#f3efe3">plain</text>
+  <text x="696" y="273" fill="#a3a3a3">#f3efe3</text>
+  <rect x="24" y="288" width="32" height="32" rx="6" fill="#a3a3a3" stroke="#262626" />
+  <text x="66" y="301" fill="#f3efe3">punctuation</text>
+  <text x="66" y="317" fill="#a3a3a3">#a3a3a3</text>
+  <rect x="234" y="288" width="32" height="32" rx="6" fill="#95e6cb" stroke="#262626" />
+  <text x="276" y="301" fill="#f3efe3">regex</text>
+  <text x="276" y="317" fill="#a3a3a3">#95e6cb</text>
+  <rect x="444" y="288" width="32" height="32" rx="6" fill="#aad94c" stroke="#262626" />
+  <text x="486" y="301" fill="#f3efe3">string</text>
+  <text x="486" y="317" fill="#a3a3a3">#aad94c</text>
+  <rect x="654" y="288" width="32" height="32" rx="6" fill="#39bae6" stroke="#262626" />
+  <text x="696" y="301" fill="#f3efe3">tag</text>
+  <text x="696" y="317" fill="#a3a3a3">#39bae6</text>
+  <rect x="24" y="332" width="32" height="32" rx="6" fill="#59c2ff" stroke="#262626" />
+  <text x="66" y="345" fill="#f3efe3">type</text>
+  <text x="66" y="361" fill="#a3a3a3">#59c2ff</text>
+  <rect x="234" y="332" width="32" height="32" rx="6" fill="#85d0ff" stroke="#262626" />
+  <text x="276" y="345" fill="#f3efe3">type_parameter</text>
+  <text x="276" y="361" fill="#a3a3a3">#85d0ff</text>
+  <rect x="444" y="332" width="32" height="32" rx="6" fill="#39bae6" stroke="#262626" />
+  <text x="486" y="345" fill="#f3efe3">type_system</text>
+  <text x="486" y="361" fill="#a3a3a3">#39bae6</text>
+  <rect x="654" y="332" width="32" height="32" rx="6" fill="#f3efe3" stroke="#262626" />
+  <text x="696" y="345" fill="#f3efe3">variable</text>
+  <text x="696" y="361" fill="#a3a3a3">#f3efe3</text>
+  <text x="24" y="396" fill="#a3a3a3">ANSI</text>
+  <rect x="24" y="420" width="32" height="32" rx="6" fill="#1c1c1c" stroke="#262626" />
+  <text x="66" y="433" fill="#f3efe3">black</text>
+  <text x="66" y="449" fill="#a3a3a3">#1c1c1c</text>
+  <rect x="234" y="420" width="32" height="32" rx="6" fill="#e6495a" stroke="#262626" />
+  <text x="276" y="433" fill="#f3efe3">red</text>
+  <text x="276" y="449" fill="#a3a3a3">#e6495a</text>
+  <rect x="444" y="420" width="32" height="32" rx="6" fill="#97c142" stroke="#262626" />
+  <text x="486" y="433" fill="#f3efe3">green</text>
+  <text x="486" y="449" fill="#a3a3a3">#97c142</text>
+  <rect x="654" y="420" width="32" height="32" rx="6" fill="#e89d37" stroke="#262626" />
+  <text x="696" y="433" fill="#f3efe3">yellow</text>
+  <text x="696" y="449" fill="#a3a3a3">#e89d37</text>
+  <rect x="24" y="464" width="32" height="32" rx="6" fill="#17acf2" stroke="#262626" />
+  <text x="66" y="477" fill="#f3efe3">blue</text>
+  <text x="66" y="493" fill="#a3a3a3">#17acf2</text>
+  <rect x="234" y="464" width="32" height="32" rx="6" fill="#c385fe" stroke="#262626" />
+  <text x="276" y="477" fill="#f3efe3">magenta</text>
+  <text x="276" y="493" fill="#a3a3a3">#c385fe</text>
+  <rect x="444" y="464" width="32" height="32" rx="6" fill="#84ceb5" stroke="#262626" />
+  <text x="486" y="477" fill="#f3efe3">cyan</text>
+  <text x="486" y="493" fill="#a3a3a3">#84ceb5</text>
+  <rect x="654" y="464" width="32" height="32" rx="6" fill="#f3efe3" stroke="#262626" />
+  <text x="696" y="477" fill="#f3efe3">white</text>
+  <text x="696" y="493" fill="#a3a3a3">#f3efe3</text>
+  <rect x="24" y="508" width="32" height="32" rx="6" fill="#8a8a8a" stroke="#262626" />
+  <text x="66" y="521" fill="#f3efe3">bright black</text>
+  <text x="66" y="537" fill="#a3a3a3">#8a8a8a</text>
+  <rect x="234" y="508" width="32" height="32" rx="6" fill="#f07178" stroke="#262626" />
+  <text x="276" y="521" fill="#f3efe3">bright red</text>
+  <text x="276" y="537" fill="#a3a3a3">#f07178</text>
+  <rect x="444" y="508" width="32" height="32" rx="6" fill="#aad94c" stroke="#262626" />
+  <text x="486" y="521" fill="#f3efe3">bright green</text>
+  <text x="486" y="537" fill="#a3a3a3">#aad94c</text>
+  <rect x="654" y="508" width="32" height="32" rx="6" fill="#ffb454" stroke="#262626" />
+  <text x="696" y="521" fill="#f3efe3">bright yellow</text>
+  <text x="696" y="537" fill="#a3a3a3">#ffb454</text>
+  <rect x="24" y="552" width="32" height="32" rx="6" fill="#59c2ff" stroke="#262626" />
+  <text x="66" y="565" fill="#f3efe3">bright blue</text>
+  <text x="66" y="581" fill="#a3a3a3">#59c2ff</text>
+  <rect x="234" y="552" width="32" height="32" rx="6" fill="#d2a6ff" stroke="#262626" />
+  <text x="276" y="565" fill="#f3efe3">bright magenta</text>
+  <text x="276" y="581" fill="#a3a3a3">#d2a6ff</text>
+  <rect x="444" y="552" width="32" height="32" rx="6" fill="#95e6cb" stroke="#262626" />
+  <text x="486" y="565" fill="#f3efe3">bright cyan</text>
+  <text x="486" y="581" fill="#a3a3a3">#95e6cb</text>
+  <rect x="654" y="552" width="32" height="32" rx="6" fill="#ffffff" stroke="#262626" />
+  <text x="696" y="565" fill="#f3efe3">bright white</text>
+  <text x="696" y="581" fill="#a3a3a3">#ffffff</text>
+</svg>

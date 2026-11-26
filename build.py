@@ -1412,7 +1412,8 @@ def herdr(palettes: list[Palette]) -> str:
     tables = [
         herdr_table(HERDR_TABLES[p["appearance"]], herdr_colours(p)) for p in palettes
     ]
-    return "[theme]\nauto_switch = true\n\n" + "\n".join(tables)
+    auto_switch = str(len({p["appearance"] for p in palettes}) > 1).lower()
+    return f"[theme]\nauto_switch = {auto_switch}\n\n" + "\n".join(tables)
 
 
 def claude_code_theme(palette: Palette) -> dict[str, Any]:
