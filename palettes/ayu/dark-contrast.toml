@@ -42,14 +42,14 @@ created = "#70bf56"
 deleted = "#f26d78"
 error = "#e6495a"
 hidden = "#8a8a8a"
-hint = "#8a8a8a"
+# Grey text drawn in code (hints, predictions, unused code) takes the comment grey: `quiet` falls below 4.5:1 on the selection.
+hint = "#a3a3a3"
 ignored = "#8a8a8a"
 info = "#17acf2"
 modified = "#73b8ff"
-predictive = "#8a8a8a"
+predictive = "#a3a3a3"
 renamed = "#73b8ff"
 success = "#97c142"
-# Unused code takes the comment grey: `quiet` falls below 4.5:1 on the selection.
 unreachable = "#a3a3a3"
 warning = "#e89d37"
 

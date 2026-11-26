@@ -75,6 +75,8 @@ SYNTAX_LIKE_PATHS = [
     "ansi.normal.4",
     "ansi.normal.5",
     "ansi.normal.6",
+    "status.hint",
+    "status.predictive",
     "status.unreachable",
 ]
 # The colours a palette's `tint` group composites over its background.
