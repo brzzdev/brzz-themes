@@ -10,7 +10,9 @@ border_strong = "#3a3a3a"
 border_variant = "#1c1c1c"
 cursor = "#e6b450"
 element = "#1c1c1c"
+# Darker than `error`, which keeps white text at only 2.5:1.
 error_fill = "#cf3341"
+# The accent composited at `1f` and `38`, with every syntax role at 4.5:1: see docs/adr/0002-find-match-contrast.md.
 find = "#251f13"
 find_active = "#3a2f19"
 find_active_border = "#e6b450"
@@ -26,6 +28,7 @@ invisible = "#3a3a3a"
 muted = "#a3a3a3"
 panel = "#111111"
 quiet = "#8a8a8a"
+# ayu's selection blue at 30% rather than its 25%, so a selection stands out on the neutral black.
 selection = "#163054"
 # Translucent, compositing to `selection` over the background.
 selection_overlay = "#2d78e058"
@@ -48,6 +51,7 @@ unreachable = "#8a8a8a"
 warning = "#ffb454"
 
 # black, red, green, yellow, blue, magenta, cyan, white
+# Black and bright black are greys: ayu's `#0a0000` disappears on this background.
 [ansi]
 normal = ["#1c1c1c", "#e6495a", "#97c142", "#e89d37", "#17acf2", "#c385fe", "#84ceb5", "#f3efe3"]
 bright = ["#8a8a8a", "#f07178", "#aad94c", "#ffb454", "#59c2ff", "#d2a6ff", "#95e6cb", "#ffffff"]
@@ -55,6 +59,7 @@ bright = ["#8a8a8a", "#f07178", "#aad94c", "#ffb454", "#59c2ff", "#d2a6ff", "#95
 # `_system` roles colour symbols from outside the project, where an editor tells them apart.
 [syntax]
 attribute = "#e6c08a"
+# ayu's `#5a6673` is 3.4:1 here, and `quiet` falls below 4.5:1 on the selection.
 comment = "#a3a3a3"
 comment_emphasized = "#bdbdbd"
 constant = "#d2a6ff"

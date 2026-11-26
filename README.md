@@ -19,7 +19,7 @@ This is an unofficial project, not made or endorsed by Vercel or the ayu project
   <img alt="Swatches for the background, foreground, accent, syntax roles and 16 ANSI colours, each with its hex value" src="docs/palette-geist-light.svg">
 </picture>
 
-![Swatches for Ayu Dark Contrast's background, foreground, accent, syntax roles and 16 ANSI colours, each with its hex value](docs/palette-ayu-dark-contrast.svg)
+![Swatches for Ayu Dark Contrast's background, foreground, accent, syntax roles, and 16 ANSI colours, each with its hex value](docs/palette-ayu-dark-contrast.svg)
 
 ## Install
 
@@ -59,7 +59,7 @@ herdr can't load a separate theme file, so paste the contents of `herdr/geist.to
 herdr server reload-config
 ```
 
-The snippet turns on `auto_switch`, so herdr uses Geist Dark or Geist Light to match the colour scheme your terminal reports. Ghostty reports dark only with a conditional theme, so a fixed `theme = Geist Dark` still reports light and herdr picks Geist Light. In Ghostty, use the conditional `theme = light:Geist Light,dark:Geist Dark` from the [Ghostty](#ghostty) section instead. To keep herdr on Geist Dark instead, pick a theme in herdr's settings, which turns `auto_switch` off and leaves Geist Dark. The snippet sets every colour herdr themes, so it looks the same whichever base theme `theme.name` picks. Ayu has no light theme, so its snippet leaves `auto_switch` off and herdr stays on Ayu Dark Contrast.
+The snippet turns on `auto_switch`, so herdr uses Geist Dark or Geist Light to match the colour scheme your terminal reports. Ghostty reports dark only with a conditional theme, so a fixed `theme = Geist Dark` still reports light and herdr picks Geist Light. In Ghostty, use a conditional theme instead, such as `theme = light:Geist Light,dark:Geist Dark`, as the [Ghostty](#ghostty) section describes. To keep herdr on Geist Dark instead, pick a theme in herdr's settings, which turns `auto_switch` off and leaves Geist Dark. The snippet sets every colour herdr themes, so it looks the same whichever base theme `theme.name` picks. Ayu has no light theme, so its snippet leaves `auto_switch` off and herdr stays on Ayu Dark Contrast.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/herdr-dark.webp">
@@ -103,7 +103,7 @@ With NetNewsWire running, open `netnewswire/Geist.nnwtheme` or `netnewswire/Ayu.
 
 ### Rex
 
-Rex imports the Ghostty files. In its Settings → Themes → Import Theme, click **Import** and pick `ghostty/Geist Dark`, then do the same for `ghostty/Geist Light`, and for `ghostty/Ayu Dark Contrast` if you want it. Rex files each theme under the appearance it matches and selects it there, so Dark Mode uses **Geist Dark** and Light Mode uses **Geist Light**. To return to them after picking another theme, select them again on the same page.
+Rex imports the Ghostty files. In its Settings → Themes → Import Theme, click **Import** and pick `ghostty/Geist Dark`, then do the same for `ghostty/Geist Light`. Rex files each theme under the appearance it matches and selects it there, so Dark Mode uses **Geist Dark** and Light Mode uses **Geist Light**. Importing `ghostty/Ayu Dark Contrast` as well selects it for Dark Mode in Geist Dark's place. To return to them after picking another theme, select them again on the same page.
 
 A Rex theme has no key for the sidebar: with **Tint with theme** on, Rex shades it from the theme, and otherwise uses macOS's own shade. For Geist Dark, pick **Glass** under Settings → Interface → Appearance → Interface style. In **Classic**, the selected tab barely shows against the black; in Glass it shows clearly.
 

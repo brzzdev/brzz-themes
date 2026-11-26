@@ -1412,7 +1412,8 @@ def herdr(palettes: list[Palette]) -> str:
     tables = [
         herdr_table(HERDR_TABLES[p["appearance"]], herdr_colours(p)) for p in palettes
     ]
-    auto_switch = str(len({p["appearance"] for p in palettes}) > 1).lower()
+    both = {p["appearance"] for p in palettes} == HERDR_TABLES.keys()
+    auto_switch = "true" if both else "false"
     return f"[theme]\nauto_switch = {auto_switch}\n\n" + "\n".join(tables)
 
 
@@ -2341,7 +2342,9 @@ def main() -> None:
     plugin = jetbrains_plugin(palettes, description)
     write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", plugin)
     write_json(ROOT / "vscode" / "package.json", vscode_manifest(palettes, description))
-    write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
+    licence = (ROOT / "LICENSE").read_text()
+    write(ROOT / "jetbrains" / "LICENSE", licence)
+    write(ROOT / "vscode" / "LICENSE", licence)
     for family in families:
         write_family(family)
 
