@@ -11,6 +11,14 @@ The reasons:
 - **Not targeted**: it belongs to a feature the themes don't cover.
 - **Fixed**: the app computes it, and no theme key reaches it.
 
+## Claude Code
+
+Audited against Claude Code 2.1.332's [colour token reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme). Each theme starts from the built-in `dark` or `light` preset, and Geist sets all 63 documented tokens.
+
+| Reason | Keys |
+| --- | --- |
+| **Not targeted**: single-purpose accents the reference leaves out, such as the onboarding screen's, which only the `/theme` editor lists | undocumented tokens |
+
 ## Ghostty
 
 Audited against Ghostty 1.4.0's `+show-config --default --docs`. Ghostty fills unset options from its built-in defaults.

@@ -90,6 +90,88 @@ TINTS = {
 type Palette = dict[str, Any]
 type Family = dict[str, Any]
 
+CLAUDE_CODE_COLOURS = {
+    "autoAccept": "ansi.normal.5",
+    "bashBorder": "ansi.bright.1",
+    "bashMessageBackgroundColor": "ui.element",
+    "blue_FOR_SUBAGENTS_ONLY": "ansi.normal.4",
+    "briefLabelClaude": "ui.accent",
+    "briefLabelYou": "ui.muted",
+    "claude": "ui.accent",
+    "claudeShimmer": "ui.accent_strong",
+    "composerSidebarBackground": "ui.panel",
+    "cyan_FOR_SUBAGENTS_ONLY": "ansi.normal.6",
+    "diffAdded": "tint.created",
+    "diffAddedWord": "tint.created",
+    "diffRemoved": "tint.deleted",
+    "diffRemovedWord": "tint.deleted",
+    "effortUltra": "ansi.bright.5",
+    "error": "status.error",
+    "fastMode": "ansi.normal.3",
+    "fastModeShimmer": "ansi.bright.3",
+    "green_FOR_SUBAGENTS_ONLY": "ansi.normal.2",
+    "ide": "status.info",
+    "inactive": "ui.muted",
+    "inactiveShimmer": "ui.foreground",
+    "inverseText": "ui.background",
+    "memoryBackgroundColor": "tint.info",
+    "merged": "ansi.normal.5",
+    "orange_FOR_SUBAGENTS_ONLY": "ansi.bright.3",
+    "permission": "status.info",
+    "permissionShimmer": "ansi.bright.4",
+    "pink_FOR_SUBAGENTS_ONLY": "ansi.bright.1",
+    "planMode": "ansi.normal.6",
+    "promptBorder": "ui.border_strong",
+    "promptBorderShimmer": "ui.quiet",
+    "purple_FOR_SUBAGENTS_ONLY": "ansi.normal.5",
+    "rainbow_blue": "ansi.normal.6",
+    "rainbow_blue_shimmer": "ansi.bright.6",
+    "rainbow_green": "ansi.normal.2",
+    "rainbow_green_shimmer": "ansi.bright.2",
+    "rainbow_indigo": "ansi.normal.4",
+    "rainbow_indigo_shimmer": "ansi.bright.4",
+    "rainbow_orange": "ansi.normal.3",
+    "rainbow_orange_shimmer": "ansi.bright.3",
+    "rainbow_red": "ansi.normal.1",
+    "rainbow_red_shimmer": "ansi.bright.1",
+    "rainbow_violet": "ansi.normal.5",
+    "rainbow_violet_shimmer": "ansi.bright.5",
+    "rainbow_yellow": "ansi.bright.3",
+    "rainbow_yellow_shimmer": "ansi.bright.7",
+    "rate_limit_empty": "ui.element",
+    "rate_limit_fill": "ui.accent",
+    "red_FOR_SUBAGENTS_ONLY": "ansi.normal.1",
+    "remember": "ansi.bright.5",
+    "selectionBg": "ui.selection",
+    "subtle": "ui.border_strong",
+    "success": "status.success",
+    "suggestion": "status.info",
+    "text": "ui.foreground",
+    "userMessageBackground": "ui.element",
+    "userMessageBackgroundHover": "ui.highlight",
+    "warning": "status.warning",
+    "warningShimmer": "ansi.bright.3",
+    "yellow_FOR_SUBAGENTS_ONLY": "ansi.normal.3",
+}
+# Rejected-edit diff fills, at half the tint alpha: see docs/adr/0003-tinted-fills-behind-syntax.md.
+CLAUDE_CODE_DIMMED_ALPHAS = {"dark": "1a", "light": "0d"}
+CLAUDE_CODE_DIMMED_DIFFS = {
+    "diffAddedDimmed": "status.created",
+    "diffRemovedDimmed": "status.deleted",
+}
+CLAUDE_CODE_TEXT_PAIRS = [
+    ("inactive", "userMessageBackground"),
+    ("inverseText", "claude"),
+    ("inverseText", "error"),
+    ("inverseText", "success"),
+    ("inverseText", "warning"),
+    ("text", "bashMessageBackgroundColor"),
+    ("text", "memoryBackgroundColor"),
+    ("text", "selectionBg"),
+    ("text", "userMessageBackground"),
+    ("text", "userMessageBackgroundHover"),
+]
+
 # Herdr's own alpha for the `blocked` fill behind its "Needs you" badge; no theme key sets it.
 HERDR_APP_BADGE_ALPHA = "26"
 HERDR_APP_COLOURS = {
@@ -1288,6 +1370,42 @@ def herdr(palettes: list[Palette]) -> str:
     return "[theme]\nauto_switch = true\n\n" + "\n".join(tables)
 
 
+def claude_code_theme(palette: Palette) -> dict[str, Any]:
+    colours = {
+        token: palette_colour(palette, path)
+        for token, path in CLAUDE_CODE_COLOURS.items()
+    }
+    alpha = CLAUDE_CODE_DIMMED_ALPHAS[palette["appearance"]]
+    for token, status in CLAUDE_CODE_DIMMED_DIFFS.items():
+        colour = palette_colour(palette, status) + alpha
+        colours[token] = opaque(colour, palette["ui"]["background"])
+    return {
+        "name": palette["name"],
+        "base": palette["appearance"],
+        "overrides": dict(sorted(colours.items())),
+    }
+
+
+def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
+    colours = claude_code_theme(palette)["overrides"]
+    pairs = [
+        (f"Claude Code's {text} on {ground}", colours[text], colours[ground])
+        for text, ground in CLAUDE_CODE_TEXT_PAIRS
+    ]
+    pairs += [
+        (f"syntax.{role} on Claude Code's {token}", colour, colours[token])
+        for token in CLAUDE_CODE_DIMMED_DIFFS
+        for role, colour in palette["syntax"].items()
+    ]
+    background = palette["ui"]["background"]
+    inactive = (
+        "Claude Code's inactive on the background",
+        colours["inactive"],
+        background,
+    )
+    return [*pairs, inactive]
+
+
 def herdr_app_theme(palette: Palette) -> dict[str, Any]:
     ui, ansi = palette["ui"], palette["ansi"]
     return {
@@ -1843,6 +1961,7 @@ def contrast_failures(palette: Palette) -> list[str]:
         )
         for text, ground in TEXT_PAIRS
     ]
+    pairs += claude_code_contrast_pairs(palette)
     pairs += herdr_app_contrast_pairs(palette)
     failures = []
     for label, text, ground in pairs:
@@ -2194,6 +2313,7 @@ def write_family(family: Family) -> None:
     write_json(ROOT / "zed" / f"{stem}.json", zed_family(family))
     for palette in palettes:
         name = slug(palette["name"])
+        write_json(ROOT / "claude-code" / f"{name}.json", claude_code_theme(palette))
         write(ROOT / "ghostty" / palette["name"], ghostty(palette))
         write_json(ROOT / "herdr-app" / f"{name}.json", herdr_app_theme(palette))
         write_json(ROOT / "jetbrains" / f"{name}.theme.json", jetbrains_theme(palette))

@@ -1,6 +1,6 @@
 # Geist Themes
 
-Editor and terminal themes built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal), for Ghostty, herdr, the Herdr desktop app, JetBrains IDEs, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed. Each comes in Geist Dark and Geist Light.
+Editor and terminal themes built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal), for Claude Code, Ghostty, herdr, the Herdr desktop app, JetBrains IDEs, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed. Each comes in Geist Dark and Geist Light.
 
 This is an unofficial project, not made or endorsed by Vercel. The colours belong to Vercel's Geist design system.
 
@@ -17,6 +17,17 @@ This is an unofficial project, not made or endorsed by Vercel. The colours belon
 </picture>
 
 ## Install
+
+### Claude Code
+
+Copy the Claude Code themes into the `themes/` folder of your Claude Code config directory, `~/.claude` unless `CLAUDE_CONFIG_DIR` points elsewhere:
+
+```sh
+mkdir -p ~/.claude/themes
+cp claude-code/geist-dark.json claude-code/geist-light.json ~/.claude/themes/
+```
+
+Then pick **Geist Dark** or **Geist Light** with `/theme`. Claude Code reloads the folder while it runs, but restart it once if `themes/` didn't exist when it started. Its **auto** theme switches only between the built-in themes, so a custom theme doesn't follow the system appearance.
 
 ### Ghostty
 
