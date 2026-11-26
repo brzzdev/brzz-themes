@@ -123,8 +123,8 @@ CLAUDE_CODE_COLOURS = {
     "permission": "status.info",
     "permissionShimmer": "ansi.bright.4",
     "pink_FOR_SUBAGENTS_ONLY": "ansi.bright.1",
-    "professionalBlue": "status.info",
     "planMode": "ansi.normal.6",
+    "professionalBlue": "status.info",
     "promptBorder": "ui.border_strong",
     "promptBorderShimmer": "ui.quiet",
     "purple_FOR_SUBAGENTS_ONLY": "ansi.normal.5",
@@ -165,14 +165,17 @@ CLAUDE_CODE_DIMMED_DIFFS = {
     "diffRemovedDimmed": "status.deleted",
 }
 CLAUDE_CODE_TEXT_PAIRS = [
+    ("bashBorder", "bashMessageBackgroundColor"),
     ("inactive", "userMessageBackground"),
-    ("inverseText", "claude"),
-    ("inverseText", "error"),
-    ("inverseText", "success"),
-    ("inverseText", "warning"),
+    ("inactive", "userMessageBackgroundHover"),
+    ("remember", "memoryBackgroundColor"),
+    ("text", "bashMessageBackgroundColor"),
+    ("text", "memoryBackgroundColor"),
+    ("text", "userMessageBackground"),
+    ("text", "userMessageBackgroundHover"),
 ]
-# Every other token colours text on the terminal background.
-CLAUDE_CODE_NOT_TEXT = {
+# Fills, borders, and text drawn on a colour; every other token is text on the background.
+CLAUDE_CODE_OFF_BACKGROUND = {
     "bashMessageBackgroundColor",
     "composerSidebarBackground",
     "diffAdded",
@@ -186,6 +189,7 @@ CLAUDE_CODE_NOT_TEXT = {
     "promptBorder",
     "promptBorderShimmer",
     "rate_limit_empty",
+    "rate_limit_fill",
     "selectionBg",
     "userMessageBackground",
     "userMessageBackgroundHover",
@@ -1414,7 +1418,7 @@ def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
     pairs += [
         (f"Claude Code's {token} on the background", colour, background)
         for token, colour in colours.items()
-        if token not in CLAUDE_CODE_NOT_TEXT
+        if token not in CLAUDE_CODE_OFF_BACKGROUND
     ]
     return pairs
 
