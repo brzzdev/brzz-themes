@@ -1,0 +1,1418 @@
+{
+  "name": "Ayu Dark Contrast",
+  "recipe": {
+    "background": {
+      "customColor": {
+        "_0": {
+          "wrapped": {
+            "oklch": {
+              "chroma": {
+                "kind": {
+                  "exact": {
+                    "_0": 0.0
+                  }
+                }
+              },
+              "gamut": {
+                "P3": {}
+              },
+              "hue": {
+                "radiansValue": 0.0
+              },
+              "lightness": {
+                "kind": {
+                  "exact": {
+                    "_0": 0.144788
+                  }
+                }
+              },
+              "opacity": 1
+            }
+          }
+        }
+      }
+    },
+    "colorScheme": {
+      "dark": {}
+    },
+    "palette": {
+      "colorGranularity": "expanded",
+      "colorOverrides": [
+        "codeFoldingRibbon",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.191251
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "comment",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.715474
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "commentEmphasized",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.798372
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "consoleBackground",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.144788
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "currentLineHighlight",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.191251
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "debugger",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.129849
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.4341
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.796829
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "diffAddition",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.160996
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 2.418244
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.730239
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "diffDeletion",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.163794
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.301854
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.698166
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "insertionPointColor",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.129849
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.4341
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.796829
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "invisibles",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.34846
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "keyword",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.162657
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.914923
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.75819
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "keyword.attribute",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.082433
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.325456
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.828414
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "link",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.125089
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 3.938518
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.738607
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "markdown",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130741
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 5.346476
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.797016
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "markdownEmphasized",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "memberDeclaration",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.140799
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.22471
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.823836
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "number",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130741
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 5.346476
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.797016
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "number.character",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130741
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 5.346476
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.797016
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherMember",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherMember.constant",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130741
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 5.346476
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.797016
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherMember.function",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.096465
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.222194
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.874581
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherMember.variable",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherType",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.125089
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 3.938518
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.738607
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherType.class",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.125089
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 3.938518
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.738607
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "otherType.type",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.125089
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 3.938518
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.738607
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "plainText",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "preprocessor",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.082433
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.325456
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.828414
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "preprocessor.macro",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.082433
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.325456
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.828414
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "preprocessor.macroSystem",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.082433
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.325456
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.828414
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectMember",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectMember.constant",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130741
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 5.346476
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.797016
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectMember.function",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.140799
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.22471
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.823836
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectMember.variable",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.016485
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 1.597908
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.951963
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectType",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130111
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 4.141543
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.777054
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectType.class",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130111
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 4.141543
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.777054
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "projectType.type",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130111
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 4.141543
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.777054
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "scopeGuides",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.0
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 0.0
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.34846
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "selectedTextBackgroundColor",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.072572
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 4.485819
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.309049
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "string",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.174542
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 2.196259
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.825078
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "string.regex",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.088396
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 2.986293
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.865144
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        },
+        "typeDeclaration",
+        {
+          "color": {
+            "_0": {
+              "wrapped": {
+                "oklch": {
+                  "chroma": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.130111
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "P3": {}
+                  },
+                  "hue": {
+                    "radiansValue": 4.141543
+                  },
+                  "lightness": {
+                    "kind": {
+                      "exact": {
+                        "_0": 0.777054
+                      }
+                    }
+                  },
+                  "opacity": 1
+                }
+              }
+            }
+          }
+        }
+      ],
+      "primary": {
+        "custom": {
+          "_0": {
+            "wrapped": {
+              "oklch": {
+                "chroma": {
+                  "kind": {
+                    "exact": {
+                      "_0": 0.178305
+                    }
+                  }
+                },
+                "gamut": {
+                  "P3": {}
+                },
+                "hue": {
+                  "radiansValue": 5.342631
+                },
+                "lightness": {
+                  "kind": {
+                    "exact": {
+                      "_0": 0.727314
+                    }
+                  }
+                },
+                "opacity": 1
+              }
+            }
+          }
+        }
+      },
+      "secondary": {
+        "custom": {
+          "_0": {
+            "wrapped": {
+              "oklch": {
+                "chroma": {
+                  "kind": {
+                    "exact": {
+                      "_0": 0.0
+                    }
+                  }
+                },
+                "gamut": {
+                  "P3": {}
+                },
+                "hue": {
+                  "radiansValue": 0.0
+                },
+                "lightness": {
+                  "kind": {
+                    "exact": {
+                      "_0": 0.144788
+                    }
+                  }
+                },
+                "opacity": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

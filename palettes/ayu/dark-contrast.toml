@@ -1,0 +1,85 @@
+name = "Ayu Dark Contrast"
+appearance = "dark"
+
+[ui]
+accent = "#e6b450"
+accent_strong = "#ffcb8f"
+background = "#0a0a0a"
+border = "#262626"
+border_strong = "#3a3a3a"
+border_variant = "#1c1c1c"
+cursor = "#e6b450"
+element = "#1c1c1c"
+# A darker red than `error`, which keeps white text at only 3.8:1.
+error_fill = "#cf3341"
+# ayu's teal composited at `1f` and `30`, a hue apart from the gold accent and the blue selection, with every syntax role at 4.5:1: see docs/adr/0002-find-match-contrast.md.
+find = "#1b2521"
+find_active = "#24332e"
+find_active_border = "#95e6cb"
+find_border = "#95e6cb66"
+find_terminal = "#95e6cb1f"
+find_terminal_active = "#95e6cb30"
+foreground = "#f3efe3"
+highlight = "#202020"
+hover = "#141414"
+indent = "#3a3a3a"
+indent_active = "#8a8a8a"
+invisible = "#3a3a3a"
+muted = "#a3a3a3"
+panel = "#111111"
+quiet = "#8a8a8a"
+# ayu's selection blue at 30% rather than its 25%, so a selection stands out on the neutral black.
+selection = "#163054"
+# Translucent, compositing to `selection` over the background.
+selection_overlay = "#2d78e058"
+# Neither the gold cursor nor the red of an unmatched bracket.
+accents = ["#59c2ff", "#d2a6ff", "#ff8f40", "#95e6cb", "#aad94c", "#39bae6"]
+
+# Severities are the normal ANSI colours, so their shimmers can take the bright ones; diff roles are ayu's `vcs` colours.
+[status]
+conflict = "#e89d37"
+created = "#70bf56"
+deleted = "#f26d78"
+error = "#e6495a"
+hidden = "#8a8a8a"
+# Grey text drawn in code (hints, predictions, unused code) takes the comment grey: `quiet` falls below 4.5:1 on the selection.
+hint = "#a3a3a3"
+ignored = "#8a8a8a"
+info = "#17acf2"
+modified = "#73b8ff"
+predictive = "#a3a3a3"
+renamed = "#73b8ff"
+success = "#97c142"
+unreachable = "#a3a3a3"
+warning = "#e89d37"
+
+# black, red, green, yellow, blue, magenta, cyan, white
+# Black and bright black are greys, since ayu's `#0a0000` disappears on this background; white is the foreground.
+[ansi]
+normal = ["#1c1c1c", "#e6495a", "#97c142", "#e89d37", "#17acf2", "#c385fe", "#84ceb5", "#f3efe3"]
+bright = ["#8a8a8a", "#f07178", "#aad94c", "#ffb454", "#59c2ff", "#d2a6ff", "#95e6cb", "#ffffff"]
+
+# `_system` roles colour symbols from outside the project, where an editor tells them apart.
+[syntax]
+attribute = "#e6c08a"
+# ayu's `#5a6673` is 3.4:1 here, and `quiet` falls below 4.5:1 on the selection.
+comment = "#a3a3a3"
+# Not in ayu: one step brighter than `comment`.
+comment_emphasized = "#bdbdbd"
+constant = "#d2a6ff"
+function = "#ffb454"
+function_system = "#ffcb8f"
+keyword = "#ff8f40"
+link = "#39bae6"
+literal = "#d2a6ff"
+namespace = "#e6c08a"
+number = "#d2a6ff"
+plain = "#f3efe3"
+punctuation = "#a3a3a3"
+regex = "#95e6cb"
+string = "#aad94c"
+tag = "#39bae6"
+type = "#59c2ff"
+type_parameter = "#85d0ff"
+type_system = "#39bae6"
+variable = "#f3efe3"

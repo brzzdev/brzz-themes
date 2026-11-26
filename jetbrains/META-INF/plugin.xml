@@ -3,10 +3,11 @@
   <name>Brzz Themes</name>
   <version>0.0.0-dev</version>
   <vendor url="https://github.com/brzzdev/brzz-themes">brzzdev</vendor>
-  <description>Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel.</description>
+  <description>Ayu Dark Contrast, built from the colours of ayu's dark theme. Unofficial: not made or endorsed by the ayu project. Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel.</description>
   <idea-version since-build="261" />
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="ayu-dark-contrast" path="/ayu-dark-contrast.theme.json" />
     <themeProvider id="geist-dark" path="/geist-dark.theme.json" />
     <themeProvider id="geist-light" path="/geist-light.theme.json" />
   </extensions>

@@ -1,8 +1,11 @@
-# Geist Themes
+# Brzz Themes
 
-Editor and terminal themes built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal), for Claude Code, Ghostty, herdr, the Herdr desktop app, JetBrains IDEs, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed. Each comes in Geist Dark and Geist Light.
+Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop app, JetBrains IDEs, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed, in two families:
 
-This is an unofficial project, not made or endorsed by Vercel. The colours belong to Vercel's Geist design system.
+- **Geist**: Geist Dark and Geist Light, built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal).
+- **Ayu**: Ayu Dark Contrast, the accents of [ayu](https://github.com/ayu-theme/ayu-colors)'s dark theme on a neutral black with brighter text, for easier focus.
+
+This is an unofficial project, not made or endorsed by Vercel or the ayu project. Geist's colours belong to Vercel's Geist design system, and ayu's to its authors under the MIT licence.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/ghostty-dark.webp">
@@ -16,6 +19,8 @@ This is an unofficial project, not made or endorsed by Vercel. The colours belon
   <img alt="Swatches for the background, foreground, accent, syntax roles and 16 ANSI colours, each with its hex value" src="docs/palette-geist-light.svg">
 </picture>
 
+![Swatches for Ayu Dark Contrast's background, foreground, accent, syntax roles, and 16 ANSI colours, each with its hex value](docs/palette-ayu-dark-contrast.svg)
+
 ## Install
 
 ### Claude Code
@@ -25,10 +30,10 @@ Copy the Claude Code themes into the `themes/` folder of your Claude Code config
 ```sh
 themes="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/themes"
 mkdir -p "$themes"
-cp claude-code/geist-dark.json claude-code/geist-light.json "$themes/"
+cp claude-code/*.json "$themes/"
 ```
 
-Then pick **Geist Dark** or **Geist Light** with `/theme`. Claude Code reloads the folder while it runs, but restart it once if `themes/` didn't exist when it started. Its **auto** theme switches only between the built-in themes, so a custom theme doesn't follow the system appearance.
+Then pick a theme, such as **Geist Dark** or **Ayu Dark Contrast**, with `/theme`. Claude Code reloads the folder while it runs, but restart it once if `themes/` didn't exist when it started. Its **auto** theme switches only between the built-in themes, so a custom theme doesn't follow the system appearance.
 
 ### Ghostty
 
@@ -36,10 +41,10 @@ Copy the Ghostty themes into `~/.config/ghostty/themes/`:
 
 ```sh
 mkdir -p ~/.config/ghostty/themes
-cp "ghostty/Geist Dark" "ghostty/Geist Light" ~/.config/ghostty/themes/
+cp ghostty/* ~/.config/ghostty/themes/
 ```
 
-Then set `theme = Geist Dark` or `theme = Geist Light` in your Ghostty config. To follow the system appearance, set `theme = light:Geist Light,dark:Geist Dark`.
+Then set `theme = Geist Dark`, `theme = Geist Light`, or `theme = Ayu Dark Contrast` in your Ghostty config. To follow the system appearance, pair a light and a dark theme, such as `theme = light:Geist Light,dark:Ayu Dark Contrast`.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/ghostty-dark.webp">
@@ -48,13 +53,13 @@ Then set `theme = Geist Dark` or `theme = Geist Light` in your Ghostty config. T
 
 ### herdr
 
-herdr can't load a separate theme file, so paste the contents of `herdr/geist.toml` into `~/.config/herdr/config.toml`, replacing the `[theme]` table and every `[theme.custom]`, `[theme.custom.dark]` and `[theme.custom.light]` table already there. Keep any other `[theme]` keys you want, such as `name`, under the pasted `[theme]` header. Then run:
+herdr can't load a separate theme file, so paste the contents of `herdr/geist.toml` or `herdr/ayu.toml` into `~/.config/herdr/config.toml`, replacing the `[theme]` table and every `[theme.custom]`, `[theme.custom.dark]` and `[theme.custom.light]` table already there. Keep any other `[theme]` keys you want, such as `name`, under the pasted `[theme]` header. Then run:
 
 ```sh
 herdr server reload-config
 ```
 
-The snippet turns on `auto_switch`, so herdr uses Geist Dark or Geist Light to match the colour scheme your terminal reports. Ghostty reports dark only with a conditional theme, so a fixed `theme = Geist Dark` still reports light and herdr picks Geist Light. In Ghostty, use the conditional `theme = light:Geist Light,dark:Geist Dark` from the [Ghostty](#ghostty) section instead. To keep herdr on Geist Dark instead, pick a theme in herdr's settings, which turns `auto_switch` off and leaves Geist Dark. The snippet sets every colour herdr themes, so it looks the same whichever base theme `theme.name` picks.
+Geist's snippet turns on `auto_switch`, so herdr uses Geist Dark or Geist Light to match the colour scheme your terminal reports. Ghostty reports dark only with a conditional theme, so a fixed `theme = Geist Dark` still reports light and herdr picks Geist Light. In Ghostty, use a conditional theme instead, such as `theme = light:Geist Light,dark:Geist Dark`, as the [Ghostty](#ghostty) section describes. To keep herdr on Geist Dark instead, pick a theme in herdr's settings, which turns `auto_switch` off and leaves Geist Dark. The snippet sets every colour herdr themes, so it looks the same whichever base theme `theme.name` picks. Ayu has no light theme, so its snippet leaves `auto_switch` off and herdr stays on Ayu Dark Contrast.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/herdr-dark.webp">
@@ -67,10 +72,10 @@ For Herdr 0.1.15 or later. Copy the Herdr desktop themes into `~/.config/herdr-a
 
 ```sh
 mkdir -p ~/.config/herdr-app/themes
-cp herdr-app/geist-dark.json herdr-app/geist-light.json ~/.config/herdr-app/themes/
+cp herdr-app/*.json ~/.config/herdr-app/themes/
 ```
 
-Then pick **geist dark** as the dark theme and **geist light** as the light one in Settings → Look. Each layout keeps its own pair, so pick them in every layout you use. Herdr follows the system appearance between the two.
+Then pick a dark theme, such as **geist dark** or **ayu dark contrast**, and **geist light** as the light one in Settings → Look. Each layout keeps its own pair, so pick them in every layout you use. Herdr follows the system appearance between the two.
 
 ### JetBrains IDEs
 
@@ -80,7 +85,7 @@ For Rider, IntelliJ IDEA, WebStorm and the other JetBrains IDEs, 2026.1 or later
 python3 -m zipfile -c brzz-themes.jar jetbrains/*
 ```
 
-Brzz Themes replaces the earlier Geist Themes plugin, so uninstall that first if you have it. Then install the jar with Settings → Plugins → ⚙ → **Install Plugin from Disk…**, and pick **Geist Dark** or **Geist Light** under Appearance & Behavior → Appearance → Theme. Each theme switches the editor to its matching colour scheme.
+Brzz Themes replaces the earlier Geist Themes plugin, so uninstall that first if you have it. Then install the jar with Settings → Plugins → ⚙ → **Install Plugin from Disk…**, and pick **Geist Dark**, **Geist Light**, or **Ayu Dark Contrast** under Appearance & Behavior → Appearance → Theme. Each theme switches the editor to its matching colour scheme.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/jetbrains-dark.webp">
@@ -89,7 +94,7 @@ Brzz Themes replaces the earlier Geist Themes plugin, so uninstall that first if
 
 ### NetNewsWire
 
-With NetNewsWire running, open `netnewswire/Geist.nnwtheme` and accept the install prompt. Opening it while NetNewsWire is closed only launches the app, so open it again. Then pick **Geist** in NetNewsWire → Settings → General → Article Theme. The article view follows the system appearance between Geist Dark and Geist Light.
+With NetNewsWire running, open `netnewswire/Geist.nnwtheme` or `netnewswire/Ayu.nnwtheme` and accept the install prompt. Opening it while NetNewsWire is closed only launches the app, so open it again. Then pick **Geist** or **Ayu** in NetNewsWire → Settings → General → Article Theme. Geist's article view follows the system appearance between Geist Dark and Geist Light; Ayu's stays dark.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/netnewswire-dark.webp">
@@ -98,7 +103,7 @@ With NetNewsWire running, open `netnewswire/Geist.nnwtheme` and accept the insta
 
 ### Rex
 
-Rex imports the Ghostty files. In its Settings → Themes → Import Theme, click **Import** and pick `ghostty/Geist Dark`, then do the same for `ghostty/Geist Light`. Rex files each theme under the appearance it matches and selects it there, so Dark Mode uses **Geist Dark** and Light Mode uses **Geist Light**. To return to them after picking another theme, select them again on the same page.
+Rex imports the Ghostty files. In its Settings → Themes → Import Theme, click **Import** and pick `ghostty/Geist Dark`, then do the same for `ghostty/Geist Light`. Rex files each theme under the appearance it matches and selects it there, so Dark Mode uses **Geist Dark** and Light Mode uses **Geist Light**. Importing `ghostty/Ayu Dark Contrast` as well selects it for Dark Mode in Geist Dark's place. To return to them after picking another theme, select them again on the same page.
 
 A Rex theme has no key for the sidebar: with **Tint with theme** on, Rex shades it from the theme, and otherwise uses macOS's own shade. For Geist Dark, pick **Glass** under Settings → Interface → Appearance → Interface style. In **Classic**, the selected tab barely shows against the black; in Glass it shows clearly.
 
@@ -109,7 +114,7 @@ A Rex theme has no key for the sidebar: with **Tint with theme** on, Rex shades 
 
 ### Slack
 
-Slack's custom themes set only four colours: the sidebar, selected items, presence, and the unread badge. Slack picks the rest, so its message pane keeps Slack's own grey in dark mode. In Slack → Preferences → Appearance, pick **Dark** under Colour mode, then under Custom theme click **Import** and paste the line from `slack/Geist Dark.txt`. For light mode, pick **Light** and paste `slack/Geist Light.txt` instead. Leave **Window gradient** off.
+Slack's custom themes set only four colours: the sidebar, selected items, presence, and the unread badge. Slack picks the rest, so its message pane keeps Slack's own grey in dark mode. In Slack → Preferences → Appearance, pick **Dark** under Colour mode, then under Custom theme click **Import** and paste the line from `slack/Geist Dark.txt` or `slack/Ayu Dark Contrast.txt`. For light mode, pick **Light** and paste `slack/Geist Light.txt` instead. Leave **Window gradient** off.
 
 ### VS Code
 
@@ -119,7 +124,7 @@ Package the extension with Node installed:
 cd vscode && npx --yes @vscode/vsce package -o brzz-themes.vsix
 ```
 
-Brzz Themes replaces the earlier `geist-themes` extension, so uninstall that first if you have it. In VS Code (or a fork such as Cursor), run **Extensions: Install from VSIX…** and pick `vscode/brzz-themes.vsix`, then choose **Geist Dark** or **Geist Light** with **Preferences: Color Theme**.
+Brzz Themes replaces the earlier `geist-themes` extension, so uninstall that first if you have it. In VS Code (or a fork such as Cursor), run **Extensions: Install from VSIX…** and pick `vscode/brzz-themes.vsix`, then choose **Geist Dark**, **Geist Light**, or **Ayu Dark Contrast** with **Preferences: Color Theme**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/vscode-dark.webp">
@@ -134,7 +139,7 @@ Xcode 27 keeps themes in its settings rather than in `.xccolortheme` files. Quit
 ./install-xcode.py
 ```
 
-Then, in Xcode → Settings → Appearance → Theme → **Choose…**, pick **Geist Dark** for the dark appearance and **Geist Light** for the light one. Running it again updates the themes in place.
+Then, in Xcode → Settings → Appearance → Theme → **Choose…**, pick **Geist Dark** or **Ayu Dark Contrast** for the dark appearance and **Geist Light** for the light one. Running it again updates the themes in place.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/xcode-dark.webp">
@@ -143,7 +148,7 @@ Then, in Xcode → Settings → Appearance → Theme → **Choose…**, pick **G
 
 ### Zed
 
-Copy `zed/geist.json` into `~/.config/zed/themes/`, then pick **Geist Dark** or **Geist Light** with `cmd-k cmd-t`.
+Copy `zed/geist.json` and `zed/ayu.json` into `~/.config/zed/themes/`, then pick **Geist Dark**, **Geist Light**, or **Ayu Dark Contrast** with `cmd-k cmd-t`.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/zed-dark.webp">

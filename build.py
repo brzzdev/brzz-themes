@@ -67,6 +67,18 @@ SYNTAX_GROUNDS = [
     "panel",
     "selection",
 ]
+# Non-syntax colours held to the syntax grounds: drawn among code, or as badge text on a tint.
+SYNTAX_LIKE_PATHS = [
+    "ansi.bright.1",
+    "ansi.normal.2",
+    "ansi.normal.3",
+    "ansi.normal.4",
+    "ansi.normal.5",
+    "ansi.normal.6",
+    "status.hint",
+    "status.predictive",
+    "status.unreachable",
+]
 # The colours a palette's `tint` group composites over its background.
 TINTS = {
     "accent": "ui.accent",
@@ -78,7 +90,7 @@ TINTS = {
     "hint": "status.hint",
     "ignored": "status.ignored",
     "info": "status.info",
-    "keyword": "syntax.keyword",
+    "magenta": "ansi.normal.5",
     "modified": "status.modified",
     "predictive": "status.predictive",
     "renamed": "status.renamed",
@@ -257,52 +269,52 @@ HERDR_APP_TEXT_PAIRS = [
 HERDR_TABLES = {"dark": "theme.custom", "light": "theme.custom.light"}
 
 ZED_SYNTAX = {
-    "attribute": ("attribute", None),
-    "boolean": ("constant", None),
-    "comment": ("comment", "italic"),
-    "comment.doc": ("comment", "italic"),
-    "concept": ("type", None),
-    "constant": ("constant", None),
-    "constructor": ("type", None),
-    "diff.delta": ("function", None),
-    "diff.minus": ("tag", None),
-    "diff.plus": ("string", None),
-    "emphasis": ("plain", "italic"),
-    "emphasis.strong": ("plain", "bold"),
-    "enum": ("type", None),
-    "function": ("function", None),
-    "function.builtin": ("function_system", None),
-    "function.macro": ("attribute", None),
-    "keyword": ("keyword", None),
-    "label": ("attribute", None),
-    "lifetime": ("type_parameter", None),
-    "link_text": ("link", None),
-    "link_uri": ("link", None),
-    "markup.heading": ("plain", "bold"),
-    "module": ("namespace", None),
-    "namespace": ("namespace", None),
-    "number": ("number", None),
-    "operator": ("punctuation", None),
-    "preproc": ("attribute", None),
-    "property": ("variable", None),
-    "punctuation": ("punctuation", None),
-    "selector": ("attribute", None),
-    "string": ("string", None),
-    "string.escape": ("number", None),
-    "string.regex": ("regex", None),
-    "string.special": ("string", None),
-    "string.special.symbol": ("constant", None),
-    "tag": ("tag", None),
-    "text.literal": ("literal", None),
-    "title": ("plain", "bold"),
-    "type": ("type", None),
-    "type.builtin": ("type_system", None),
-    "type.parameter": ("type_parameter", None),
-    "variable": ("variable", None),
-    "variable.builtin": ("keyword", None),
-    "variable.parameter": ("variable", None),
-    "variable.special": ("keyword", None),
-    "variant": ("constant", None),
+    "attribute": ("syntax.attribute", None),
+    "boolean": ("syntax.constant", None),
+    "comment": ("syntax.comment", "italic"),
+    "comment.doc": ("syntax.comment", "italic"),
+    "concept": ("syntax.type", None),
+    "constant": ("syntax.constant", None),
+    "constructor": ("syntax.type", None),
+    "diff.delta": ("ansi.normal.4", None),
+    "diff.minus": ("ansi.bright.1", None),
+    "diff.plus": ("ansi.normal.2", None),
+    "emphasis": ("syntax.plain", "italic"),
+    "emphasis.strong": ("syntax.plain", "bold"),
+    "enum": ("syntax.type", None),
+    "function": ("syntax.function", None),
+    "function.builtin": ("syntax.function_system", None),
+    "function.macro": ("syntax.attribute", None),
+    "keyword": ("syntax.keyword", None),
+    "label": ("syntax.attribute", None),
+    "lifetime": ("syntax.type_parameter", None),
+    "link_text": ("syntax.link", None),
+    "link_uri": ("syntax.link", None),
+    "markup.heading": ("syntax.plain", "bold"),
+    "module": ("syntax.namespace", None),
+    "namespace": ("syntax.namespace", None),
+    "number": ("syntax.number", None),
+    "operator": ("syntax.punctuation", None),
+    "preproc": ("syntax.attribute", None),
+    "property": ("syntax.variable", None),
+    "punctuation": ("syntax.punctuation", None),
+    "selector": ("syntax.attribute", None),
+    "string": ("syntax.string", None),
+    "string.escape": ("syntax.number", None),
+    "string.regex": ("syntax.regex", None),
+    "string.special": ("syntax.string", None),
+    "string.special.symbol": ("syntax.constant", None),
+    "tag": ("syntax.tag", None),
+    "text.literal": ("syntax.literal", None),
+    "title": ("syntax.plain", "bold"),
+    "type": ("syntax.type", None),
+    "type.builtin": ("syntax.type_system", None),
+    "type.parameter": ("syntax.type_parameter", None),
+    "variable": ("syntax.variable", None),
+    "variable.builtin": ("syntax.keyword", None),
+    "variable.parameter": ("syntax.variable", None),
+    "variable.special": ("syntax.keyword", None),
+    "variant": ("syntax.constant", None),
 }
 
 NETNEWSWIRE_VARIABLES = {
@@ -313,7 +325,7 @@ NETNEWSWIRE_VARIABLES = {
     "code-background": "ui.element",
     "find": "ui.find",
     "foreground": "ui.foreground",
-    "link": "syntax.link",
+    "link": "ui.accent_strong",
     "muted": "ui.muted",
     "panel": "ui.panel",
     "quiet": "ui.quiet",
@@ -633,8 +645,8 @@ JETBRAINS_UI = {
     "Badge.greenForeground": "ui.background",
     "Badge.greenSecondaryBackground": "tint.success",
     "Badge.greenSecondaryForeground": "status.success",
-    "Badge.purpleSecondaryBackground": "tint.keyword",
-    "Badge.purpleSecondaryForeground": "syntax.keyword",
+    "Badge.purpleSecondaryBackground": "tint.magenta",
+    "Badge.purpleSecondaryForeground": "ansi.normal.5",
     "Bookmark.MnemonicCurrent.foreground": "ui.background",
     "Counter.foreground": "ui.foreground",
     "Debugger.Variables.changedValueForeground": "ui.accent",
@@ -719,7 +731,7 @@ JETBRAINS_UI = {
     "VersionControl.GitLog.headIconColor": "status.warning",
     "VersionControl.GitLog.localBranchIconColor": "status.success",
     "VersionControl.GitLog.otherIconColor": "ui.quiet",
-    "VersionControl.GitLog.remoteBranchIconColor": "syntax.keyword",
+    "VersionControl.GitLog.remoteBranchIconColor": "ansi.normal.5",
     "VersionControl.GitLog.tagIconColor": "ui.quiet",
     "VersionControl.Log.Commit.Reference.foreground": "ui.quiet",
     "VersionControl.Log.Commit.currentBranchBackground": "tint.accent",
@@ -984,11 +996,11 @@ JETBRAINS_FOREGROUNDS = {
     "NOT_USED_ELEMENT_ATTRIBUTES": "status.unreachable",
     "PROPERTIES.KEY": "syntax.keyword",
     "PROPERTIES.KEY_VALUE_SEPARATOR": "syntax.punctuation",
-    "RAINBOW_COLOR0": "syntax.function",
-    "RAINBOW_COLOR1": "syntax.keyword",
-    "RAINBOW_COLOR2": "syntax.string",
-    "RAINBOW_COLOR3": "syntax.type",
-    "RAINBOW_COLOR4": "syntax.constant",
+    "RAINBOW_COLOR0": "ansi.normal.4",
+    "RAINBOW_COLOR1": "ansi.normal.5",
+    "RAINBOW_COLOR2": "ansi.normal.2",
+    "RAINBOW_COLOR3": "ansi.normal.6",
+    "RAINBOW_COLOR4": "ansi.normal.3",
     "REGEXP.BRACES": "syntax.punctuation",
     "REGEXP.BRACKETS": "syntax.punctuation",
     "REGEXP.CHAR_CLASS": "syntax.constant",
@@ -1224,7 +1236,7 @@ def zed_syntax_style(colour: str, style: str | None) -> dict[str, Any]:
 
 
 def zed_style(palette: Palette) -> dict[str, Any]:
-    ui, ansi, syntax = palette["ui"], palette["ansi"], palette["syntax"]
+    ui, ansi = palette["ui"], palette["ansi"]
     status, tints = palette["status"], palette["tint"]
     thumb, hover_thumb = scrollbar_thumbs(palette)
     style = {
@@ -1296,8 +1308,8 @@ def zed_style(palette: Palette) -> dict[str, Any]:
         "status_bar.background": ui["panel"],
         "surface.background": ui["panel"],
         "syntax": {
-            token: zed_syntax_style(syntax[role], font)
-            for token, (role, font) in ZED_SYNTAX.items()
+            token: zed_syntax_style(palette_colour(palette, path), font)
+            for token, (path, font) in ZED_SYNTAX.items()
         },
         "tab.active_background": ui["background"],
         "tab.inactive_background": ui["panel"],
@@ -1412,7 +1424,9 @@ def herdr(palettes: list[Palette]) -> str:
     tables = [
         herdr_table(HERDR_TABLES[p["appearance"]], herdr_colours(p)) for p in palettes
     ]
-    return "[theme]\nauto_switch = true\n\n" + "\n".join(tables)
+    has_both_appearances = {p["appearance"] for p in palettes} == HERDR_TABLES.keys()
+    auto_switch = "true" if has_both_appearances else "false"
+    return f"[theme]\nauto_switch = {auto_switch}\n\n" + "\n".join(tables)
 
 
 def claude_code_theme(palette: Palette) -> dict[str, Any]:
@@ -1534,7 +1548,7 @@ def xcode_recipe(palette: Palette) -> dict[str, Any]:
                 "colorGranularity": "expanded",
                 "colorOverrides": overrides,
                 "primary": {
-                    "custom": {"_0": xcode_colour(palette["syntax"]["keyword"])}
+                    "custom": {"_0": xcode_colour(palette["ansi"]["normal"][5])}
                 },
                 "secondary": {
                     "custom": {"_0": xcode_colour(palette["ui"]["background"])}
@@ -1679,8 +1693,8 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "editor.snippetTabstopHighlightBackground": decoration(ui["highlight"]),
         "editor.stackFrameHighlightBackground": decoration(ui["highlight"]),
         "editor.wordHighlightBackground": decoration(ui["highlight"]),
-        "editor.wordHighlightStrongBackground": decoration(tints["keyword"]),
-        "editorBracketHighlight.unexpectedBracket.foreground": syntax["regex"],
+        "editor.wordHighlightStrongBackground": decoration(tints["magenta"]),
+        "editorBracketHighlight.unexpectedBracket.foreground": ansi["bright"][1],
         "editorBracketMatch.background": ui["highlight"],
         "editorBracketMatch.border": ui["indent_active"],
         "editorCodeLens.foreground": status["hint"],
@@ -1709,7 +1723,7 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "editorOverviewRuler.errorForeground": status["error"],
         "editorOverviewRuler.findMatchForeground": ui["find_active_border"],
         "editorOverviewRuler.rangeHighlightForeground": ui["accent"],
-        "editorOverviewRuler.wordHighlightStrongForeground": syntax["keyword"],
+        "editorOverviewRuler.wordHighlightStrongForeground": ansi["normal"][5],
         "editorRuler.foreground": ui["border"],
         "editorStickyScrollHover.background": ui["hover"],
         "editorSuggestWidgetStatus.foreground": status["hint"],
@@ -1759,7 +1773,7 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "list.invalidItemForeground": status["warning"],
         "list.warningForeground": status["warning"],
         "listFilterWidget.noMatchesOutline": status["error"],
-        "markdownAlert.important.foreground": syntax["keyword"],
+        "markdownAlert.important.foreground": ansi["normal"][5],
         "markdownAlert.tip.foreground": status["success"],
         "menu.background": ui["panel"],
         "menu.border": ui["border"],
@@ -2003,6 +2017,11 @@ def contrast_failures(palette: Palette) -> list[str]:
         )
         for text, ground in TEXT_PAIRS
     ]
+    pairs += [
+        (f"{path} on {name}", palette_colour(palette, path), ground)
+        for name, ground in syntax_grounds(palette).items()
+        for path in SYNTAX_LIKE_PATHS
+    ]
     pairs += claude_code_contrast_pairs(palette)
     pairs += herdr_app_contrast_pairs(palette)
     failures = []
@@ -2158,8 +2177,8 @@ def jetbrains_scheme(palette: Palette) -> str:
             "FOREGROUND": path_colour("syntax.comment_emphasized"),
         },
         "WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES": {
-            "BACKGROUND": path_colour("tint.keyword"),
-            "ERROR_STRIPE_COLOR": keyword,
+            "BACKGROUND": path_colour("tint.magenta"),
+            "ERROR_STRIPE_COLOR": path_colour("ansi.normal.5"),
         },
         "WRITE_SEARCH_RESULT_ATTRIBUTES": find,
     }
@@ -2340,7 +2359,9 @@ def main() -> None:
     plugin = jetbrains_plugin(palettes, description)
     write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", plugin)
     write_json(ROOT / "vscode" / "package.json", vscode_manifest(palettes, description))
-    write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
+    licence = (ROOT / "LICENSE").read_text()
+    write(ROOT / "jetbrains" / "LICENSE", licence)
+    write(ROOT / "vscode" / "LICENSE", licence)
     for family in families:
         write_family(family)
 
