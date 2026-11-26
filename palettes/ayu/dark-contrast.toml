@@ -12,12 +12,12 @@ cursor = "#e6b450"
 element = "#1c1c1c"
 # A darker red than `error`, which keeps white text at only 3.9:1.
 error_fill = "#cf3341"
-# ayu's gold find match, dimmed from its `#4c4126` until every syntax role reaches 4.5:1: see docs/adr/0002-find-match-contrast.md.
-find = "#221d12"
+# ayu's find fills; the active match is dimmed from its `#4c4126` until every colour drawn among code reaches 4.5:1: see docs/adr/0002-find-match-contrast.md.
+find = "#2b2618"
 find_active = "#3b301a"
 find_active_border = "#e6b450"
 find_border = "#e6b45066"
-find_terminal = "#e6b4501c"
+find_terminal = "#4c412680"
 find_terminal_active = "#e6b45039"
 foreground = "#f3efe3"
 highlight = "#202020"
@@ -34,7 +34,6 @@ selection = "#142a47"
 selection_overlay = "#3388ff40"
 accents = ["#59c2ff", "#d2a6ff", "#e6b450", "#95e6cb", "#aad94c", "#f07178"]
 
-# ayu's own error and warning colours, and its `vcs` colours for diffs.
 [status]
 conflict = "#d95757"
 created = "#70bf56"
@@ -44,7 +43,7 @@ hidden = "#8a8a8a"
 # Grey text drawn in code (hints, predictions, unused code) takes the comment grey: `quiet` falls below 4.5:1 on the selection.
 hint = "#a3a3a3"
 ignored = "#8a8a8a"
-info = "#59c2ff"
+info = "#39bae6"
 modified = "#73b8ff"
 predictive = "#a3a3a3"
 renamed = "#73b8ff"
