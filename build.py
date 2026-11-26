@@ -16,6 +16,20 @@ FAMILY_FILE = "family.toml"
 IDENTIFIER_PREFIX = "dev.brzz"
 PACKAGE = "brzz-themes"
 PACKAGE_NAME = "Brzz Themes"
+# Backgrounds a port draws code over, besides its editor background and Zed's selection.
+PORT_GROUNDS = {
+    "vscode": [
+        "editor.findMatchBackground",
+        "editor.findMatchHighlightBackground",
+        "editor.lineHighlightBackground",
+        "editor.selectionBackground",
+    ],
+    "zed": [
+        "editor.active_line.background",
+        "search.active_match_background",
+        "search.match_background",
+    ],
+}
 REPOSITORY_URL = "https://github.com/brzzdev/brzz-themes"
 SCROLLBAR_ALPHA = "50"
 SCROLLBAR_HOVER_ALPHA = "80"
@@ -101,6 +115,7 @@ TINTS = {
 
 type Palette = dict[str, Any]
 type Family = dict[str, Any]
+type Json = dict[str, Json] | list[Json] | str | int | float | bool | None
 
 CLAUDE_CODE_COLOURS = {
     "autoAccept": "ansi.normal.5",
@@ -642,10 +657,40 @@ def zed_family(family: Family) -> dict[str, Any]:
         "name": family["name"],
         "author": AUTHOR,
         "themes": [
-            {"name": p["name"], "appearance": p["appearance"], "style": zed_style(p)}
+            {
+                "name": p["name"],
+                "appearance": p["appearance"],
+                "style": port_theme(p, "zed") if "zed" in p["ports"] else zed_style(p),
+            }
             for p in family["palettes"]
         ],
     }
+
+
+def port_theme(palette: Palette, app: str) -> dict[str, Any]:
+    port = palette["ports"][app]
+    theme = recoloured(port["source"], palette, port["recolour"])
+    if colors := port.get("colors"):
+        theme["colors"] |= {
+            key: palette_colour(palette, path) for key, path in colors.items()
+        }
+    return theme
+
+
+def recoloured(value: Json, palette: Palette, table: dict[str, str]) -> Json:
+    if isinstance(value, dict):
+        return {key: recoloured(v, palette, table) for key, v in value.items()}
+    if isinstance(value, list):
+        return [recoloured(v, palette, table) for v in value]
+    if not isinstance(value, str) or not value.startswith("#"):
+        return value
+    colour = value.lower()
+    if colour in table:
+        return palette_colour(palette, table[colour])
+    base, alpha = colour[:OPAQUE_HEX_LENGTH], colour[OPAQUE_HEX_LENGTH:]
+    if base in table:
+        return palette_colour(palette, table[base]) + alpha
+    return value
 
 
 def ghostty(palette: Palette) -> str:
@@ -1206,6 +1251,8 @@ def vscode_token_settings(colour: str, style: str | None) -> dict[str, str]:
 
 
 def vscode_theme(palette: Palette) -> dict[str, Any]:
+    if "vscode" in palette["ports"]:
+        return port_theme(palette, "vscode") | {"name": palette["name"]}
     syntax = palette["syntax"]
     return {
         "name": palette["name"],
@@ -1339,6 +1386,7 @@ def contrast_failures(palette: Palette) -> list[str]:
         for path in SYNTAX_LIKE_PATHS
     ]
     pairs += claude_code_contrast_pairs(palette)
+    pairs += port_contrast_pairs(palette)
     pairs += herdr_app_contrast_pairs(palette)
     failures = []
     for label, text, ground in pairs:
@@ -1347,6 +1395,51 @@ def contrast_failures(palette: Palette) -> list[str]:
             continue
         failures.append(f"{palette['name']}: {label} is {ratio:.2f}:1")
     return failures
+
+
+def port_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
+    pairs = []
+    for app in palette["ports"]:
+        theme = port_theme(palette, app)
+        colours = theme["colors"] if app == "vscode" else theme
+        background = opaque(colours["editor.background"], palette["ui"]["background"])
+        grounds = {"editor.background": background} | {
+            key: opaque(colours[key], background) for key in PORT_GROUNDS[app]
+        }
+        texts = {"editor.foreground": colours["editor.foreground"]}
+        if app == "zed":
+            selection = theme["players"][0]["selection"]
+            grounds["players[0].selection"] = opaque(selection, background)
+            texts |= {
+                f"syntax.{name}": style["color"]
+                for name, style in theme["syntax"].items()
+                if "color" in style
+            }
+        else:
+            texts |= {
+                str(rule["scope"]): rule["settings"]["foreground"]
+                for rule in theme["tokenColors"]
+                if "foreground" in rule["settings"]
+            }
+            texts |= {
+                f"semantic {name}": style
+                if isinstance(style, str)
+                else style["foreground"]
+                for name, style in theme.get("semanticTokenColors", {}).items()
+                if isinstance(style, str) or "foreground" in style
+            }
+        pairs += [
+            (f"{app} {text} on {name}", opaque(colour, ground), ground)
+            for text, colour in texts.items()
+            for name, ground in grounds.items()
+        ]
+        terminal = opaque(colours["terminal.background"], background)
+        pairs += [
+            (f"{app} {key} on terminal.background", opaque(colour, terminal), terminal)
+            for key, colour in colours.items()
+            if key.startswith("terminal.ansi") and "black" not in key.lower()
+        ]
+    return pairs
 
 
 def xml_text(root: ET.Element) -> str:
@@ -1440,11 +1533,23 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
 def load_family(folder: Path) -> Family:
     family = tomllib.loads((folder / FAMILY_FILE).read_text())
     family["palettes"] = [
-        with_tints(tomllib.loads(p.read_text()))
+        with_ports(with_tints(tomllib.loads(p.read_text())), folder)
         for p in sorted(folder.glob("*.toml"))
         if p.name != FAMILY_FILE
     ]
     return family
+
+
+def with_ports(palette: Palette, folder: Path) -> Palette:
+    ports = {}
+    for app, port in palette.get("ports", {}).items():
+        source = json.loads((folder / port["file"]).read_text())
+        if "theme" in port:
+            source = next(t for t in source["themes"] if t["name"] == port["theme"])
+            source = source["style"]
+        licence = (folder / port["file"]).with_name("LICENSE").read_text()
+        ports[app] = port | {"licence": licence, "source": source}
+    return palette | {"ports": ports}
 
 
 def main() -> None:
@@ -1458,7 +1563,13 @@ def main() -> None:
         raise SystemExit("\n".join(failures))
     description = package_description(families)
     write_json(ROOT / "vscode" / "package.json", vscode_manifest(palettes, description))
-    write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
+    port_licences = [
+        p["ports"]["vscode"]["licence"] for p in palettes if "vscode" in p["ports"]
+    ]
+    write(
+        ROOT / "vscode" / "LICENSE",
+        "\n---\n\n".join([(ROOT / "LICENSE").read_text(), *port_licences]),
+    )
     for family in families:
         write_family(family)
 
@@ -1473,6 +1584,8 @@ def write_family(family: Family) -> None:
     write_json(ROOT / "zed" / f"{stem}.json", zed_family(family))
     for palette in palettes:
         name = slug(palette["name"])
+        if "zed" in palette["ports"]:
+            write(ROOT / "zed" / f"{stem}.LICENSE", palette["ports"]["zed"]["licence"])
         write_json(ROOT / "claude-code" / f"{name}.json", claude_code_theme(palette))
         write(ROOT / "ghostty" / palette["name"], ghostty(palette))
         write_json(ROOT / "herdr-app" / f"{name}.json", herdr_app_theme(palette))
