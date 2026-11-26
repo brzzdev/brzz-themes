@@ -12,13 +12,13 @@ cursor = "#e6b450"
 element = "#1c1c1c"
 # A darker red than `error`, which keeps white text at only 3.8:1.
 error_fill = "#cf3341"
-# The accent composited at `1f` and `38`, with every syntax role at 4.5:1: see docs/adr/0002-find-match-contrast.md.
-find = "#251f13"
-find_active = "#3a2f19"
-find_active_border = "#e6b450"
-find_border = "#e6b45066"
-find_terminal = "#e6b4501f"
-find_terminal_active = "#e6b45038"
+# ayu's teal composited at `1f` and `30`, a hue apart from the gold accent and the blue selection, with every syntax role at 4.5:1: see docs/adr/0002-find-match-contrast.md.
+find = "#1b2521"
+find_active = "#24332e"
+find_active_border = "#95e6cb"
+find_border = "#95e6cb66"
+find_terminal = "#95e6cb1f"
+find_terminal_active = "#95e6cb30"
 foreground = "#f3efe3"
 highlight = "#202020"
 hover = "#141414"
@@ -32,7 +32,8 @@ quiet = "#8a8a8a"
 selection = "#163054"
 # Translucent, compositing to `selection` over the background.
 selection_overlay = "#2d78e058"
-accents = ["#59c2ff", "#d2a6ff", "#e6b450", "#95e6cb", "#aad94c", "#f07178"]
+# Neither the gold cursor nor the red of an unmatched bracket.
+accents = ["#59c2ff", "#d2a6ff", "#ff8f40", "#95e6cb", "#aad94c", "#39bae6"]
 
 # Severities are the normal ANSI colours, so their shimmers can take the bright ones; diff roles are ayu's `vcs` colours.
 [status]

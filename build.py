@@ -67,12 +67,14 @@ SYNTAX_GROUNDS = [
     "panel",
     "selection",
 ]
-# Non-syntax colours drawn among code, held to the syntax grounds too.
+# Non-syntax colours held to the syntax grounds: drawn among code, or as badge text on a tint.
 SYNTAX_LIKE_PATHS = [
     "ansi.bright.1",
     "ansi.normal.2",
+    "ansi.normal.3",
     "ansi.normal.4",
     "ansi.normal.5",
+    "ansi.normal.6",
     "status.unreachable",
 ]
 # The colours a palette's `tint` group composites over its background.
@@ -321,7 +323,7 @@ NETNEWSWIRE_VARIABLES = {
     "code-background": "ui.element",
     "find": "ui.find",
     "foreground": "ui.foreground",
-    "link": "syntax.link",
+    "link": "ui.accent_strong",
     "muted": "ui.muted",
     "panel": "ui.panel",
     "quiet": "ui.quiet",
@@ -992,11 +994,11 @@ JETBRAINS_FOREGROUNDS = {
     "NOT_USED_ELEMENT_ATTRIBUTES": "status.unreachable",
     "PROPERTIES.KEY": "syntax.keyword",
     "PROPERTIES.KEY_VALUE_SEPARATOR": "syntax.punctuation",
-    "RAINBOW_COLOR0": "syntax.function",
-    "RAINBOW_COLOR1": "syntax.keyword",
-    "RAINBOW_COLOR2": "syntax.string",
-    "RAINBOW_COLOR3": "syntax.type",
-    "RAINBOW_COLOR4": "syntax.constant",
+    "RAINBOW_COLOR0": "ansi.normal.4",
+    "RAINBOW_COLOR1": "ansi.normal.5",
+    "RAINBOW_COLOR2": "ansi.normal.2",
+    "RAINBOW_COLOR3": "ansi.normal.6",
+    "RAINBOW_COLOR4": "ansi.normal.3",
     "REGEXP.BRACES": "syntax.punctuation",
     "REGEXP.BRACKETS": "syntax.punctuation",
     "REGEXP.CHAR_CLASS": "syntax.constant",
@@ -1544,7 +1546,7 @@ def xcode_recipe(palette: Palette) -> dict[str, Any]:
                 "colorGranularity": "expanded",
                 "colorOverrides": overrides,
                 "primary": {
-                    "custom": {"_0": xcode_colour(palette["syntax"]["keyword"])}
+                    "custom": {"_0": xcode_colour(palette["ansi"]["normal"][5])}
                 },
                 "secondary": {
                     "custom": {"_0": xcode_colour(palette["ui"]["background"])}

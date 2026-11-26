@@ -10,10 +10,10 @@
         "accents": [
           "#59c2ff",
           "#d2a6ff",
-          "#e6b450",
+          "#ff8f40",
           "#95e6cb",
           "#aad94c",
-          "#f07178"
+          "#39bae6"
         ],
         "background": "#111111",
         "border": "#262626",
@@ -113,8 +113,8 @@
             "selection": "#2d78e058"
           },
           {
-            "background": "#e6b450",
-            "cursor": "#e6b450",
+            "background": "#ff8f40",
+            "cursor": "#ff8f40",
             "selection": "#2d78e058"
           },
           {
@@ -133,8 +133,8 @@
             "selection": "#2d78e058"
           },
           {
-            "background": "#f07178",
-            "cursor": "#f07178",
+            "background": "#39bae6",
+            "cursor": "#39bae6",
             "selection": "#2d78e058"
           }
         ],
@@ -149,8 +149,8 @@
         "scrollbar.thumb.hover_background": "#a3a3a380",
         "scrollbar.track.background": "#00000000",
         "scrollbar.track.border": "#00000000",
-        "search.active_match_background": "#3a2f19",
-        "search.match_background": "#251f13",
+        "search.active_match_background": "#24332e",
+        "search.match_background": "#1b2521",
         "status_bar.background": "#111111",
         "success": "#97c142",
         "success.background": "#262f15",
