@@ -13,7 +13,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent
 AUTHOR = "brzzdev"
 FAMILY = "Geist"
-REPOSITORY_URL = "https://github.com/brzzdev/geist-themes"
+REPOSITORY_URL = "https://github.com/brzzdev/brzz-themes"
 SCROLLBAR_ALPHA = "50"
 SCROLLBAR_HOVER_ALPHA = "80"
 # Fills behind syntax text: see docs/adr/0003-tinted-fills-behind-syntax.md.

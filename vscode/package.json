@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "publisher": "brzzdev",
   "license": "MIT",
-  "repository": "https://github.com/brzzdev/geist-themes",
+  "repository": "https://github.com/brzzdev/brzz-themes",
   "engines": {
     "vscode": "^1.81.0"
   },

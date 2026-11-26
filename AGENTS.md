@@ -4,7 +4,7 @@
 
 ### Issue tracker
 
-Issues live in GitHub Issues for `brzzdev/geist-themes`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Issues live in GitHub Issues for `brzzdev/brzz-themes`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
