@@ -29,4 +29,4 @@ _Avoid_: Indent line
 A kind of source text that the palette gives its own colour, such as a comment, keyword or string.
 
 **Tint**:
-A status, accent, or magenta colour composited over the background at the appearance's tint alpha. A surface that takes that colour's meaning, such as a diff line or a badge, uses it as its fill, so every syntax role keeps 4.5:1 on it.
+A status, accent, or magenta colour composited over the background at its palette's tint alpha. A surface that takes that colour's meaning, such as a diff line or a badge, uses it as its fill, so every syntax role keeps 4.5:1 on it.

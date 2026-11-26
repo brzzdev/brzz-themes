@@ -18,9 +18,9 @@
   <rect x="234" y="156" width="32" height="32" rx="6" fill="#778e95" stroke="#363d42" />
   <text x="276" y="169" fill="#b5cccc">comment</text>
   <text x="276" y="185" fill="#899c9e">#778e95</text>
-  <rect x="444" y="156" width="32" height="32" rx="6" fill="#7a8d8f" stroke="#363d42" />
+  <rect x="444" y="156" width="32" height="32" rx="6" fill="#93a6a8" stroke="#363d42" />
   <text x="486" y="169" fill="#b5cccc">comment_emphasized</text>
-  <text x="486" y="185" fill="#899c9e">#7a8d8f</text>
+  <text x="486" y="185" fill="#899c9e">#93a6a8</text>
   <rect x="654" y="156" width="32" height="32" rx="6" fill="#7a9417" stroke="#363d42" />
   <text x="696" y="169" fill="#b5cccc">constant</text>
   <text x="696" y="185" fill="#899c9e">#7a9417</text>

@@ -4,9 +4,9 @@ Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop ap
 
 - **Geist**: Geist Dark and Geist Light, built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal).
 - **Ayu**: Ayu Dark Contrast, [ayu](https://github.com/ayu-theme/ayu-colors)'s dark theme on a neutral black with brighter text, for easier focus. Its Zed and VS Code themes are ayu's own for those apps, with the backgrounds, text, and greys swapped, along with any colour that falls short of 4.5:1.
-- **Brzz**: Brzz Dark, the colours of [John Sundell's Xcode theme](https://github.com/JohnSundell/XcodeTheme), each lifted halfway towards a brighter version and then only as far as 4.5:1 needs, with softer fills behind code, for long sessions.
+- **Brzz**: Brzz Dark, the colours of [John Sundell's Xcode theme](https://github.com/JohnSundell/XcodeTheme), each lightened only as far as 4.5:1 needs, with softer fills behind code, for long sessions.
 
-This is an unofficial project, not made or endorsed by Vercel, the ayu project, or John Sundell. Geist's colours belong to Vercel's Geist design system, ayu's to its authors, and Brzz's starting colours to John Sundell's Xcode theme, both under the MIT licence.
+This is an unofficial project, not made or endorsed by Vercel, the ayu project, or John Sundell. Geist's colours belong to Vercel's Geist design system, ayu's to its authors under the MIT licence, and Brzz's starting colours to John Sundell's Xcode theme, also under the MIT licence.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/ghostty-dark.webp">
