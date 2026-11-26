@@ -1,8 +1,8 @@
-background = #0e0e15
+background = #0a0a0a
 foreground = #b5cccc
 cursor-color = #ebebeb
-cursor-text = #0e0e15
-selection-background = #1e232a
+cursor-text = #0a0a0a
+selection-background = #1b2022
 selection-foreground = #b5cccc
 search-background = #17221b
 search-foreground = #b5cccc
