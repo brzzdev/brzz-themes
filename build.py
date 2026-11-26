@@ -1739,17 +1739,20 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     }
 
 
-def credit(family: Family) -> str:
-    names = " and ".join(p["name"] for p in family["palettes"])
-    origin = f"{names}, built from the colours of {family['source']}."
-    return f"{origin} {family['disclaimer']}"
+def package_description(families: list[Family]) -> str:
+    sentences = []
+    for family in families:
+        names = " and ".join(p["name"] for p in family["palettes"])
+        origin = f"{names}, built from the colours of {family['source']}."
+        sentences.append(f"{origin} {family['disclaimer']}")
+    return " ".join(sentences)
 
 
-def vscode_manifest(families: list[Family]) -> dict[str, Any]:
+def vscode_manifest(palettes: list[Palette], description: str) -> dict[str, Any]:
     return {
         "name": PACKAGE,
         "displayName": PACKAGE_NAME,
-        "description": " ".join(credit(f) for f in families),
+        "description": description,
         "version": "1.0.0",
         "publisher": AUTHOR,
         "license": "MIT",
@@ -1764,8 +1767,7 @@ def vscode_manifest(families: list[Family]) -> dict[str, Any]:
                     "uiTheme": VSCODE_UI_THEMES[p["appearance"]],
                     "path": f"./themes/{slug(p['name'])}.json",
                 }
-                for f in families
-                for p in f["palettes"]
+                for p in palettes
             ],
         },
     }
@@ -2058,19 +2060,19 @@ def jetbrains_scheme(palette: Palette) -> str:
     return xml_text(scheme)
 
 
-def jetbrains_plugin(families: list[Family]) -> str:
+def jetbrains_plugin(palettes: list[Palette], description: str) -> str:
     plugin = ET.Element("idea-plugin")
     ET.SubElement(plugin, "id").text = f"{IDENTIFIER_PREFIX}.{PACKAGE}"
     ET.SubElement(plugin, "name").text = PACKAGE_NAME
     ET.SubElement(plugin, "version").text = JETBRAINS_PLUGIN_DEV_VERSION
     ET.SubElement(plugin, "vendor", url=REPOSITORY_URL).text = AUTHOR
-    ET.SubElement(plugin, "description").text = " ".join(credit(f) for f in families)
+    ET.SubElement(plugin, "description").text = description
     ET.SubElement(
         plugin, "idea-version", {"since-build": JETBRAINS_ISLANDS_TOKENS_SINCE_BUILD}
     )
     ET.SubElement(plugin, "depends").text = "com.intellij.modules.platform"
     extensions = ET.SubElement(plugin, "extensions", defaultExtensionNs="com.intellij")
-    for palette in (p for f in families for p in f["palettes"]):
+    for palette in palettes:
         name = slug(palette["name"])
         ET.SubElement(extensions, "themeProvider", id=name, path=f"/{name}.theme.json")
     return xml_text(plugin)
@@ -2173,8 +2175,10 @@ def main() -> None:
     palettes = [p for family in families for p in family["palettes"]]
     if failures := [f for p in palettes for f in contrast_failures(p)]:
         raise SystemExit("\n".join(failures))
-    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", jetbrains_plugin(families))
-    write_json(ROOT / "vscode" / "package.json", vscode_manifest(families))
+    description = package_description(families)
+    plugin = jetbrains_plugin(palettes, description)
+    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", plugin)
+    write_json(ROOT / "vscode" / "package.json", vscode_manifest(palettes, description))
     write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
     for family in families:
         write_family(family)
