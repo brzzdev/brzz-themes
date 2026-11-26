@@ -12,8 +12,8 @@ This is an unofficial project, not made or endorsed by Vercel. The colours belon
 ## Palette
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/palette-dark.svg">
-  <img alt="Swatches for the background, foreground, accent, syntax roles and 16 ANSI colours, each with its hex value" src="docs/palette-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/palette-geist-dark.svg">
+  <img alt="Swatches for the background, foreground, accent, syntax roles and 16 ANSI colours, each with its hex value" src="docs/palette-geist-light.svg">
 </picture>
 
 ## Install
@@ -140,7 +140,7 @@ Copy `zed/geist.json` into `~/.config/zed/themes/`, then pick **Geist Dark** or 
 
 ## Changing colours
 
-Every theme, and each palette card under `docs/`, is generated from `palettes/`. Edit a palette, then regenerate:
+Every theme, and each palette card under `docs/`, is generated from `palettes/`. Each family of themes has its own folder there: `family.toml` holds the family's name, the package name its identifiers derive from, its source credit, and its disclaimer; every other `.toml` is one theme's palette. Edit a palette, then regenerate:
 
 ```sh
 ./build.py
