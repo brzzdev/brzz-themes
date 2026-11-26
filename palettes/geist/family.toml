@@ -1,4 +1,4 @@
 name = "Geist"
-package = "geist-themes"
+identifier = "geist-themes"
 source = "Vercel's Geist terminal themes"
 disclaimer = "Unofficial: not made or endorsed by Vercel."

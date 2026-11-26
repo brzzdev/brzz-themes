@@ -1,7 +1,7 @@
 {
-  "name": "geist-themes",
-  "displayName": "Geist Themes",
-  "description": "Colour themes from Vercel's Geist terminal themes.",
+  "name": "brzz-themes",
+  "displayName": "Brzz Themes",
+  "description": "Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel.",
   "version": "1.0.0",
   "publisher": "brzzdev",
   "license": "MIT",
