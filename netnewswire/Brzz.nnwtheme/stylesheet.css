@@ -1,7 +1,7 @@
 :root {
 	color-scheme: dark;
 	--accent: #2c8dd7;
-	--background: #0e0e15;
+	--background: #0a0a0a;
 	--border: #363d42;
 	--border-variant: #242830;
 	--code-background: #1a1e24;
@@ -9,9 +9,9 @@
 	--foreground: #b5cccc;
 	--link: #3a9be5;
 	--muted: #899c9e;
-	--panel: #0a0a10;
+	--panel: #060606;
 	--quiet: #728991;
-	--selection: #1e232a;
+	--selection: #1b2022;
 }
 
 :root {

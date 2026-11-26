@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="888" height="620" viewBox="0 0 888 620" style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px">
   <title>Brzz Dark palette</title>
-  <rect width="100%" height="100%" rx="12" fill="#0e0e15" />
+  <rect width="100%" height="100%" rx="12" fill="#0a0a0a" />
   <text x="24" y="44" fill="#899c9e">UI</text>
-  <rect x="24" y="68" width="32" height="32" rx="6" fill="#0e0e15" stroke="#363d42" />
+  <rect x="24" y="68" width="32" height="32" rx="6" fill="#0a0a0a" stroke="#363d42" />
   <text x="66" y="81" fill="#b5cccc">background</text>
-  <text x="66" y="97" fill="#899c9e">#0e0e15</text>
+  <text x="66" y="97" fill="#899c9e">#0a0a0a</text>
   <rect x="234" y="68" width="32" height="32" rx="6" fill="#b5cccc" stroke="#363d42" />
   <text x="276" y="81" fill="#b5cccc">foreground</text>
   <text x="276" y="97" fill="#899c9e">#b5cccc</text>
