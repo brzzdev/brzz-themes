@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parent
 AUTHOR = "brzzdev"
 FAMILY_FILE = "family.toml"
 IDENTIFIER_PREFIX = "dev.brzz"
+PACKAGE = "brzz-themes"
+PACKAGE_NAME = "Brzz Themes"
 REPOSITORY_URL = "https://github.com/brzzdev/brzz-themes"
 SCROLLBAR_ALPHA = "50"
 SCROLLBAR_HOVER_ALPHA = "80"
@@ -1409,7 +1411,7 @@ def netnewswire_info(family: Family) -> str:
         "CreatorHomePage": REPOSITORY_URL,
         "CreatorName": AUTHOR,
         "Name": family["name"],
-        "ThemeIdentifier": f"{IDENTIFIER_PREFIX}.{family['package']}.netnewswire",
+        "ThemeIdentifier": f"{IDENTIFIER_PREFIX}.{family['identifier']}.netnewswire",
         "Version": 1,
     }
     return plistlib.dumps(info).decode()
@@ -1737,11 +1739,17 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     }
 
 
-def vscode_manifest(family: Family) -> dict[str, Any]:
+def credit(family: Family) -> str:
+    names = " and ".join(p["name"] for p in family["palettes"])
+    origin = f"{names}, built from the colours of {family['source']}."
+    return f"{origin} {family['disclaimer']}"
+
+
+def vscode_manifest(families: list[Family]) -> dict[str, Any]:
     return {
-        "name": family["package"],
-        "displayName": f"{family['name']} Themes",
-        "description": f"Colour themes from {family['source']}.",
+        "name": PACKAGE,
+        "displayName": PACKAGE_NAME,
+        "description": " ".join(credit(f) for f in families),
         "version": "1.0.0",
         "publisher": AUTHOR,
         "license": "MIT",
@@ -1756,7 +1764,8 @@ def vscode_manifest(family: Family) -> dict[str, Any]:
                     "uiTheme": VSCODE_UI_THEMES[p["appearance"]],
                     "path": f"./themes/{slug(p['name'])}.json",
                 }
-                for p in family["palettes"]
+                for f in families
+                for p in f["palettes"]
             ],
         },
     }
@@ -2049,21 +2058,19 @@ def jetbrains_scheme(palette: Palette) -> str:
     return xml_text(scheme)
 
 
-def jetbrains_plugin(family: Family) -> str:
+def jetbrains_plugin(families: list[Family]) -> str:
     plugin = ET.Element("idea-plugin")
-    ET.SubElement(plugin, "id").text = f"{IDENTIFIER_PREFIX}.{family['package']}"
-    ET.SubElement(plugin, "name").text = f"{family['name']} Themes"
+    ET.SubElement(plugin, "id").text = f"{IDENTIFIER_PREFIX}.{PACKAGE}"
+    ET.SubElement(plugin, "name").text = PACKAGE_NAME
     ET.SubElement(plugin, "version").text = JETBRAINS_PLUGIN_DEV_VERSION
     ET.SubElement(plugin, "vendor", url=REPOSITORY_URL).text = AUTHOR
-    names = " and ".join(p["name"] for p in family["palettes"])
-    description = f"{names}, built from the colours of {family['source']}."
-    ET.SubElement(plugin, "description").text = f"{description} {family['disclaimer']}"
+    ET.SubElement(plugin, "description").text = " ".join(credit(f) for f in families)
     ET.SubElement(
         plugin, "idea-version", {"since-build": JETBRAINS_ISLANDS_TOKENS_SINCE_BUILD}
     )
     ET.SubElement(plugin, "depends").text = "com.intellij.modules.platform"
     extensions = ET.SubElement(plugin, "extensions", defaultExtensionNs="com.intellij")
-    for palette in family["palettes"]:
+    for palette in (p for f in families for p in f["palettes"]):
         name = slug(palette["name"])
         ET.SubElement(extensions, "themeProvider", id=name, path=f"/{name}.theme.json")
     return xml_text(plugin)
@@ -2166,6 +2173,9 @@ def main() -> None:
     palettes = [p for family in families for p in family["palettes"]]
     if failures := [f for p in palettes for f in contrast_failures(p)]:
         raise SystemExit("\n".join(failures))
+    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", jetbrains_plugin(families))
+    write_json(ROOT / "vscode" / "package.json", vscode_manifest(families))
+    write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
     for family in families:
         write_family(family)
 
@@ -2174,12 +2184,9 @@ def write_family(family: Family) -> None:
     palettes = family["palettes"]
     stem = slug(family["name"])
     write(ROOT / "herdr" / f"{stem}.toml", herdr(palettes))
-    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", jetbrains_plugin(family))
     bundle = ROOT / "netnewswire" / f"{family['name']}.nnwtheme"
     write(bundle / "Info.plist", netnewswire_info(family))
     write(bundle / "stylesheet.css", netnewswire_stylesheet(palettes))
-    write_json(ROOT / "vscode" / "package.json", vscode_manifest(family))
-    write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
     write_json(ROOT / "zed" / f"{stem}.json", zed_family(family))
     for palette in palettes:
         name = slug(palette["name"])

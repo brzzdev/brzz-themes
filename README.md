@@ -65,7 +65,7 @@ Then pick **geist dark** as the dark theme and **geist light** as the light one 
 For Rider, IntelliJ IDEA, WebStorm and the other JetBrains IDEs, 2026.1 or later. Download the `.jar` from the [latest release](https://github.com/brzzdev/brzz-themes/releases/latest), or build it from the repository root, where it reports version `0.0.0-dev`:
 
 ```sh
-python3 -m zipfile -c geist-themes.jar jetbrains/*
+python3 -m zipfile -c brzz-themes.jar jetbrains/*
 ```
 
 Then install the jar with Settings → Plugins → ⚙ → **Install Plugin from Disk…**, and pick **Geist Dark** or **Geist Light** under Appearance & Behavior → Appearance → Theme. Each theme switches the editor to its matching colour scheme.
@@ -104,10 +104,10 @@ Slack's custom themes set only four colours: the sidebar, selected items, presen
 Package the extension with Node installed:
 
 ```sh
-cd vscode && npx --yes @vscode/vsce package -o geist-themes.vsix
+cd vscode && npx --yes @vscode/vsce package -o brzz-themes.vsix
 ```
 
-In VS Code (or a fork such as Cursor), run **Extensions: Install from VSIX…** and pick `vscode/geist-themes.vsix`, then choose **Geist Dark** or **Geist Light** with **Preferences: Color Theme**.
+In VS Code (or a fork such as Cursor), run **Extensions: Install from VSIX…** and pick `vscode/brzz-themes.vsix`, then choose **Geist Dark** or **Geist Light** with **Preferences: Color Theme**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/vscode-dark.webp">
@@ -140,7 +140,7 @@ Copy `zed/geist.json` into `~/.config/zed/themes/`, then pick **Geist Dark** or 
 
 ## Changing colours
 
-Every theme, and each palette card under `docs/`, is generated from `palettes/`. Each family of themes has its own folder there: `family.toml` holds the family's name, the package name its identifiers derive from, its source credit, and its disclaimer; every other `.toml` is one theme's palette. Edit a palette, then regenerate:
+Every theme, and each palette card under `docs/`, is generated from `palettes/`. Each family of themes has its own folder there: `family.toml` holds the family's name, the identifier its NetNewsWire theme ships under, its source credit, and its disclaimer; every other `.toml` is one theme's palette. Edit a palette, then regenerate:
 
 ```sh
 ./build.py

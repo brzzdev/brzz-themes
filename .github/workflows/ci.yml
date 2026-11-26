@@ -68,7 +68,7 @@ jobs:
               tag="v$major.$minor.$((patch + 1))"
             fi
           fi
-          archive="geist-themes-$tag"
+          archive="brzz-themes-$tag"
           git archive --format=zip --prefix="$archive/" -o "$archive.zip" HEAD \
             "${shipped[@]}" LICENSE README.md
           plugin="$(mktemp -d)"
