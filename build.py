@@ -384,6 +384,13 @@ VSCODE_RANGE_ALPHA = "60"
 VSCODE_DECORATION_ALPHA = "80"
 VSCODE_UI_THEMES = {"dark": "vs-dark", "light": "vs"}
 
+# Diff and patch files, in the ANSI colours Zed's diff captures use.
+VSCODE_DIFF_TOKENS = [
+    (["markup.changed"], "ansi.normal.4"),
+    (["markup.deleted"], "ansi.bright.1"),
+    (["markup.inserted"], "ansi.normal.2"),
+    (["meta.diff", "meta.diff.header"], "syntax.constant"),
+]
 VSCODE_TOKENS = [
     (
         [
@@ -1046,6 +1053,31 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "menu.background": ui["panel"],
         "menu.border": ui["border"],
         "minimap.errorHighlight": status["error"],
+        "modernActivityBar.background": ui["panel"],
+        "modernActivityBar.border": ui["border"],
+        "modernActivityBar.inactiveBackground": ui["panel"],
+        "modernActivityBarItem.activeBackground": ui["element"],
+        "modernActivityBarItem.activeForeground": ui["foreground"],
+        "modernActivityBarItem.hoverBackground": ui["hover"],
+        "modernActivityBarItem.hoverForeground": ui["foreground"],
+        "modernEditorTab.activeActionBackground": ui["highlight"],
+        "modernEditorTab.activeBackground": ui["element"],
+        "modernEditorTab.activeForeground": ui["foreground"],
+        "modernEditorTab.activeHoverActionBackground": ui["highlight"],
+        "modernEditorTab.activeHoverBackground": ui["element"],
+        "modernEditorTab.hoverActionBackground": ui["highlight"],
+        "modernEditorTab.hoverBackground": ui["hover"],
+        "modernEditorTab.hoverForeground": ui["foreground"],
+        "modernEditorTab.inactiveBackground": TRANSPARENT,
+        "modernEditorTab.selectedActionBackground": ui["highlight"],
+        "modernPanel.border": ui["border"],
+        "modernSash.gripForeground": ui["border_strong"],
+        "modernTab.activeBackground": ui["element"],
+        "modernTab.activeForeground": ui["foreground"],
+        "modernTab.hoverBackground": ui["hover"],
+        "modernTab.hoverForeground": ui["foreground"],
+        "modernUI.inactiveShellBackground": ui["panel"],
+        "modernUI.shellBackground": ui["panel"],
         "multiDiffEditor.border": ui["border"],
         "multiDiffEditor.headerBackground": ui["panel"],
         "panel.background": ui["panel"],
@@ -1101,6 +1133,9 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "statusBarItem.warningBackground": status["warning"],
         "statusBarItem.warningForeground": ui["background"],
         "strongForeground": ui["foreground"],
+        "surface.background": ui["background"],
+        "surface.border": ui["border"],
+        "surface.foreground": ui["muted"],
         "symbolIcon.classForeground": syntax["type"],
         "symbolIcon.constructorForeground": syntax["function"],
         "symbolIcon.enumeratorForeground": syntax["type"],
@@ -1174,6 +1209,10 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
         "tokenColors": [
             {"scope": scopes, "settings": vscode_token_settings(syntax[role], style)}
             for scopes, role, style in VSCODE_TOKENS
+        ]
+        + [
+            {"scope": scopes, "settings": {"foreground": palette_colour(palette, path)}}
+            for scopes, path in VSCODE_DIFF_TOKENS
         ],
         "semanticTokenColors": {
             selector: syntax[role] for selector, role in VSCODE_SEMANTIC.items()

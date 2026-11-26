@@ -174,6 +174,31 @@
     "menu.background": "#111111",
     "menu.border": "#262626",
     "minimap.errorHighlight": "#d95757",
+    "modernActivityBar.background": "#111111",
+    "modernActivityBar.border": "#262626",
+    "modernActivityBar.inactiveBackground": "#111111",
+    "modernActivityBarItem.activeBackground": "#1c1c1c",
+    "modernActivityBarItem.activeForeground": "#f3efe3",
+    "modernActivityBarItem.hoverBackground": "#141414",
+    "modernActivityBarItem.hoverForeground": "#f3efe3",
+    "modernEditorTab.activeActionBackground": "#202020",
+    "modernEditorTab.activeBackground": "#1c1c1c",
+    "modernEditorTab.activeForeground": "#f3efe3",
+    "modernEditorTab.activeHoverActionBackground": "#202020",
+    "modernEditorTab.activeHoverBackground": "#1c1c1c",
+    "modernEditorTab.hoverActionBackground": "#202020",
+    "modernEditorTab.hoverBackground": "#141414",
+    "modernEditorTab.hoverForeground": "#f3efe3",
+    "modernEditorTab.inactiveBackground": "#00000000",
+    "modernEditorTab.selectedActionBackground": "#202020",
+    "modernPanel.border": "#262626",
+    "modernSash.gripForeground": "#3a3a3a",
+    "modernTab.activeBackground": "#1c1c1c",
+    "modernTab.activeForeground": "#f3efe3",
+    "modernTab.hoverBackground": "#141414",
+    "modernTab.hoverForeground": "#f3efe3",
+    "modernUI.inactiveShellBackground": "#111111",
+    "modernUI.shellBackground": "#111111",
     "multiDiffEditor.border": "#262626",
     "multiDiffEditor.headerBackground": "#111111",
     "panel.background": "#111111",
@@ -229,6 +254,9 @@
     "statusBarItem.warningBackground": "#e6b450",
     "statusBarItem.warningForeground": "#0a0a0a",
     "strongForeground": "#f3efe3",
+    "surface.background": "#0a0a0a",
+    "surface.border": "#262626",
+    "surface.foreground": "#a3a3a3",
     "symbolIcon.classForeground": "#59c2ff",
     "symbolIcon.constructorForeground": "#ffb454",
     "symbolIcon.enumeratorForeground": "#59c2ff",
@@ -493,6 +521,39 @@
       ],
       "settings": {
         "foreground": "#f3efe3"
+      }
+    },
+    {
+      "scope": [
+        "markup.changed"
+      ],
+      "settings": {
+        "foreground": "#17acf2"
+      }
+    },
+    {
+      "scope": [
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "#f07178"
+      }
+    },
+    {
+      "scope": [
+        "markup.inserted"
+      ],
+      "settings": {
+        "foreground": "#97c142"
+      }
+    },
+    {
+      "scope": [
+        "meta.diff",
+        "meta.diff.header"
+      ],
+      "settings": {
+        "foreground": "#d2a6ff"
       }
     }
   ],
