@@ -1,7 +1,7 @@
 {
   "name": "brzz-themes",
   "displayName": "Brzz Themes",
-  "description": "Ayu Dark Contrast, built from the colours of ayu's dark theme. Unofficial: not made or endorsed by the ayu project. Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel.",
+  "description": "Ayu Dark Contrast, built from the colours of ayu's dark theme. Unofficial: not made or endorsed by the ayu project. Brzz Dark, built from the colours of John Sundell's Xcode theme. Unofficial: not made or endorsed by John Sundell. Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel.",
   "version": "1.0.0",
   "publisher": "brzzdev",
   "license": "MIT",
@@ -22,6 +22,11 @@
         "label": "Ayu Dark Contrast",
         "uiTheme": "vs-dark",
         "path": "./themes/ayu-dark-contrast.json"
+      },
+      {
+        "label": "Brzz Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/brzz-dark.json"
       },
       {
         "label": "Geist Dark",

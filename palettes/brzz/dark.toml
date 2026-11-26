@@ -1,0 +1,79 @@
+name = "Brzz Dark"
+appearance = "dark"
+# Half the usual tint, so syntax colours near 4.5:1 keep it on diff and diagnostic fills: see docs/adr/0003-tinted-fills-behind-syntax.md.
+tint_alpha = "1a"
+
+[ui]
+accent = "#2c8dd7"
+accent_strong = "#3a9be5"
+background = "#0e0e15"
+border = "#363d42"
+border_strong = "#6a8189"
+border_variant = "#242830"
+cursor = "#ebebeb"
+element = "#1a1e24"
+error_fill = "#c0392b"
+# Green find fills, after the earlier Brzz themes, dark enough that syntax colours keep 4.5:1.
+find = "#141c18"
+find_active = "#1a261e"
+find_active_border = "#8ba400"
+find_border = "#8ba40066"
+find_terminal = "#3d6a4540"
+find_terminal_active = "#3d6a4580"
+foreground = "#b5cccc"
+highlight = "#1a2025"
+hover = "#14171d"
+indent = "#363d42"
+indent_active = "#6a8189"
+invisible = "#363d42"
+muted = "#899c9e"
+panel = "#0a0a10"
+quiet = "#728991"
+# Sundell's `#526870` at 23%.
+selection = "#1e232a"
+selection_overlay = "#5268703b"
+accents = ["#388de4", "#f04a91", "#b18219", "#28998d", "#7a9417", "#7f7fe3"]
+
+[status]
+conflict = "#f5c94e"
+created = "#8ba400"
+deleted = "#ff6961"
+error = "#ff6961"
+hidden = "#6a8189"
+hint = "#778e95"
+ignored = "#6a8189"
+info = "#2c8dd7"
+modified = "#2c8dd7"
+predictive = "#778e95"
+renamed = "#2c8dd7"
+success = "#8ba400"
+unreachable = "#778e95"
+warning = "#f5c94e"
+
+# black, red, green, yellow, blue, magenta, cyan, white
+[ansi]
+normal = ["#242830", "#ff6961", "#8ba400", "#f5c94e", "#308fd9", "#ec4d97", "#2faaa0", "#b5cccc"]
+bright = ["#6a8189", "#ff8f89", "#a6c400", "#f7d96f", "#74dfff", "#e860a4", "#58b6ce", "#ebebeb"]
+
+# Each colour halfway in lightness between Sundell's and one lifted to 4.5:1 on its selection, then lifted only as far as the contrast gate needs.
+[syntax]
+attribute = "#b18219"
+comment = "#778e95"
+comment_emphasized = "#7a8d8f"
+constant = "#7a9417"
+function = "#388de4"
+function_system = "#388de4"
+keyword = "#f04a91"
+link = "#778e96"
+literal = "#f04a91"
+namespace = "#7f7fe3"
+number = "#df654a"
+plain = "#b5cccc"
+punctuation = "#b5cccc"
+regex = "#fc6a5d"
+string = "#e85e37"
+tag = "#41a1c0"
+type = "#7f7fe3"
+type_parameter = "#5dd8ff"
+type_system = "#7f7fe3"
+variable = "#28998d"

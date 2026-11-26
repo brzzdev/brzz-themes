@@ -1337,7 +1337,8 @@ def opaque(colour: str, ground: str) -> str:
 
 
 def tint(palette: Palette, colour: str, weight: float = 1) -> str:
-    alpha = round(int(TINT_ALPHAS[palette["appearance"]], 16) * weight)
+    base = palette.get("tint_alpha", TINT_ALPHAS[palette["appearance"]])
+    alpha = round(int(base, 16) * weight)
     return opaque(f"{colour}{alpha:02x}", palette["ui"]["background"])
 
 

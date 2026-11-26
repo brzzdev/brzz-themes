@@ -1,6 +1,6 @@
 # Brzz Themes
 
-Editor and terminal themes in two families, Geist (Geist Dark and Geist Light) and Ayu (Ayu Dark Contrast), all generated from one palette per theme, except where a theme takes a port.
+Editor and terminal themes in three families, Geist (Geist Dark and Geist Light), Ayu (Ayu Dark Contrast), and Brzz (Brzz Dark), all generated from one palette per theme, except where a theme takes a port.
 
 ## Language
 

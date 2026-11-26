@@ -1,0 +1,23 @@
+[theme]
+auto_switch = false
+
+[theme.custom]
+accent = "#2c8dd7"
+active_row_bg = "#1a1e24"
+blue = "#2c8dd7"
+green = "#8ba400"
+mauve = "#ec4d97"
+overlay0 = "#728991"
+overlay1 = "#899c9e"
+panel_bg = "#0a0a10"
+peach = "#f7d96f"
+red = "#ff6961"
+selection_bg = "#1e232a"
+sidebar_bg = "#0e0e15"
+subtext0 = "#899c9e"
+surface0 = "#1a1e24"
+surface1 = "#1e232a"
+surface_dim = "#14171d"
+teal = "#2faaa0"
+text = "#b5cccc"
+yellow = "#f5c94e"
