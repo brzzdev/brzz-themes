@@ -1412,8 +1412,8 @@ def herdr(palettes: list[Palette]) -> str:
     tables = [
         herdr_table(HERDR_TABLES[p["appearance"]], herdr_colours(p)) for p in palettes
     ]
-    both = {p["appearance"] for p in palettes} == HERDR_TABLES.keys()
-    auto_switch = "true" if both else "false"
+    has_both_appearances = {p["appearance"] for p in palettes} == HERDR_TABLES.keys()
+    auto_switch = "true" if has_both_appearances else "false"
     return f"[theme]\nauto_switch = {auto_switch}\n\n" + "\n".join(tables)
 
 

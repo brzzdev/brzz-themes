@@ -20,9 +20,9 @@
     <option name="BLOCK_TERMINAL_SELECTED_BLOCK_BACKGROUND" value="163054" />
     <option name="BLOCK_TERMINAL_SELECTED_BLOCK_STROKE_COLOR" value="e6b450" />
     <option name="Bookmark.Mnemonic.iconBackground" value="1c1c1c" />
-    <option name="Bookmark.Mnemonic.iconBorderColor" value="ffb454" />
+    <option name="Bookmark.Mnemonic.iconBorderColor" value="e89d37" />
     <option name="Bookmark.Mnemonic.iconForeground" value="f3efe3" />
-    <option name="Bookmark.iconBackground" value="ffb454" />
+    <option name="Bookmark.iconBackground" value="e89d37" />
     <option name="CARET_COLOR" value="e6b450" />
     <option name="CARET_ROW_COLOR" value="141414" />
     <option name="CONSOLE_BACKGROUND_KEY" value="0a0a0a" />
@@ -37,9 +37,9 @@
     <option name="FILESTATUS_HIJACKED" value="73b8ff" />
     <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="f26d78" />
     <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="8a8a8a" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="ffb454" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="ffb454" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="ffb454" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="e89d37" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="e89d37" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="e89d37" />
     <option name="FILESTATUS_MERGED" value="73b8ff" />
     <option name="FILESTATUS_MODIFIED" value="73b8ff" />
     <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="73b8ff" />
@@ -49,7 +49,7 @@
     <option name="FILESTATUS_SWITCHED" value="73b8ff" />
     <option name="FILESTATUS_UNKNOWN" value="70bf56" />
     <option name="FILESTATUS_addedOutside" value="70bf56" />
-    <option name="FILESTATUS_changelistConflict" value="ffb454" />
+    <option name="FILESTATUS_changelistConflict" value="e89d37" />
     <option name="FILESTATUS_modifiedOutside" value="73b8ff" />
     <option name="FOLDED_TEXT_BORDER_COLOR" value="262626" />
     <option name="GRID_STRIPE_COLOR" value="141414" />
@@ -256,7 +256,7 @@
     </option>
     <option name="BOOKMARKS_ATTRIBUTES">
       <value>
-        <option name="ERROR_STRIPE_COLOR" value="ffb454" />
+        <option name="ERROR_STRIPE_COLOR" value="e89d37" />
       </value>
     </option>
     <option name="BREADCRUMBS_CURRENT">
@@ -504,7 +504,7 @@
     <option name="DEBUGGER_INLINED_VALUES_MODIFIED">
       <value>
         <option name="FONT_TYPE" value="2" />
-        <option name="FOREGROUND" value="ffb454" />
+        <option name="FOREGROUND" value="e89d37" />
       </value>
     </option>
     <option name="DEBUGGER_PREDICTED_EXCEPTION">
@@ -817,8 +817,8 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="3b2c19" />
-        <option name="ERROR_STRIPE_COLOR" value="ffb454" />
+        <option name="BACKGROUND" value="362713" />
+        <option name="ERROR_STRIPE_COLOR" value="e89d37" />
       </value>
     </option>
     <option name="DIFF_DELETED">
@@ -1018,14 +1018,14 @@
     </option>
     <option name="GD_WARNING">
       <value>
-        <option name="FOREGROUND" value="ffb454" />
+        <option name="FOREGROUND" value="e89d37" />
       </value>
     </option>
     <option name="GENERIC_SERVER_ERROR_OR_WARNING">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="1" />
-        <option name="ERROR_STRIPE_COLOR" value="ffb454" />
+        <option name="ERROR_STRIPE_COLOR" value="e89d37" />
       </value>
     </option>
     <option name="GRAMMAR_ERROR">
@@ -1285,7 +1285,7 @@
     </option>
     <option name="LINE_PARTIAL_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="ffb454" />
+        <option name="FOREGROUND" value="e89d37" />
       </value>
     </option>
     <option name="LIVE_TEMPLATE_ATTRIBUTES">
@@ -1317,7 +1317,7 @@
     </option>
     <option name="LOG_INFO_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="59c2ff" />
+        <option name="FOREGROUND" value="17acf2" />
       </value>
     </option>
     <option name="LOG_VERBOSE_OUTPUT">
@@ -1327,7 +1327,7 @@
     </option>
     <option name="LOG_WARNING_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="ffb454" />
+        <option name="FOREGROUND" value="e89d37" />
       </value>
     </option>
     <option name="MARKDOWN_HEADER">
@@ -1524,25 +1524,25 @@
     </option>
     <option name="ReSharper.UNITY_PERFORMANCE_CAMERA_MAIN">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="ReSharper.UNITY_PERFORMANCE_COSTLY_METHOD_HIGHLIGHTER">
       <value>
-        <option name="BACKGROUND" value="3b2c19" />
-        <option name="ERROR_STRIPE_COLOR" value="ffb454" />
+        <option name="BACKGROUND" value="362713" />
+        <option name="ERROR_STRIPE_COLOR" value="e89d37" />
       </value>
     </option>
     <option name="ReSharper.UNITY_PERFORMANCE_COSTLY_METHOD_INVOCATION">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="ReSharper.UNITY_PERFORMANCE_NULL_COMPARISON">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -1620,9 +1620,9 @@
     </option>
     <option name="SUGGESTION">
       <value>
-        <option name="EFFECT_COLOR" value="59c2ff" />
+        <option name="EFFECT_COLOR" value="17acf2" />
         <option name="EFFECT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="59c2ff" />
+        <option name="ERROR_STRIPE_COLOR" value="17acf2" />
       </value>
     </option>
     <option name="Scala Type Alias">
@@ -1677,13 +1677,13 @@
     </option>
     <option name="TEXT_STYLE_SUGGESTION">
       <value>
-        <option name="EFFECT_COLOR" value="59c2ff" />
+        <option name="EFFECT_COLOR" value="17acf2" />
         <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="TEXT_STYLE_WARNING">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
@@ -1739,7 +1739,7 @@
     </option>
     <option name="TYPO">
       <value>
-        <option name="EFFECT_COLOR" value="59c2ff" />
+        <option name="EFFECT_COLOR" value="17acf2" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -1768,9 +1768,9 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="ffb454" />
+        <option name="EFFECT_COLOR" value="e89d37" />
         <option name="EFFECT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="ffb454" />
+        <option name="ERROR_STRIPE_COLOR" value="e89d37" />
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
