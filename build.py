@@ -171,11 +171,9 @@ CLAUDE_CODE_TEXT_PAIRS = [
     ("error", "userMessageBackgroundHover"),
     ("inactive", "userMessageBackground"),
     ("inactive", "userMessageBackgroundHover"),
-    ("inverseText", "claude"),
-    ("inverseText", "error"),
-    ("inverseText", "success"),
-    ("inverseText", "warning"),
     ("remember", "memoryBackgroundColor"),
+    ("success", "userMessageBackground"),
+    ("suggestion", "userMessageBackground"),
     ("text", "bashMessageBackgroundColor"),
     ("text", "composerSidebarBackground"),
     ("text", "diffAdded"),
@@ -185,6 +183,22 @@ CLAUDE_CODE_TEXT_PAIRS = [
     ("text", "memoryBackgroundColor"),
     ("text", "userMessageBackground"),
     ("text", "userMessageBackgroundHover"),
+]
+# The badge fills Claude Code draws `inverseText` on.
+CLAUDE_CODE_BADGE_GROUNDS = [
+    "blue_FOR_SUBAGENTS_ONLY",
+    "claude",
+    "cyan_FOR_SUBAGENTS_ONLY",
+    "error",
+    "green_FOR_SUBAGENTS_ONLY",
+    "orange_FOR_SUBAGENTS_ONLY",
+    "permission",
+    "pink_FOR_SUBAGENTS_ONLY",
+    "purple_FOR_SUBAGENTS_ONLY",
+    "red_FOR_SUBAGENTS_ONLY",
+    "success",
+    "warning",
+    "yellow_FOR_SUBAGENTS_ONLY",
 ]
 # Fills, and text drawn on a colour; every other token is text on the background.
 CLAUDE_CODE_NOT_TEXT_ON_BACKGROUND = {
@@ -1418,9 +1432,12 @@ def claude_code_theme(palette: Palette) -> dict[str, Any]:
 
 def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
     colours = claude_code_theme(palette)["overrides"]
+    text_pairs = CLAUDE_CODE_TEXT_PAIRS + [
+        ("inverseText", ground) for ground in CLAUDE_CODE_BADGE_GROUNDS
+    ]
     pairs = [
         (f"Claude Code's {text} on {ground}", colours[text], colours[ground])
-        for text, ground in CLAUDE_CODE_TEXT_PAIRS
+        for text, ground in text_pairs
     ]
     background = palette["ui"]["background"]
     pairs += [
