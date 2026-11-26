@@ -9,7 +9,7 @@
     <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="141414" />
     <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="0a0a0a" />
     <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="f3efe3" />
-    <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="f07178" />
+    <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="e6495a" />
     <option name="BLOCK_TERMINAL_GENERATE_COMMAND_CARET_COLOR" value="e6b450" />
     <option name="BLOCK_TERMINAL_GENERATE_COMMAND_PLACEHOLDER_FOREGROUND" value="8a8a8a" />
     <option name="BLOCK_TERMINAL_HOVERED_BLOCK_BACKGROUND_END" value="1c1c1c" />
@@ -139,7 +139,7 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -283,8 +283,8 @@
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="381f20" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="BACKGROUND" value="36171a" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="CODE_LENS_BORDER_COLOR">
@@ -335,7 +335,7 @@
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="CONSOLE_GRAY_OUTPUT">
@@ -395,7 +395,7 @@
     <option name="CONSOLE_USER_INPUT">
       <value>
         <option name="FONT_TYPE" value="2" />
-        <option name="FOREGROUND" value="aad94c" />
+        <option name="FOREGROUND" value="97c142" />
       </value>
     </option>
     <option name="CONSOLE_WHITE_OUTPUT">
@@ -437,7 +437,7 @@
     </option>
     <option name="CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
         <option name="FOREGROUND" value="aad94c" />
       </value>
@@ -527,26 +527,26 @@
     </option>
     <option name="DEBUGGER_PREDICTED_VALUE_FALSE">
       <value>
-        <option name="BACKGROUND" value="381f20" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="BACKGROUND" value="36171a" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="DEBUGGER_PREDICTED_VALUE_FALSE_ALT">
       <value>
-        <option name="BACKGROUND" value="381f20" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="BACKGROUND" value="36171a" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="DEBUGGER_PREDICTED_VALUE_TRUE">
       <value>
-        <option name="BACKGROUND" value="2a3317" />
-        <option name="ERROR_STRIPE_COLOR" value="aad94c" />
+        <option name="BACKGROUND" value="262f15" />
+        <option name="ERROR_STRIPE_COLOR" value="97c142" />
       </value>
     </option>
     <option name="DEBUGGER_PREDICTED_VALUE_TRUE_ALT">
       <value>
-        <option name="BACKGROUND" value="2a3317" />
-        <option name="ERROR_STRIPE_COLOR" value="aad94c" />
+        <option name="BACKGROUND" value="262f15" />
+        <option name="ERROR_STRIPE_COLOR" value="97c142" />
       </value>
     </option>
     <option name="DEBUGGER_SMART_STEP_INTO_SELECTION">
@@ -691,7 +691,7 @@
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
         <option name="FOREGROUND" value="aad94c" />
       </value>
@@ -853,9 +853,9 @@
     </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="EVALUATED_EXPRESSION_ATTRIBUTES">
@@ -876,9 +876,9 @@
     </option>
     <option name="FILESTATUS_ERRORS">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="FOLDED_TEXT_ATTRIBUTES">
@@ -901,7 +901,7 @@
     </option>
     <option name="GD_BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="GD_BASE_TYPE">
@@ -922,7 +922,7 @@
     </option>
     <option name="GD_DANGER">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="GD_DOC_COMMENT">
@@ -1030,7 +1030,7 @@
     </option>
     <option name="GRAMMAR_ERROR">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -1307,7 +1307,7 @@
     </option>
     <option name="LOG_ERROR_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="LOG_EXPIRED_ENTRY">
@@ -1338,7 +1338,7 @@
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="3" />
       </value>
     </option>
@@ -1371,7 +1371,7 @@
     </option>
     <option name="PROPERTIES.INVALID_STRING_ESCAPE">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="2" />
         <option name="FOREGROUND" value="aad94c" />
       </value>
@@ -1458,9 +1458,9 @@
     </option>
     <option name="RUNTIME_ERROR">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="5" />
-        <option name="ERROR_STRIPE_COLOR" value="f07178" />
+        <option name="ERROR_STRIPE_COLOR" value="e6495a" />
       </value>
     </option>
     <option name="ReSharper.ASP_NET_RAZOR_TAG_HELPER_ATTRIBUTE">
@@ -1671,7 +1671,7 @@
     </option>
     <option name="TEXT_STYLE_ERROR">
       <value>
-        <option name="EFFECT_COLOR" value="f07178" />
+        <option name="EFFECT_COLOR" value="e6495a" />
         <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
@@ -1745,7 +1745,7 @@
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="VELOCITY_DIRECTIVE">
@@ -1787,7 +1787,7 @@
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="f07178" />
+        <option name="FOREGROUND" value="e6495a" />
       </value>
     </option>
     <option name="XML_ATTRIBUTE_NAME">

@@ -10,7 +10,7 @@ border_strong = "#3a3a3a"
 border_variant = "#1c1c1c"
 cursor = "#e6b450"
 element = "#1c1c1c"
-# A darker red than `error`, which keeps white text at only 2.9:1.
+# A darker red than `error`, which keeps white text at only 3.8:1.
 error_fill = "#cf3341"
 # The accent composited at `1f` and `38`, with every syntax role at 4.5:1: see docs/adr/0002-find-match-contrast.md.
 find = "#251f13"
@@ -34,12 +34,12 @@ selection = "#163054"
 selection_overlay = "#2d78e058"
 accents = ["#59c2ff", "#d2a6ff", "#e6b450", "#95e6cb", "#aad94c", "#f07178"]
 
-# The normal ANSI colours, so their shimmers can take the bright ones; `error` is ayu's syntax red, not its dimmer `#d95757`.
+# Severities are the normal ANSI colours, so their shimmers can take the bright ones; diff roles are ayu's `vcs` colours.
 [status]
 conflict = "#e89d37"
 created = "#70bf56"
 deleted = "#f26d78"
-error = "#f07178"
+error = "#e6495a"
 hidden = "#8a8a8a"
 hint = "#8a8a8a"
 ignored = "#8a8a8a"
@@ -47,7 +47,7 @@ info = "#17acf2"
 modified = "#73b8ff"
 predictive = "#8a8a8a"
 renamed = "#73b8ff"
-success = "#aad94c"
+success = "#97c142"
 unreachable = "#8a8a8a"
 warning = "#e89d37"
 
