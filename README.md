@@ -23,8 +23,9 @@ This is an unofficial project, not made or endorsed by Vercel. The colours belon
 Copy the Claude Code themes into the `themes/` folder of your Claude Code config directory, `~/.claude` unless `CLAUDE_CONFIG_DIR` points elsewhere:
 
 ```sh
-mkdir -p ~/.claude/themes
-cp claude-code/geist-dark.json claude-code/geist-light.json ~/.claude/themes/
+themes="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/themes"
+mkdir -p "$themes"
+cp claude-code/geist-dark.json claude-code/geist-light.json "$themes/"
 ```
 
 Then pick **Geist Dark** or **Geist Light** with `/theme`. Claude Code reloads the folder while it runs, but restart it once if `themes/` didn't exist when it started. Its **auto** theme switches only between the built-in themes, so a custom theme doesn't follow the system appearance.

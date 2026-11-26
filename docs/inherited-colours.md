@@ -13,11 +13,14 @@ The reasons:
 
 ## Claude Code
 
-Audited against Claude Code 2.1.332's [colour token reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme). Each theme starts from the built-in `dark` or `light` preset, and Geist sets all 63 documented tokens.
+Audited against the keys of Claude Code 2.1.332's built-in themes, which add nine undocumented keys to the 63 in its [colour token reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme). Each theme starts from the built-in `dark` or `light` preset. Geist sets all 63 documented tokens and `autoAcceptShimmer`, the undocumented shimmer that pairs with `autoAccept`.
 
 | Reason | Keys |
 | --- | --- |
-| **Not targeted**: single-purpose accents the reference leaves out, such as the onboarding screen's, which only the `/theme` editor lists | undocumented tokens |
+| **Fixed**: diff code takes Claude Code's own highlighter, Monokai Extended over `dark` or GitHub over `light` (see ADR 0003) | syntax colours |
+| **Not targeted**: the Clawd mascot | `clawd_background`, `clawd_body` |
+| **Not targeted**: the system spinner | `claudeBlue_FOR_SYSTEM_SPINNER`, `claudeBlueShimmer_FOR_SYSTEM_SPINNER` |
+| **Not targeted**: undocumented single-purpose keys, whose uses the reference doesn't name | `background`, `chromeYellow`, `professionalBlue`, `skill` |
 
 ## Ghostty
 

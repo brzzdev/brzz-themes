@@ -3,6 +3,7 @@
   "base": "dark",
   "overrides": {
     "autoAccept": "#bf7af0",
+    "autoAcceptShimmer": "#d7a4ff",
     "bashBorder": "#fe7573",
     "bashMessageBackgroundColor": "#1a1a1a",
     "blue_FOR_SUBAGENTS_ONLY": "#52a9ff",
@@ -29,7 +30,7 @@
     "inverseText": "#000000",
     "memoryBackgroundColor": "#102233",
     "merged": "#bf7af0",
-    "orange_FOR_SUBAGENTS_ONLY": "#ffc983",
+    "orange_FOR_SUBAGENTS_ONLY": "#f1a10d",
     "permission": "#52a9ff",
     "permissionShimmer": "#97c9fe",
     "pink_FOR_SUBAGENTS_ONLY": "#fe7573",
@@ -50,7 +51,7 @@
     "rainbow_violet": "#bf7af0",
     "rainbow_violet_shimmer": "#d7a4ff",
     "rainbow_yellow": "#ffc983",
-    "rainbow_yellow_shimmer": "#ffffff",
+    "rainbow_yellow_shimmer": "#ffc983",
     "rate_limit_empty": "#1a1a1a",
     "rate_limit_fill": "#52a9ff",
     "red_FOR_SUBAGENTS_ONLY": "#e5484d",
@@ -64,6 +65,6 @@
     "userMessageBackgroundHover": "#1f1f1f",
     "warning": "#f1a10d",
     "warningShimmer": "#ffc983",
-    "yellow_FOR_SUBAGENTS_ONLY": "#f1a10d"
+    "yellow_FOR_SUBAGENTS_ONLY": "#ffc983"
   }
 }
