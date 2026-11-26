@@ -131,9 +131,7 @@ CLAUDE_CODE_COLOURS = {
     "claudeShimmer": "ui.accent_strong",
     "composerSidebarBackground": "ui.panel",
     "cyan_FOR_SUBAGENTS_ONLY": "ansi.normal.6",
-    "diffAdded": "tint.created",
     "diffAddedWord": "status.created",
-    "diffRemoved": "tint.deleted",
     "diffRemovedWord": "status.deleted",
     "effortUltra": "ansi.bright.5",
     "error": "status.error",
@@ -185,11 +183,17 @@ CLAUDE_CODE_COLOURS = {
     "warningShimmer": "ansi.bright.3",
     "yellow_FOR_SUBAGENTS_ONLY": "ansi.bright.3",
 }
-# Rejected-edit diff fills, at half a tint's strength: see docs/adr/0003-tinted-fills-behind-syntax.md.
-CLAUDE_CODE_DIMMED_WEIGHT = 0.5
-CLAUDE_CODE_DIMMED_DIFFS = {
-    "diffAddedDimmed": "status.created",
-    "diffRemovedDimmed": "status.deleted",
+# Diff line fills and, at half strength, rejected-edit fills, at the appearance's tint whatever the palette's, since Claude Code draws diff code in its own highlighter: see docs/adr/0003-tinted-fills-behind-syntax.md.
+CLAUDE_CODE_DIFF_FILLS = {
+    "diffAdded": ("status.created", 1),
+    "diffAddedDimmed": ("status.created", 0.5),
+    "diffRemoved": ("status.deleted", 1),
+    "diffRemovedDimmed": ("status.deleted", 0.5),
+}
+# Changed-word fills, which Claude Code also draws the `+N` and `-N` counts in: moved towards the background until those counts sit at 4.5:1, for its highlighter's text on them.
+CLAUDE_CODE_WORD_FILLS = {
+    "diffAddedWord": "status.created",
+    "diffRemovedWord": "status.deleted",
 }
 CLAUDE_CODE_TEXT_PAIRS = [
     ("bashBorder", "bashMessageBackgroundColor"),
@@ -760,14 +764,31 @@ def claude_code_theme(palette: Palette) -> dict[str, Any]:
         token: palette_colour(palette, path)
         for token, path in CLAUDE_CODE_COLOURS.items()
     }
-    for token, status in CLAUDE_CODE_DIMMED_DIFFS.items():
-        colour = palette_colour(palette, status)
-        colours[token] = tint(palette, colour, CLAUDE_CODE_DIMMED_WEIGHT)
+    background = palette["ui"]["background"]
+    appearance_alpha = int(TINT_ALPHAS[palette["appearance"]], 16)
+    for token, (status, weight) in CLAUDE_CODE_DIFF_FILLS.items():
+        alpha = round(appearance_alpha * weight)
+        colours[token] = opaque(
+            f"{palette_colour(palette, status)}{alpha:02x}", background
+        )
+    grounds = [background, colours["composerSidebarBackground"]]
+    for token, status in CLAUDE_CODE_WORD_FILLS.items():
+        colours[token] = nearest_readable(palette_colour(palette, status), grounds)
     return {
         "name": palette["name"],
         "base": palette["appearance"],
         "overrides": dict(sorted(colours.items())),
     }
+
+
+def nearest_readable(colour: str, grounds: list[str]) -> str:
+    best = colour
+    for alpha in range(0xFE, 0, -1):
+        candidate = opaque(f"{colour}{alpha:02x}", grounds[0])
+        if min(contrast(candidate, g) for g in grounds) < MINIMUM_CONTRAST:
+            return best
+        best = candidate
+    return best
 
 
 def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
