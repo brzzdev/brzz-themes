@@ -563,9 +563,9 @@
     </option>
     <option name="DEBUGGER_UNREACHABLE_DECORATION">
       <value>
-        <option name="EFFECT_COLOR" value="8a8a8a" />
+        <option name="EFFECT_COLOR" value="a3a3a3" />
         <option name="EFFECT_TYPE" value="3" />
-        <option name="FOREGROUND" value="8a8a8a" />
+        <option name="FOREGROUND" value="a3a3a3" />
       </value>
     </option>
     <option name="DEBUG_THREAD_LABEL">
@@ -1312,7 +1312,7 @@
     </option>
     <option name="LOG_EXPIRED_ENTRY">
       <value>
-        <option name="FOREGROUND" value="8a8a8a" />
+        <option name="FOREGROUND" value="a3a3a3" />
       </value>
     </option>
     <option name="LOG_INFO_OUTPUT">
@@ -1361,7 +1361,7 @@
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="8a8a8a" />
+        <option name="FOREGROUND" value="a3a3a3" />
       </value>
     </option>
     <option name="NO_ANALYSIS">
@@ -1485,7 +1485,7 @@
     </option>
     <option name="ReSharper.ReSharper.ShaderLab_DISABLED_SHADER_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="8a8a8a" />
+        <option name="FOREGROUND" value="a3a3a3" />
       </value>
     </option>
     <option name="ReSharper.ReSharper.ShaderLab_ENABLED_SHADER_KEYWORD">
@@ -1502,9 +1502,9 @@
     </option>
     <option name="ReSharper.ReSharper.ShaderLab_SUPPRESSED_SHADER_KEYWORD">
       <value>
-        <option name="EFFECT_COLOR" value="8a8a8a" />
+        <option name="EFFECT_COLOR" value="a3a3a3" />
         <option name="EFFECT_TYPE" value="3" />
-        <option name="FOREGROUND" value="8a8a8a" />
+        <option name="FOREGROUND" value="a3a3a3" />
       </value>
     </option>
     <option name="ReSharper.STRING_ESCAPE_CHARACTER_2">

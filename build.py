@@ -68,7 +68,13 @@ SYNTAX_GROUNDS = [
     "selection",
 ]
 # Non-syntax colours drawn among code, held to the syntax grounds too.
-SYNTAX_LIKE_PATHS = ["ansi.bright.1", "ansi.normal.2", "ansi.normal.4", "ansi.normal.5"]
+SYNTAX_LIKE_PATHS = [
+    "ansi.bright.1",
+    "ansi.normal.2",
+    "ansi.normal.4",
+    "ansi.normal.5",
+    "status.unreachable",
+]
 # The colours a palette's `tint` group composites over its background.
 TINTS = {
     "accent": "ui.accent",

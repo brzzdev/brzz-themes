@@ -48,7 +48,8 @@ modified = "#73b8ff"
 predictive = "#8a8a8a"
 renamed = "#73b8ff"
 success = "#97c142"
-unreachable = "#8a8a8a"
+# Unused code takes the comment grey: `quiet` falls below 4.5:1 on the selection.
+unreachable = "#a3a3a3"
 warning = "#e89d37"
 
 # black, red, green, yellow, blue, magenta, cyan, white
