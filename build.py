@@ -67,6 +67,8 @@ SYNTAX_GROUNDS = [
     "panel",
     "selection",
 ]
+# Non-syntax colours drawn among code, held to the syntax grounds too.
+SYNTAX_LIKE_PATHS = ["ansi.bright.1", "ansi.normal.2", "ansi.normal.4", "ansi.normal.5"]
 # The colours a palette's `tint` group composites over its background.
 TINTS = {
     "accent": "ui.accent",
@@ -78,7 +80,7 @@ TINTS = {
     "hint": "status.hint",
     "ignored": "status.ignored",
     "info": "status.info",
-    "keyword": "syntax.keyword",
+    "magenta": "ansi.normal.5",
     "modified": "status.modified",
     "predictive": "status.predictive",
     "renamed": "status.renamed",
@@ -633,8 +635,8 @@ JETBRAINS_UI = {
     "Badge.greenForeground": "ui.background",
     "Badge.greenSecondaryBackground": "tint.success",
     "Badge.greenSecondaryForeground": "status.success",
-    "Badge.purpleSecondaryBackground": "tint.keyword",
-    "Badge.purpleSecondaryForeground": "syntax.keyword",
+    "Badge.purpleSecondaryBackground": "tint.magenta",
+    "Badge.purpleSecondaryForeground": "ansi.normal.5",
     "Bookmark.MnemonicCurrent.foreground": "ui.background",
     "Counter.foreground": "ui.foreground",
     "Debugger.Variables.changedValueForeground": "ui.accent",
@@ -719,7 +721,7 @@ JETBRAINS_UI = {
     "VersionControl.GitLog.headIconColor": "status.warning",
     "VersionControl.GitLog.localBranchIconColor": "status.success",
     "VersionControl.GitLog.otherIconColor": "ui.quiet",
-    "VersionControl.GitLog.remoteBranchIconColor": "syntax.keyword",
+    "VersionControl.GitLog.remoteBranchIconColor": "ansi.normal.5",
     "VersionControl.GitLog.tagIconColor": "ui.quiet",
     "VersionControl.Log.Commit.Reference.foreground": "ui.quiet",
     "VersionControl.Log.Commit.currentBranchBackground": "tint.accent",
@@ -1681,8 +1683,8 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "editor.snippetTabstopHighlightBackground": decoration(ui["highlight"]),
         "editor.stackFrameHighlightBackground": decoration(ui["highlight"]),
         "editor.wordHighlightBackground": decoration(ui["highlight"]),
-        "editor.wordHighlightStrongBackground": decoration(tints["keyword"]),
-        "editorBracketHighlight.unexpectedBracket.foreground": syntax["regex"],
+        "editor.wordHighlightStrongBackground": decoration(tints["magenta"]),
+        "editorBracketHighlight.unexpectedBracket.foreground": ansi["bright"][1],
         "editorBracketMatch.background": ui["highlight"],
         "editorBracketMatch.border": ui["indent_active"],
         "editorCodeLens.foreground": status["hint"],
@@ -1711,7 +1713,7 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "editorOverviewRuler.errorForeground": status["error"],
         "editorOverviewRuler.findMatchForeground": ui["find_active_border"],
         "editorOverviewRuler.rangeHighlightForeground": ui["accent"],
-        "editorOverviewRuler.wordHighlightStrongForeground": syntax["keyword"],
+        "editorOverviewRuler.wordHighlightStrongForeground": ansi["normal"][5],
         "editorRuler.foreground": ui["border"],
         "editorStickyScrollHover.background": ui["hover"],
         "editorSuggestWidgetStatus.foreground": status["hint"],
@@ -1761,7 +1763,7 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "list.invalidItemForeground": status["warning"],
         "list.warningForeground": status["warning"],
         "listFilterWidget.noMatchesOutline": status["error"],
-        "markdownAlert.important.foreground": syntax["keyword"],
+        "markdownAlert.important.foreground": ansi["normal"][5],
         "markdownAlert.tip.foreground": status["success"],
         "menu.background": ui["panel"],
         "menu.border": ui["border"],
@@ -2006,10 +2008,9 @@ def contrast_failures(palette: Palette) -> list[str]:
         for text, ground in TEXT_PAIRS
     ]
     pairs += [
-        (f"Zed's {path} on {name}", palette_colour(palette, path), ground)
+        (f"{path} on {name}", palette_colour(palette, path), ground)
         for name, ground in syntax_grounds(palette).items()
-        for path in {path for path, _ in ZED_SYNTAX.values()}
-        if not path.startswith("syntax.")
+        for path in SYNTAX_LIKE_PATHS
     ]
     pairs += claude_code_contrast_pairs(palette)
     pairs += herdr_app_contrast_pairs(palette)
@@ -2166,8 +2167,8 @@ def jetbrains_scheme(palette: Palette) -> str:
             "FOREGROUND": path_colour("syntax.comment_emphasized"),
         },
         "WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES": {
-            "BACKGROUND": path_colour("tint.keyword"),
-            "ERROR_STRIPE_COLOR": keyword,
+            "BACKGROUND": path_colour("tint.magenta"),
+            "ERROR_STRIPE_COLOR": path_colour("ansi.normal.5"),
         },
         "WRITE_SEARCH_RESULT_ATTRIBUTES": find,
     }

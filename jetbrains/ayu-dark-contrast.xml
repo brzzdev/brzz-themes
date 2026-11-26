@@ -1775,8 +1775,8 @@
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="3b2515" />
-        <option name="ERROR_STRIPE_COLOR" value="ff8f40" />
+        <option name="BACKGROUND" value="2f233b" />
+        <option name="ERROR_STRIPE_COLOR" value="c385fe" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
