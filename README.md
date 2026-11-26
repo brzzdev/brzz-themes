@@ -3,7 +3,7 @@
 Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop app, NetNewsWire, Rex, Slack, VS Code, Xcode 27, and Zed, in two families:
 
 - **Geist**: Geist Dark and Geist Light, built from the colours of Vercel's [Geist terminal themes](https://vercel.com/geist/terminal).
-- **Ayu**: Ayu Dark Contrast, [ayu](https://github.com/ayu-theme/ayu-colors)'s dark theme on a neutral black with brighter text, for easier focus. Its Zed and VS Code themes are ayu's own for those apps, with only the backgrounds, text, and greys swapped.
+- **Ayu**: Ayu Dark Contrast, [ayu](https://github.com/ayu-theme/ayu-colors)'s dark theme on a neutral black with brighter text, for easier focus. Its Zed and VS Code themes are ayu's own for those apps, with the backgrounds, text, and greys swapped, along with any colour that falls short of 4.5:1.
 
 This is an unofficial project, not made or endorsed by Vercel or the ayu project. Geist's colours belong to Vercel's Geist design system, and ayu's to its authors under the MIT licence.
 
