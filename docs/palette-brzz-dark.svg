@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="888" height="620" viewBox="0 0 888 620" style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px">
+  <title>Brzz Dark palette</title>
+  <rect width="100%" height="100%" rx="12" fill="#0e0e15" />
+  <text x="24" y="44" fill="#899c9e">UI</text>
+  <rect x="24" y="68" width="32" height="32" rx="6" fill="#0e0e15" stroke="#363d42" />
+  <text x="66" y="81" fill="#b5cccc">background</text>
+  <text x="66" y="97" fill="#899c9e">#0e0e15</text>
+  <rect x="234" y="68" width="32" height="32" rx="6" fill="#b5cccc" stroke="#363d42" />
+  <text x="276" y="81" fill="#b5cccc">foreground</text>
+  <text x="276" y="97" fill="#899c9e">#b5cccc</text>
+  <rect x="444" y="68" width="32" height="32" rx="6" fill="#2c8dd7" stroke="#363d42" />
+  <text x="486" y="81" fill="#b5cccc">accent</text>
+  <text x="486" y="97" fill="#899c9e">#2c8dd7</text>
+  <text x="24" y="132" fill="#899c9e">Syntax</text>
+  <rect x="24" y="156" width="32" height="32" rx="6" fill="#b18219" stroke="#363d42" />
+  <text x="66" y="169" fill="#b5cccc">attribute</text>
+  <text x="66" y="185" fill="#899c9e">#b18219</text>
+  <rect x="234" y="156" width="32" height="32" rx="6" fill="#778e95" stroke="#363d42" />
+  <text x="276" y="169" fill="#b5cccc">comment</text>
+  <text x="276" y="185" fill="#899c9e">#778e95</text>
+  <rect x="444" y="156" width="32" height="32" rx="6" fill="#93a6a8" stroke="#363d42" />
+  <text x="486" y="169" fill="#b5cccc">comment_emphasized</text>
+  <text x="486" y="185" fill="#899c9e">#93a6a8</text>
+  <rect x="654" y="156" width="32" height="32" rx="6" fill="#7a9417" stroke="#363d42" />
+  <text x="696" y="169" fill="#b5cccc">constant</text>
+  <text x="696" y="185" fill="#899c9e">#7a9417</text>
+  <rect x="24" y="200" width="32" height="32" rx="6" fill="#388de4" stroke="#363d42" />
+  <text x="66" y="213" fill="#b5cccc">function</text>
+  <text x="66" y="229" fill="#899c9e">#388de4</text>
+  <rect x="234" y="200" width="32" height="32" rx="6" fill="#388de4" stroke="#363d42" />
+  <text x="276" y="213" fill="#b5cccc">function_system</text>
+  <text x="276" y="229" fill="#899c9e">#388de4</text>
+  <rect x="444" y="200" width="32" height="32" rx="6" fill="#f04a91" stroke="#363d42" />
+  <text x="486" y="213" fill="#b5cccc">keyword</text>
+  <text x="486" y="229" fill="#899c9e">#f04a91</text>
+  <rect x="654" y="200" width="32" height="32" rx="6" fill="#778e96" stroke="#363d42" />
+  <text x="696" y="213" fill="#b5cccc">link</text>
+  <text x="696" y="229" fill="#899c9e">#778e96</text>
+  <rect x="24" y="244" width="32" height="32" rx="6" fill="#f04a91" stroke="#363d42" />
+  <text x="66" y="257" fill="#b5cccc">literal</text>
+  <text x="66" y="273" fill="#899c9e">#f04a91</text>
+  <rect x="234" y="244" width="32" height="32" rx="6" fill="#7f7fe3" stroke="#363d42" />
+  <text x="276" y="257" fill="#b5cccc">namespace</text>
+  <text x="276" y="273" fill="#899c9e">#7f7fe3</text>
+  <rect x="444" y="244" width="32" height="32" rx="6" fill="#df654a" stroke="#363d42" />
+  <text x="486" y="257" fill="#b5cccc">number</text>
+  <text x="486" y="273" fill="#899c9e">#df654a</text>
+  <rect x="654" y="244" width="32" height="32" rx="6" fill="#b5cccc" stroke="#363d42" />
+  <text x="696" y="257" fill="#b5cccc">plain</text>
+  <text x="696" y="273" fill="#899c9e">#b5cccc</text>
+  <rect x="24" y="288" width="32" height="32" rx="6" fill="#b5cccc" stroke="#363d42" />
+  <text x="66" y="301" fill="#b5cccc">punctuation</text>
+  <text x="66" y="317" fill="#899c9e">#b5cccc</text>
+  <rect x="234" y="288" width="32" height="32" rx="6" fill="#fc6a5d" stroke="#363d42" />
+  <text x="276" y="301" fill="#b5cccc">regex</text>
+  <text x="276" y="317" fill="#899c9e">#fc6a5d</text>
+  <rect x="444" y="288" width="32" height="32" rx="6" fill="#e85e37" stroke="#363d42" />
+  <text x="486" y="301" fill="#b5cccc">string</text>
+  <text x="486" y="317" fill="#899c9e">#e85e37</text>
+  <rect x="654" y="288" width="32" height="32" rx="6" fill="#41a1c0" stroke="#363d42" />
+  <text x="696" y="301" fill="#b5cccc">tag</text>
+  <text x="696" y="317" fill="#899c9e">#41a1c0</text>
+  <rect x="24" y="332" width="32" height="32" rx="6" fill="#7f7fe3" stroke="#363d42" />
+  <text x="66" y="345" fill="#b5cccc">type</text>
+  <text x="66" y="361" fill="#899c9e">#7f7fe3</text>
+  <rect x="234" y="332" width="32" height="32" rx="6" fill="#5dd8ff" stroke="#363d42" />
+  <text x="276" y="345" fill="#b5cccc">type_parameter</text>
+  <text x="276" y="361" fill="#899c9e">#5dd8ff</text>
+  <rect x="444" y="332" width="32" height="32" rx="6" fill="#7f7fe3" stroke="#363d42" />
+  <text x="486" y="345" fill="#b5cccc">type_system</text>
+  <text x="486" y="361" fill="#899c9e">#7f7fe3</text>
+  <rect x="654" y="332" width="32" height="32" rx="6" fill="#28998d" stroke="#363d42" />
+  <text x="696" y="345" fill="#b5cccc">variable</text>
+  <text x="696" y="361" fill="#899c9e">#28998d</text>
+  <text x="24" y="396" fill="#899c9e">ANSI</text>
+  <rect x="24" y="420" width="32" height="32" rx="6" fill="#242830" stroke="#363d42" />
+  <text x="66" y="433" fill="#b5cccc">black</text>
+  <text x="66" y="449" fill="#899c9e">#242830</text>
+  <rect x="234" y="420" width="32" height="32" rx="6" fill="#ff6961" stroke="#363d42" />
+  <text x="276" y="433" fill="#b5cccc">red</text>
+  <text x="276" y="449" fill="#899c9e">#ff6961</text>
+  <rect x="444" y="420" width="32" height="32" rx="6" fill="#8ba400" stroke="#363d42" />
+  <text x="486" y="433" fill="#b5cccc">green</text>
+  <text x="486" y="449" fill="#899c9e">#8ba400</text>
+  <rect x="654" y="420" width="32" height="32" rx="6" fill="#f5c94e" stroke="#363d42" />
+  <text x="696" y="433" fill="#b5cccc">yellow</text>
+  <text x="696" y="449" fill="#899c9e">#f5c94e</text>
+  <rect x="24" y="464" width="32" height="32" rx="6" fill="#308fd9" stroke="#363d42" />
+  <text x="66" y="477" fill="#b5cccc">blue</text>
+  <text x="66" y="493" fill="#899c9e">#308fd9</text>
+  <rect x="234" y="464" width="32" height="32" rx="6" fill="#ec4d97" stroke="#363d42" />
+  <text x="276" y="477" fill="#b5cccc">magenta</text>
+  <text x="276" y="493" fill="#899c9e">#ec4d97</text>
+  <rect x="444" y="464" width="32" height="32" rx="6" fill="#2faaa0" stroke="#363d42" />
+  <text x="486" y="477" fill="#b5cccc">cyan</text>
+  <text x="486" y="493" fill="#899c9e">#2faaa0</text>
+  <rect x="654" y="464" width="32" height="32" rx="6" fill="#b5cccc" stroke="#363d42" />
+  <text x="696" y="477" fill="#b5cccc">white</text>
+  <text x="696" y="493" fill="#899c9e">#b5cccc</text>
+  <rect x="24" y="508" width="32" height="32" rx="6" fill="#6a8189" stroke="#363d42" />
+  <text x="66" y="521" fill="#b5cccc">bright black</text>
+  <text x="66" y="537" fill="#899c9e">#6a8189</text>
+  <rect x="234" y="508" width="32" height="32" rx="6" fill="#ff8f89" stroke="#363d42" />
+  <text x="276" y="521" fill="#b5cccc">bright red</text>
+  <text x="276" y="537" fill="#899c9e">#ff8f89</text>
+  <rect x="444" y="508" width="32" height="32" rx="6" fill="#a6c400" stroke="#363d42" />
+  <text x="486" y="521" fill="#b5cccc">bright green</text>
+  <text x="486" y="537" fill="#899c9e">#a6c400</text>
+  <rect x="654" y="508" width="32" height="32" rx="6" fill="#f7d96f" stroke="#363d42" />
+  <text x="696" y="521" fill="#b5cccc">bright yellow</text>
+  <text x="696" y="537" fill="#899c9e">#f7d96f</text>
+  <rect x="24" y="552" width="32" height="32" rx="6" fill="#74dfff" stroke="#363d42" />
+  <text x="66" y="565" fill="#b5cccc">bright blue</text>
+  <text x="66" y="581" fill="#899c9e">#74dfff</text>
+  <rect x="234" y="552" width="32" height="32" rx="6" fill="#e860a4" stroke="#363d42" />
+  <text x="276" y="565" fill="#b5cccc">bright magenta</text>
+  <text x="276" y="581" fill="#899c9e">#e860a4</text>
+  <rect x="444" y="552" width="32" height="32" rx="6" fill="#58b6ce" stroke="#363d42" />
+  <text x="486" y="565" fill="#b5cccc">bright cyan</text>
+  <text x="486" y="581" fill="#899c9e">#58b6ce</text>
+  <rect x="654" y="552" width="32" height="32" rx="6" fill="#ebebeb" stroke="#363d42" />
+  <text x="696" y="565" fill="#b5cccc">bright white</text>
+  <text x="696" y="581" fill="#899c9e">#ebebeb</text>
+</svg>
