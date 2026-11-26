@@ -350,6 +350,9 @@
     {
       "scope": [
         "constant.language",
+        "meta.diff",
+        "punctuation.definition.from-file.diff",
+        "punctuation.definition.to-file.diff",
         "support.constant",
         "variable.other.enummember"
       ],
@@ -525,7 +528,8 @@
     },
     {
       "scope": [
-        "markup.changed"
+        "markup.changed",
+        "punctuation.definition.changed.diff"
       ],
       "settings": {
         "foreground": "#1a5fb4"
@@ -533,7 +537,8 @@
     },
     {
       "scope": [
-        "markup.deleted"
+        "markup.deleted",
+        "punctuation.definition.deleted.diff"
       ],
       "settings": {
         "foreground": "#a8242b"
@@ -541,19 +546,11 @@
     },
     {
       "scope": [
-        "markup.inserted"
+        "markup.inserted",
+        "punctuation.definition.inserted.diff"
       ],
       "settings": {
         "foreground": "#18703a"
-      }
-    },
-    {
-      "scope": [
-        "meta.diff",
-        "meta.diff.header"
-      ],
-      "settings": {
-        "foreground": "#8a5300"
       }
     }
   ],

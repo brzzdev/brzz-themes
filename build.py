@@ -386,10 +386,9 @@ VSCODE_UI_THEMES = {"dark": "vs-dark", "light": "vs"}
 
 # Diff and patch files, in the ANSI colours Zed's diff captures use.
 VSCODE_DIFF_TOKENS = [
-    (["markup.changed"], "ansi.normal.4"),
-    (["markup.deleted"], "ansi.bright.1"),
-    (["markup.inserted"], "ansi.normal.2"),
-    (["meta.diff", "meta.diff.header"], "syntax.constant"),
+    (["markup.changed", "punctuation.definition.changed.diff"], "ansi.normal.4"),
+    (["markup.deleted", "punctuation.definition.deleted.diff"], "ansi.bright.1"),
+    (["markup.inserted", "punctuation.definition.inserted.diff"], "ansi.normal.2"),
 ]
 VSCODE_TOKENS = [
     (
@@ -408,7 +407,14 @@ VSCODE_TOKENS = [
     ),
     (["comment", "punctuation.definition.comment"], "comment", "italic"),
     (
-        ["constant.language", "support.constant", "variable.other.enummember"],
+        [
+            "constant.language",
+            "meta.diff",
+            "punctuation.definition.from-file.diff",
+            "punctuation.definition.to-file.diff",
+            "support.constant",
+            "variable.other.enummember",
+        ],
         "constant",
         None,
     ),
@@ -1211,7 +1217,10 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
             for scopes, role, style in VSCODE_TOKENS
         ]
         + [
-            {"scope": scopes, "settings": {"foreground": palette_colour(palette, path)}}
+            {
+                "scope": scopes,
+                "settings": vscode_token_settings(palette_colour(palette, path), None),
+            }
             for scopes, path in VSCODE_DIFF_TOKENS
         ],
         "semanticTokenColors": {
