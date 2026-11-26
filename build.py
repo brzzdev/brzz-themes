@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate every app's theme files from the palettes in palettes/."""
+"""Generate every app's theme files from the theme folders in palettes/."""
 
 import json
 import math
@@ -11,8 +11,9 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent
+THEME_FILE = "theme.toml"
 AUTHOR = "brzzdev"
-FAMILY = "Geist"
+IDENTIFIER_PREFIX = "dev.brzz"
 REPOSITORY_URL = "https://github.com/brzzdev/brzz-themes"
 SCROLLBAR_ALPHA = "50"
 SCROLLBAR_HOVER_ALPHA = "80"
@@ -85,6 +86,7 @@ TINTS = {
 }
 
 type Palette = dict[str, Any]
+type Theme = dict[str, Any]
 
 # Herdr's own alpha for the `blocked` fill behind its "Needs you" badge; no theme key sets it.
 HERDR_APP_BADGE_ALPHA = "26"
@@ -341,7 +343,6 @@ VSCODE_SEMANTIC = {
 
 
 JETBRAINS_PLUGIN_DEV_VERSION = "0.0.0-dev"
-JETBRAINS_PLUGIN_ID = "dev.brzz.geist-themes"
 JETBRAINS_ISLANDS_TOKENS_SINCE_BUILD = "261"
 JETBRAINS_PARENT_SCHEMES = {"dark": "Darcula", "light": "Default"}
 JETBRAINS_PARENT_THEMES = {"dark": "Islands Dark", "light": "Islands Light"}
@@ -1073,8 +1074,8 @@ JETBRAINS_CONSOLE = {
 }
 
 
-def slug(palette: Palette) -> str:
-    return palette["name"].lower().replace(" ", "-")
+def slug(named: Palette | Theme) -> str:
+    return named["name"].lower().replace(" ", "-")
 
 
 def palette_colour(palette: Palette, path: str) -> str:
@@ -1213,14 +1214,14 @@ def zed_players(palette: Palette) -> list[dict[str, str]]:
     ]
 
 
-def zed_family(palettes: list[Palette]) -> dict[str, Any]:
+def zed_family(theme: Theme) -> dict[str, Any]:
     return {
         "$schema": ZED_SCHEMA,
-        "name": FAMILY,
+        "name": theme["name"],
         "author": AUTHOR,
         "themes": [
             {"name": p["name"], "appearance": p["appearance"], "style": zed_style(p)}
-            for p in palettes
+            for p in theme["palettes"]
         ],
     }
 
@@ -1403,12 +1404,12 @@ def netnewswire_stylesheet(palettes: list[Palette]) -> str:
     return "\n".join([*blocks, rules])
 
 
-def netnewswire_info() -> str:
+def netnewswire_info(theme: Theme) -> str:
     info = {
         "CreatorHomePage": REPOSITORY_URL,
         "CreatorName": AUTHOR,
-        "Name": FAMILY,
-        "ThemeIdentifier": "dev.brzz.geist-themes.netnewswire",
+        "Name": theme["name"],
+        "ThemeIdentifier": f"{IDENTIFIER_PREFIX}.{theme['package']}.netnewswire",
         "Version": 1,
     }
     return plistlib.dumps(info).decode()
@@ -1736,11 +1737,11 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     }
 
 
-def vscode_manifest(palettes: list[Palette]) -> dict[str, Any]:
+def vscode_manifest(theme: Theme) -> dict[str, Any]:
     return {
-        "name": "geist-themes",
-        "displayName": "Geist Themes",
-        "description": "Colour themes from Vercel's Geist terminal themes.",
+        "name": theme["package"],
+        "displayName": f"{theme['name']} Themes",
+        "description": f"Colour themes from {theme['source']}.",
         "version": "1.0.0",
         "publisher": AUTHOR,
         "license": "MIT",
@@ -1755,7 +1756,7 @@ def vscode_manifest(palettes: list[Palette]) -> dict[str, Any]:
                     "uiTheme": VSCODE_UI_THEMES[p["appearance"]],
                     "path": f"./themes/{slug(p)}.json",
                 }
-                for p in palettes
+                for p in theme["palettes"]
             ],
         },
     }
@@ -2048,23 +2049,21 @@ def jetbrains_scheme(palette: Palette) -> str:
     return xml_text(scheme)
 
 
-def jetbrains_plugin(palettes: list[Palette]) -> str:
+def jetbrains_plugin(theme: Theme) -> str:
     plugin = ET.Element("idea-plugin")
-    ET.SubElement(plugin, "id").text = JETBRAINS_PLUGIN_ID
-    ET.SubElement(plugin, "name").text = "Geist Themes"
+    ET.SubElement(plugin, "id").text = f"{IDENTIFIER_PREFIX}.{theme['package']}"
+    ET.SubElement(plugin, "name").text = f"{theme['name']} Themes"
     ET.SubElement(plugin, "version").text = JETBRAINS_PLUGIN_DEV_VERSION
     ET.SubElement(plugin, "vendor", url=REPOSITORY_URL).text = AUTHOR
-    names = " and ".join(p["name"] for p in palettes)
-    ET.SubElement(plugin, "description").text = (
-        f"{names}, built from the colours of Vercel's Geist terminal themes. "
-        "Unofficial: not made or endorsed by Vercel."
-    )
+    names = " and ".join(p["name"] for p in theme["palettes"])
+    description = f"{names}, built from the colours of {theme['source']}."
+    ET.SubElement(plugin, "description").text = f"{description} {theme['disclaimer']}"
     ET.SubElement(
         plugin, "idea-version", {"since-build": JETBRAINS_ISLANDS_TOKENS_SINCE_BUILD}
     )
     ET.SubElement(plugin, "depends").text = "com.intellij.modules.platform"
     extensions = ET.SubElement(plugin, "extensions", defaultExtensionNs="com.intellij")
-    for palette in palettes:
+    for palette in theme["palettes"]:
         name = slug(palette)
         ET.SubElement(extensions, "themeProvider", id=name, path=f"/{name}.theme.json")
     return xml_text(plugin)
@@ -2148,21 +2147,40 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
     write(path, json.dumps(value, indent=2) + "\n")
 
 
-def main() -> None:
-    palettes = [
+def load_theme(folder: Path) -> Theme:
+    theme = tomllib.loads((folder / THEME_FILE).read_text())
+    theme["palettes"] = [
         with_tints(tomllib.loads(p.read_text()))
-        for p in sorted((ROOT / "palettes").glob("*.toml"))
+        for p in sorted(folder.glob("*.toml"))
+        if p.name != THEME_FILE
     ]
+    return theme
+
+
+def main() -> None:
+    themes = [
+        load_theme(folder)
+        for folder in sorted((ROOT / "palettes").iterdir())
+        if folder.is_dir()
+    ]
+    palettes = [p for theme in themes for p in theme["palettes"]]
     if failures := [f for p in palettes for f in contrast_failures(p)]:
         raise SystemExit("\n".join(failures))
-    write(ROOT / "herdr" / "geist.toml", herdr(palettes))
-    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", jetbrains_plugin(palettes))
-    bundle = ROOT / "netnewswire" / f"{FAMILY}.nnwtheme"
-    write(bundle / "Info.plist", netnewswire_info())
+    for theme in themes:
+        write_theme(theme)
+
+
+def write_theme(theme: Theme) -> None:
+    palettes = theme["palettes"]
+    family = slug(theme)
+    write(ROOT / "herdr" / f"{family}.toml", herdr(palettes))
+    write(ROOT / "jetbrains" / "META-INF" / "plugin.xml", jetbrains_plugin(theme))
+    bundle = ROOT / "netnewswire" / f"{theme['name']}.nnwtheme"
+    write(bundle / "Info.plist", netnewswire_info(theme))
     write(bundle / "stylesheet.css", netnewswire_stylesheet(palettes))
-    write_json(ROOT / "vscode" / "package.json", vscode_manifest(palettes))
+    write_json(ROOT / "vscode" / "package.json", vscode_manifest(theme))
     write(ROOT / "vscode" / "LICENSE", (ROOT / "LICENSE").read_text())
-    write_json(ROOT / "zed" / "geist.json", zed_family(palettes))
+    write_json(ROOT / "zed" / f"{family}.json", zed_family(theme))
     for palette in palettes:
         name = slug(palette)
         write(ROOT / "ghostty" / palette["name"], ghostty(palette))
@@ -2173,7 +2191,7 @@ def main() -> None:
         write_json(ROOT / "vscode" / "themes" / f"{name}.json", vscode_theme(palette))
         write_json(ROOT / "xcode" / f"{name}.json", xcode_recipe(palette))
         write(
-            ROOT / "docs" / f"palette-{palette['appearance']}.svg",
+            ROOT / "docs" / f"palette-{name}.svg",
             palette_card(palette),
         )
 
