@@ -93,11 +93,13 @@ type Family = dict[str, Any]
 CLAUDE_CODE_COLOURS = {
     "autoAccept": "ansi.normal.5",
     "autoAcceptShimmer": "ansi.bright.5",
+    "background": "status.info",
     "bashBorder": "ansi.bright.1",
     "bashMessageBackgroundColor": "ui.element",
     "blue_FOR_SUBAGENTS_ONLY": "ansi.normal.4",
     "briefLabelClaude": "ui.accent",
     "briefLabelYou": "ui.muted",
+    "chromeYellow": "status.warning",
     "claude": "ui.accent",
     "claudeShimmer": "ui.accent_strong",
     "composerSidebarBackground": "ui.panel",
@@ -121,6 +123,7 @@ CLAUDE_CODE_COLOURS = {
     "permission": "status.info",
     "permissionShimmer": "ansi.bright.4",
     "pink_FOR_SUBAGENTS_ONLY": "ansi.bright.1",
+    "professionalBlue": "status.info",
     "planMode": "ansi.normal.6",
     "promptBorder": "ui.border_strong",
     "promptBorderShimmer": "ui.quiet",
@@ -144,7 +147,8 @@ CLAUDE_CODE_COLOURS = {
     "red_FOR_SUBAGENTS_ONLY": "ansi.normal.1",
     "remember": "ansi.bright.5",
     "selectionBg": "ui.selection",
-    "subtle": "ui.border_strong",
+    "skill": "ansi.normal.5",
+    "subtle": "ui.quiet",
     "success": "status.success",
     "suggestion": "status.info",
     "text": "ui.foreground",
@@ -167,32 +171,25 @@ CLAUDE_CODE_TEXT_PAIRS = [
     ("inverseText", "success"),
     ("inverseText", "warning"),
 ]
-# Drawn as text on the terminal background.
-CLAUDE_CODE_TEXT_ON_BACKGROUND = [
-    "autoAccept",
-    "blue_FOR_SUBAGENTS_ONLY",
-    "briefLabelClaude",
-    "briefLabelYou",
-    "claude",
-    "cyan_FOR_SUBAGENTS_ONLY",
-    "error",
-    "fastMode",
-    "green_FOR_SUBAGENTS_ONLY",
-    "ide",
-    "inactive",
-    "merged",
-    "orange_FOR_SUBAGENTS_ONLY",
-    "permission",
-    "pink_FOR_SUBAGENTS_ONLY",
-    "planMode",
-    "purple_FOR_SUBAGENTS_ONLY",
-    "red_FOR_SUBAGENTS_ONLY",
-    "remember",
-    "success",
-    "suggestion",
-    "warning",
-    "yellow_FOR_SUBAGENTS_ONLY",
-]
+# Every other token colours text on the terminal background.
+CLAUDE_CODE_NOT_TEXT = {
+    "bashMessageBackgroundColor",
+    "composerSidebarBackground",
+    "diffAdded",
+    "diffAddedDimmed",
+    "diffAddedWord",
+    "diffRemoved",
+    "diffRemovedDimmed",
+    "diffRemovedWord",
+    "inverseText",
+    "memoryBackgroundColor",
+    "promptBorder",
+    "promptBorderShimmer",
+    "rate_limit_empty",
+    "selectionBg",
+    "userMessageBackground",
+    "userMessageBackgroundHover",
+}
 
 # Herdr's own alpha for the `blocked` fill behind its "Needs you" badge; no theme key sets it.
 HERDR_APP_BADGE_ALPHA = "26"
@@ -1415,8 +1412,9 @@ def claude_code_contrast_pairs(palette: Palette) -> list[tuple[str, str, str]]:
     ]
     background = palette["ui"]["background"]
     pairs += [
-        (f"Claude Code's {token} on the background", colours[token], background)
-        for token in CLAUDE_CODE_TEXT_ON_BACKGROUND
+        (f"Claude Code's {token} on the background", colour, background)
+        for token, colour in colours.items()
+        if token not in CLAUDE_CODE_NOT_TEXT
     ]
     return pairs
 

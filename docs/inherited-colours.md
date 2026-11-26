@@ -13,14 +13,13 @@ The reasons:
 
 ## Claude Code
 
-Audited against the keys of Claude Code 2.1.332's built-in themes, which add nine undocumented keys to the 63 in its [colour token reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme). Each theme starts from the built-in `dark` or `light` preset. Geist sets all 63 documented tokens and `autoAcceptShimmer`, the undocumented shimmer that pairs with `autoAccept`.
+Audited against the keys of Claude Code 2.1.332's built-in themes, which add nine undocumented keys to the 63 in its [colour token reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme). Each theme starts from the built-in `dark` or `light` preset. Geist sets all 63 documented tokens and five undocumented ones it can read in the binary: `autoAcceptShimmer`, which pairs with `autoAccept`, and the text colours `background` (background agent and task labels), `chromeYellow` (`/chrome`), `professionalBlue` (the data privacy and consumer terms dialogs), and `skill` (skill labels).
 
 | Reason | Keys |
 | --- | --- |
 | **Fixed**: diff code takes Claude Code's own highlighter, Monokai Extended over `dark` or GitHub over `light` (see ADR 0003) | syntax colours |
 | **Not targeted**: the Clawd mascot | `clawd_background`, `clawd_body` |
 | **Not targeted**: the system spinner | `claudeBlue_FOR_SYSTEM_SPINNER`, `claudeBlueShimmer_FOR_SYSTEM_SPINNER` |
-| **Not targeted**: undocumented single-purpose keys, whose uses the reference doesn't name | `background`, `chromeYellow`, `professionalBlue`, `skill` |
 
 ## Ghostty
 
