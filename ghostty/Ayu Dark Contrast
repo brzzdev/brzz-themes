@@ -2,11 +2,11 @@ background = #0a0a0a
 foreground = #f3efe3
 cursor-color = #e6b450
 cursor-text = #0a0a0a
-selection-background = #163054
+selection-background = #142a47
 selection-foreground = #f3efe3
-search-background = #1b2521
+search-background = #2b2618
 search-foreground = #f3efe3
-search-selected-background = #95e6cb
+search-selected-background = #e6b450
 search-selected-foreground = #1c1c1c
 split-divider-color = #262626
 
@@ -17,7 +17,7 @@ palette = 3=#e89d37
 palette = 4=#17acf2
 palette = 5=#c385fe
 palette = 6=#84ceb5
-palette = 7=#f3efe3
+palette = 7=#ffffff
 palette = 8=#8a8a8a
 palette = 9=#f07178
 palette = 10=#aad94c

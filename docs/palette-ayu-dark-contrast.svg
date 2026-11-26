@@ -94,9 +94,9 @@
   <rect x="444" y="464" width="32" height="32" rx="6" fill="#84ceb5" stroke="#262626" />
   <text x="486" y="477" fill="#f3efe3">cyan</text>
   <text x="486" y="493" fill="#a3a3a3">#84ceb5</text>
-  <rect x="654" y="464" width="32" height="32" rx="6" fill="#f3efe3" stroke="#262626" />
+  <rect x="654" y="464" width="32" height="32" rx="6" fill="#ffffff" stroke="#262626" />
   <text x="696" y="477" fill="#f3efe3">white</text>
-  <text x="696" y="493" fill="#a3a3a3">#f3efe3</text>
+  <text x="696" y="493" fill="#a3a3a3">#ffffff</text>
   <rect x="24" y="508" width="32" height="32" rx="6" fill="#8a8a8a" stroke="#262626" />
   <text x="66" y="521" fill="#f3efe3">bright black</text>
   <text x="66" y="537" fill="#a3a3a3">#8a8a8a</text>
