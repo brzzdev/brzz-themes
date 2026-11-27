@@ -59,22 +59,21 @@ SLACK_BADGE_TEXT = "#ffffff"
 # Each text colour reaches the minimum on the ground it's paired with.
 TEXT_PAIRS = [
     ("ansi.normal.0", "ui.find_active_border"),
-    ("status.hint", "ui.background"),
     ("status.hint", "ui.element"),
     ("status.hint", "ui.hover"),
-    ("status.predictive", "ui.background"),
     ("status.predictive", "ui.hover"),
     (SLACK_BADGE_TEXT, "ui.error_fill"),
+    ("ui.accent", "ui.panel"),
     ("ui.foreground", "tint.accent"),
     ("ui.quiet", "ui.background"),
     ("ui.quiet", "ui.element"),
     ("ui.quiet", "ui.panel"),
 ]
-# Terminal text: every ANSI colour but black, which programs use as a fill.
-ANSI_TEXT_PATHS = [
-    f"ansi.{kind}.{index}" for kind in ("bright", "normal") for index in range(1, 8)
+# Terminal text: every ANSI colour but normal black, which programs use as a fill.
+ANSI_TEXT_PATHS = [f"ansi.bright.{index}" for index in range(len(ANSI_NAMES))] + [
+    f"ansi.normal.{index}" for index in range(1, len(ANSI_NAMES))
 ]
-# Every status colour reaches the minimum on these, where file names and labels take it.
+# Grounds every status colour reaches the minimum on.
 STATUS_GROUNDS = ["background", "panel"]
 # Every syntax role reaches the minimum on these, and on every tint.
 SYNTAX_GROUNDS = [

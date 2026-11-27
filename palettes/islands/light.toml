@@ -2,7 +2,8 @@ name = "Islands Light"
 appearance = "light"
 
 [ui]
-accent = "#3871e1"
+# JetBrains' brand blue-80, darkened only as far as 4.5:1 on `panel` needs.
+accent = "#2c64d3"
 accent_strong = "#2f5eb9"
 background = "#ffffff"
 border = "#dddfe4"

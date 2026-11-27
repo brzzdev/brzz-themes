@@ -11,8 +11,8 @@
     "#469fe0",
     "#ba83d2",
     "#15a9a9",
+    "#b1b1b1",
     "#828282",
-    "#595959",
     "#fc676a",
     "#4fc414",
     "#e5bf00",
@@ -22,7 +22,7 @@
     "#ffffff"
   ],
   "colors": {
-    "accent": "#538af9",
+    "accent": "#548bfa",
     "accent_foreground": "#191a1c",
     "blocked": "#fc676a",
     "border": "#33353b",
@@ -37,7 +37,7 @@
     "muted": "#9fa2a8",
     "popover": "#26282c",
     "raised": "#2f3136",
-    "ring": "#538af9",
+    "ring": "#548bfa",
     "selected": "#1d3056",
     "solid": "#bcbec4",
     "solid_foreground": "#191a1c",

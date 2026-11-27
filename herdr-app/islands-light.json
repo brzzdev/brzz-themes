@@ -22,7 +22,7 @@
     "#080808"
   ],
   "colors": {
-    "accent": "#3871e1",
+    "accent": "#2c64d3",
     "accent_foreground": "#ffffff",
     "blocked": "#c51412",
     "border": "#dddfe4",
@@ -37,7 +37,7 @@
     "muted": "#4c4f56",
     "popover": "#e9eaee",
     "raised": "#dddfe4",
-    "ring": "#3871e1",
+    "ring": "#2c64d3",
     "selected": "#c7e3ff",
     "solid": "#080808",
     "solid_foreground": "#ffffff",

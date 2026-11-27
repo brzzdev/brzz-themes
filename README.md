@@ -7,7 +7,7 @@ Editor and terminal themes for Claude Code, Ghostty, herdr, the Herdr desktop ap
 - **Brzz**: Brzz Dark, the colours of [John Sundell's Xcode theme](https://github.com/JohnSundell/XcodeTheme), each lightened only as far as 4.5:1 needs, with softer fills behind code, for long sessions.
 - **Islands**: Islands Dark and Islands Light, the colours of JetBrains' [Islands themes](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-resources/src/themes/islands) and the editor schemes they use, each moved only as far as 4.5:1 needs, with the editor set apart from the window around it.
 
-This is an unofficial project, not made or endorsed by Vercel, the ayu project, John Sundell, or JetBrains. Geist's colours belong to Vercel's Geist design system, ayu's to its authors under the MIT licence, Brzz's starting colours to John Sundell's Xcode theme, also under the MIT licence, and Islands' starting colours to JetBrains' IntelliJ Platform, under the Apache 2.0 licence.
+This is an unofficial project, not made or endorsed by Vercel, the ayu project, John Sundell, or JetBrains. Geist's colours belong to Vercel's Geist design system; ayu's to its authors, under the MIT licence; Brzz's starting colours to John Sundell's Xcode theme, also under the MIT licence; and Islands' starting colours to JetBrains' IntelliJ Platform, under the Apache 2.0 licence.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/ghostty-dark.webp">

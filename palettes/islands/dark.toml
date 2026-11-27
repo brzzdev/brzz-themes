@@ -4,7 +4,8 @@ appearance = "dark"
 tint_alpha = "1a"
 
 [ui]
-accent = "#538af9"
+# JetBrains' blue-90, a step above its brand blue-80, which falls short on the dark background.
+accent = "#548bfa"
 accent_strong = "#71a1fe"
 background = "#191a1c"
 border = "#33353b"
@@ -55,10 +56,10 @@ unreachable = "#9499a0"
 warning = "#d59637"
 
 # black, red, green, yellow, blue, magenta, cyan, white
-# Darcula's console colours, which Islands Dark inherits, with black lifted off the background, and the rest lightened only as far as 4.5:1 needs.
+# Darcula's console colours, which Islands Dark inherits, with black lifted off the background, white kept a JetBrains step above bright black, and the rest lightened only as far as 4.5:1 needs.
 [ansi]
-normal = ["#33353b", "#f0524f", "#6da83f", "#b29624", "#469fe0", "#ba83d2", "#15a9a9", "#828282"]
-bright = ["#595959", "#fc676a", "#4fc414", "#e5bf00", "#1fb0ff", "#ed7eed", "#00e5e5", "#ffffff"]
+normal = ["#33353b", "#f0524f", "#6da83f", "#b29624", "#469fe0", "#ba83d2", "#15a9a9", "#b1b1b1"]
+bright = ["#828282", "#fc676a", "#4fc414", "#e5bf00", "#1fb0ff", "#ed7eed", "#00e5e5", "#ffffff"]
 
 # The Islands Dark scheme, each colour lightened with its hue kept only as far as 4.5:1 needs. JetBrains leaves types, namespaces, and local variables in plain text.
 [syntax]

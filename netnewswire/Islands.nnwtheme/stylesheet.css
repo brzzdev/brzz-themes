@@ -1,6 +1,6 @@
 :root {
 	color-scheme: dark;
-	--accent: #538af9;
+	--accent: #548bfa;
 	--background: #191a1c;
 	--border: #33353b;
 	--border-variant: #2f3136;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		color-scheme: light;
-		--accent: #3871e1;
+		--accent: #2c64d3;
 		--background: #ffffff;
 		--border: #dddfe4;
 		--border-variant: #f7f8f9;

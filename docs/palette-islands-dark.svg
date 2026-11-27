@@ -8,9 +8,9 @@
   <rect x="234" y="68" width="32" height="32" rx="6" fill="#bcbec4" stroke="#33353b" />
   <text x="276" y="81" fill="#bcbec4">foreground</text>
   <text x="276" y="97" fill="#9fa2a8">#bcbec4</text>
-  <rect x="444" y="68" width="32" height="32" rx="6" fill="#538af9" stroke="#33353b" />
+  <rect x="444" y="68" width="32" height="32" rx="6" fill="#548bfa" stroke="#33353b" />
   <text x="486" y="81" fill="#bcbec4">accent</text>
-  <text x="486" y="97" fill="#9fa2a8">#538af9</text>
+  <text x="486" y="97" fill="#9fa2a8">#548bfa</text>
   <text x="24" y="132" fill="#9fa2a8">Syntax</text>
   <rect x="24" y="156" width="32" height="32" rx="6" fill="#b3ae60" stroke="#33353b" />
   <text x="66" y="169" fill="#bcbec4">attribute</text>
@@ -94,12 +94,12 @@
   <rect x="444" y="464" width="32" height="32" rx="6" fill="#15a9a9" stroke="#33353b" />
   <text x="486" y="477" fill="#bcbec4">cyan</text>
   <text x="486" y="493" fill="#9fa2a8">#15a9a9</text>
-  <rect x="654" y="464" width="32" height="32" rx="6" fill="#828282" stroke="#33353b" />
+  <rect x="654" y="464" width="32" height="32" rx="6" fill="#b1b1b1" stroke="#33353b" />
   <text x="696" y="477" fill="#bcbec4">white</text>
-  <text x="696" y="493" fill="#9fa2a8">#828282</text>
-  <rect x="24" y="508" width="32" height="32" rx="6" fill="#595959" stroke="#33353b" />
+  <text x="696" y="493" fill="#9fa2a8">#b1b1b1</text>
+  <rect x="24" y="508" width="32" height="32" rx="6" fill="#828282" stroke="#33353b" />
   <text x="66" y="521" fill="#bcbec4">bright black</text>
-  <text x="66" y="537" fill="#9fa2a8">#595959</text>
+  <text x="66" y="537" fill="#9fa2a8">#828282</text>
   <rect x="234" y="508" width="32" height="32" rx="6" fill="#fc676a" stroke="#33353b" />
   <text x="276" y="521" fill="#bcbec4">bright red</text>
   <text x="276" y="537" fill="#9fa2a8">#fc676a</text>

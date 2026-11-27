@@ -8,9 +8,9 @@
   <rect x="234" y="68" width="32" height="32" rx="6" fill="#080808" stroke="#dddfe4" />
   <text x="276" y="81" fill="#080808">foreground</text>
   <text x="276" y="97" fill="#4c4f56">#080808</text>
-  <rect x="444" y="68" width="32" height="32" rx="6" fill="#3871e1" stroke="#dddfe4" />
+  <rect x="444" y="68" width="32" height="32" rx="6" fill="#2c64d3" stroke="#dddfe4" />
   <text x="486" y="81" fill="#080808">accent</text>
-  <text x="486" y="97" fill="#4c4f56">#3871e1</text>
+  <text x="486" y="97" fill="#4c4f56">#2c64d3</text>
   <text x="24" y="132" fill="#4c4f56">Syntax</text>
   <rect x="24" y="156" width="32" height="32" rx="6" fill="#72620d" stroke="#dddfe4" />
   <text x="66" y="169" fill="#080808">attribute</text>
