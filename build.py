@@ -288,7 +288,7 @@ HERDR_APP_TEXT_PAIRS = [
 # Dark takes the unsuffixed table, the one herdr keeps when auto_switch is off.
 HERDR_TABLES = {"dark": "theme.custom", "light": "theme.custom.light"}
 
-FONT_STYLES = {"bold", "italic"}
+FONT_STYLES = ("bold", "italic")
 # Markdown headings: the role a palette's `syntax.heading` names, or plain bold text.
 HEADING = "heading"
 
@@ -1607,15 +1607,15 @@ def with_defaults(palette: Palette) -> Palette:
     syntax = dict(palette["syntax"])
     heading = syntax.pop(HEADING, None)
     styles = palette.get("syntax_style", {})
-    unknown = [
+    invalid = [
         f"syntax_style.{role} = {style!r}"
         for role, style in styles.items()
         if role not in syntax or style not in FONT_STYLES
     ]
     if heading is not None and heading not in syntax:
-        unknown.append(f"syntax.heading = {heading!r}")
-    if unknown:
-        raise SystemExit(f"{palette['name']}: unknown {', '.join(unknown)}")
+        invalid.append(f"syntax.heading = {heading!r}")
+    if invalid:
+        raise SystemExit(f"{palette['name']}: invalid {', '.join(invalid)}")
     return palette | {
         "heading": heading,
         "syntax": syntax,
