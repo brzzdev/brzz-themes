@@ -414,6 +414,8 @@ VSCODE_DIFF_TOKENS = [
     (["markup.deleted", "punctuation.definition.deleted.diff"], "ansi.bright.1"),
     (["markup.inserted", "punctuation.definition.inserted.diff"], "ansi.normal.2"),
 ]
+# A font style that sets none, clearing one a token would otherwise inherit.
+VSCODE_CLEARED_STYLE = ""
 # Markdown headings and their `#` markers, which the `punctuation` rule would otherwise claim.
 VSCODE_HEADING_SCOPES = ["markup.heading", "punctuation.definition.heading"]
 VSCODE_TOKENS = [
@@ -1283,46 +1285,53 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     if "vscode" in palette["ports"]:
         return port_theme(palette, "vscode") | {"name": palette["name"]}
     syntax, styles = palette["syntax"], palette["syntax_style"]
-    # Once a role is styled, a rule with no style inherits a broader scope's, as
-    # `string.regexp` would `string`'s; an empty style clears it.
-    unstyled = "" if styles else None
-
-    def settings(colour: str, style: str | None) -> dict[str, str]:
-        return vscode_token_settings(colour, unstyled if style is None else style)
-
-    token_colours = [
-        {
-            "scope": scopes,
-            "settings": settings(*syntax_look(palette, f"syntax.{role}", style)),
-        }
-        for scopes, role, style in VSCODE_TOKENS
-    ]
-    if palette["heading"] is not None:
-        colour, style = heading_look(palette)
-        # Appended after the token rules to override their bold `markup.heading`; an empty
-        # style clears that bold, which an unset one would keep.
-        heading = {"foreground": colour, "fontStyle": style or ""}
-        token_colours.append({"scope": VSCODE_HEADING_SCOPES, "settings": heading})
-    token_colours += [
-        {
-            "scope": scopes,
-            "settings": settings(palette_colour(palette, path), None),
-        }
-        for scopes, path in VSCODE_DIFF_TOKENS
-    ]
     return {
         "name": palette["name"],
         "type": palette["appearance"],
         "semanticHighlighting": True,
         "colors": vscode_colours(palette),
-        "tokenColors": token_colours,
+        "tokenColors": vscode_token_colours(palette),
+        # Once a role is styled, an unstyled selector would take a broader selector's
+        # style, or its TextMate scope's, so it clears it.
         "semanticTokenColors": {
-            selector: vscode_token_settings(syntax[role], styles[role])
-            if role in styles
+            selector: vscode_token_settings(
+                syntax[role], styles.get(role, VSCODE_CLEARED_STYLE)
+            )
+            if styles
             else syntax[role]
             for selector, role in VSCODE_SEMANTIC.items()
         },
     }
+
+
+def vscode_token_colours(palette: Palette) -> list[dict[str, Any]]:
+    rules = [
+        (scopes, *syntax_look(palette, f"syntax.{role}", style))
+        for scopes, role, style in VSCODE_TOKENS
+    ]
+    if palette["heading"] is not None:
+        colour, style = heading_look(palette)
+        # After the token rules, to override their bold `markup.heading`, which an unset
+        # style would keep.
+        rules.append((VSCODE_HEADING_SCOPES, colour, style or VSCODE_CLEARED_STYLE))
+    rules += [
+        (scopes, palette_colour(palette, path), None)
+        for scopes, path in VSCODE_DIFF_TOKENS
+    ]
+    styled = [scope for scopes, _, style in rules if style for scope in scopes]
+    token_colours = []
+    for scopes, colour, style in rules:
+        # An unset style takes a broader styled scope's, as `string.regexp` would
+        # `string`'s, so such a rule clears it; elsewhere it keeps the style of the
+        # scope it sits in, such as a comment's italics.
+        narrows_styled = any(
+            scope.startswith(f"{parent}.") for scope in scopes for parent in styled
+        )
+        if style is None and narrows_styled:
+            style = VSCODE_CLEARED_STYLE
+        settings = vscode_token_settings(colour, style)
+        token_colours.append({"scope": scopes, "settings": settings})
+    return token_colours
 
 
 def package_description(families: list[Family]) -> str:
