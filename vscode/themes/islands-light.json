@@ -113,7 +113,7 @@
     "editorLightBulb.foreground": "#935e0d",
     "editorLightBulbAutoFix.foreground": "#255cca",
     "editorLineNumber.activeForeground": "#080808",
-    "editorLineNumber.foreground": "#606369",
+    "editorLineNumber.foreground": "#717685",
     "editorLink.activeForeground": "#0b63b7",
     "editorOverviewRuler.border": "#dddfe4",
     "editorOverviewRuler.errorForeground": "#b7414d",
@@ -357,7 +357,8 @@
         "variable.other.enummember"
       ],
       "settings": {
-        "foreground": "#871094"
+        "foreground": "#871094",
+        "fontStyle": "italic"
       }
     },
     {
@@ -528,6 +529,16 @@
     },
     {
       "scope": [
+        "markup.heading",
+        "punctuation.definition.heading"
+      ],
+      "settings": {
+        "foreground": "#871094",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
         "markup.changed",
         "punctuation.definition.changed.diff"
       ],
@@ -560,7 +571,10 @@
     "decorator": "#72620d",
     "enum": "#080808",
     "enum.defaultLibrary": "#080808",
-    "enumMember": "#871094",
+    "enumMember": {
+      "foreground": "#871094",
+      "fontStyle": "italic"
+    },
     "function": "#00627a",
     "function.defaultLibrary": "#00627a",
     "interface": "#080808",

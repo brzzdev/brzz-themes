@@ -1,0 +1,14 @@
+# Syntax styles, Markdown headings, and line numbers
+
+`build.py` used to fix every font style: comments in italics, Markdown headings plain and bold. JetBrains draws constants in italics in both Islands schemes, and its Markdown plugin draws headings through `HEADER_LEVEL` keys that fall back to `CONSTANT`, so Islands' headings, `#` markers included, are the constant colour in italics. A palette can now say so:
+
+- A `[syntax_style]` table maps a syntax role to `"italic"` or `"bold"`. Every Zed capture and VS Code token rule, TextMate or semantic, drawn in that role takes the style, unless its mapping sets its own, as comments and Markdown emphasis do.
+- `heading` in `[syntax]` names the role whose colour and style Markdown headings take: Zed's `title` and `markup.heading`, and VS Code's `markup.heading` and `punctuation.definition.heading`, the `#` markers, which VS Code's `punctuation` rule would otherwise claim. Without it, headings stay plain and bold.
+
+Islands Dark and Light set `constant = "italic"` and `heading = "constant"`, so headings are `#ca7fbe` and `#871094` in italics. Booleans, enum members, and Ruby symbols, which the shared mapping draws in the constant colour, turn italic with it, though JetBrains draws booleans as keywords. Static members stay upright: JetBrains italicises them, but `function_system` also covers library calls.
+
+Styles reach only Zed and VS Code. Xcode's recipe, the terminals, and Claude Code take colours alone, so they stay as they were. Markdown table pipes stay plain. Zed captures them as `punctuation.markup`, along with block-quote markers and table delimiter rows, and with no key of that name it falls back to `punctuation`.
+
+Line numbers get their own key. ADR 0004 has every target but Xcode draw them in `ui.quiet`, which holds 4.5:1 on the panel and the element as well as the background. JetBrains' line numbers are fainter, so a palette can set `line_number` in `[ui]`, held to 4.5:1 on the background alone, the only surface the gutter draws them on. Zed's `editor.line_number` and VS Code's `editorLineNumber.foreground` take it, and it defaults to `quiet`. The current line's number stays the foreground colour. Islands Dark's `#7d828b` and Islands Light's `#717685` are JetBrains' `#4b5059` and `#aeb3c2`, each moved with its hue kept only as far as 4.5:1 needs.
+
+A palette that sets none of these generates what it did before, so Geist's, Ayu's, and Brzz's themes are unchanged.
