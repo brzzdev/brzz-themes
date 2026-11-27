@@ -1,0 +1,83 @@
+name = "Islands Dark"
+appearance = "dark"
+# Half the dark tint, so most of JetBrains' syntax colours keep 4.5:1 on diff and diagnostic fills unchanged: see docs/adr/0003-tinted-fills-behind-syntax.md.
+tint_alpha = "1a"
+
+[ui]
+accent = "#538af9"
+accent_strong = "#71a1fe"
+background = "#191a1c"
+border = "#33353b"
+border_strong = "#4c4f56"
+border_variant = "#26282c"
+cursor = "#ced0d6"
+element = "#212326"
+error_fill = "#c54e58"
+# JetBrains' text search fill `#114957` at 25%, and at 39% for the active match, the most at which syntax keeps 4.5:1.
+find = "#17262b"
+find_active = "#162c33"
+find_active_border = "#72d6d6"
+find_border = "#72d6d666"
+find_terminal = "#5c97ab40"
+find_terminal_active = "#58afcb40"
+foreground = "#bcbec4"
+# JetBrains' identifier-under-caret fill `#373b39` at 47%.
+highlight = "#27292a"
+hover = "#1f2024"
+indent = "#323438"
+indent_active = "#4e5157"
+invisible = "#6f737a"
+muted = "#9fa2a8"
+# The main window around the editor, which Islands sets apart.
+panel = "#26282c"
+quiet = "#8c8f95"
+# JetBrains' `#214283` at 38%, the most at which syntax keeps 4.5:1.
+selection = "#1c2943"
+selection_overlay = "#21428361"
+accents = ["#538af9", "#a894f6", "#d59637", "#6aaea6", "#6db083", "#f57e84"]
+
+[status]
+conflict = "#de6a66"
+created = "#73bd79"
+# JetBrains marks deleted files and lines in grey.
+deleted = "#6f737a"
+error = "#f57e84"
+hidden = "#6f737a"
+hint = "#8c9097"
+ignored = "#d69a6b"
+info = "#548bfa"
+modified = "#70aeff"
+predictive = "#8b909b"
+renamed = "#70aeff"
+success = "#6db083"
+unreachable = "#8c9097"
+warning = "#d59637"
+
+# black, red, green, yellow, blue, magenta, cyan, white
+# Darcula's console colours, which Islands Dark inherits, with black lifted off the background and the colours drawn among code lightened to 4.5:1.
+[ansi]
+normal = ["#33353b", "#f0524f", "#649f36", "#aa8e16", "#3d96d7", "#b17bc9", "#00a3a3", "#808080"]
+bright = ["#595959", "#fc555d", "#4fc414", "#e5bf00", "#1fb0ff", "#ed7eed", "#00e5e5", "#ffffff"]
+
+# The Islands Dark scheme, each colour lightened with its hue kept only as far as 4.5:1 needs. JetBrains leaves types, namespaces, and local variables in plain text.
+[syntax]
+attribute = "#b3ae60"
+comment = "#8c9097"
+comment_emphasized = "#749880"
+constant = "#c77dbb"
+function = "#56a8f5"
+function_system = "#57aaf7"
+keyword = "#cf8e6d"
+link = "#568cf9"
+literal = "#bcbec4"
+namespace = "#bcbec4"
+number = "#2aacb8"
+plain = "#bcbec4"
+punctuation = "#bcbec4"
+regex = "#42c3d4"
+string = "#6aab73"
+tag = "#d5b778"
+type = "#bcbec4"
+type_parameter = "#16baac"
+type_system = "#bcbec4"
+variable = "#bcbec4"

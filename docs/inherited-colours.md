@@ -1,6 +1,6 @@
 # Inherited colours
 
-Every app fills each colour key a theme leaves unset from its own base theme, so a key a theme doesn't set shows the base theme's colour. Every family goes through the same `build.py` mappings, so where an entry says Geist, it holds for Ayu Dark Contrast and Brzz Dark too, except in Zed and VS Code, where Ayu Dark Contrast is a port of ayu's own theme and sets the keys that theme sets. This record lists, for each target, every key still left to the base theme and why. It comes from an audit of each app's own defaults (#39), not from `build.py`, so it needs a fresh audit when an app adds keys.
+Every app fills each colour key a theme leaves unset from its own base theme, so a key a theme doesn't set shows the base theme's colour. Every family goes through the same `build.py` mappings, so where an entry says Geist, it holds for Ayu Dark Contrast, Brzz Dark, and Islands too, except in Zed and VS Code, where Ayu Dark Contrast is a port of ayu's own theme and sets the keys that theme sets. This record lists, for each target, every key still left to the base theme and why. It comes from an audit of each app's own defaults (#39), not from `build.py`, so it needs a fresh audit when an app adds keys.
 
 The reasons:
 
