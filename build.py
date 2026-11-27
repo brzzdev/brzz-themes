@@ -1318,19 +1318,24 @@ def vscode_token_colours(palette: Palette) -> list[dict[str, Any]]:
         (scopes, palette_colour(palette, path), None)
         for scopes, path in VSCODE_DIFF_TOKENS
     ]
-    styled = [scope for scopes, _, style in rules if style for scope in scopes]
+    styled = {scope for scopes, _, style in rules if style for scope in scopes}
     token_colours = []
     for scopes, colour, style in rules:
         # An unset style takes a broader styled scope's, as `string.regexp` would
-        # `string`'s, so such a rule clears it; elsewhere it keeps the style of the
-        # scope it sits in, such as a comment's italics.
-        narrows_styled = any(
-            scope.startswith(f"{parent}.") for scope in scopes for parent in styled
-        )
-        if style is None and narrows_styled:
-            style = VSCODE_CLEARED_STYLE
-        settings = vscode_token_settings(colour, style)
-        token_colours.append({"scope": scopes, "settings": settings})
+        # `string`'s, so those scopes clear it in a rule of their own; the rest keep
+        # the style of the scope they sit in, such as a comment's italics.
+        narrowing = [
+            scope
+            for scope in scopes
+            if style is None
+            and any(scope.startswith(f"{parent}.") for parent in styled)
+        ]
+        if kept := [scope for scope in scopes if scope not in narrowing]:
+            settings = vscode_token_settings(colour, style)
+            token_colours.append({"scope": kept, "settings": settings})
+        if narrowing:
+            settings = vscode_token_settings(colour, VSCODE_CLEARED_STYLE)
+            token_colours.append({"scope": narrowing, "settings": settings})
     return token_colours
 
 
