@@ -25,14 +25,14 @@ hover = "#f5f8fe"
 indent = "#ebecf0"
 indent_active = "#aeb3c2"
 invisible = "#adadad"
-muted = "#5f6269"
+muted = "#4c4f56"
 # The main window around the editor, which Islands sets apart.
 panel = "#e9eaee"
 quiet = "#606369"
 # JetBrains' `#a6d2ff` at 63%, the most at which code keeps 4.5:1.
 selection = "#c7e3ff"
 selection_overlay = "#a6d2ffa1"
-accents = ["#3871e1", "#8060db", "#a56906", "#31827b", "#338555", "#c54e58"]
+accents = ["#255cca", "#6d4bc5", "#8a580d", "#176e68", "#1b7143", "#af3946"]
 
 [status]
 conflict = "#de1b2e"

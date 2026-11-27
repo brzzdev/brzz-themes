@@ -35,7 +35,7 @@ quiet = "#95989e"
 # JetBrains' `#214283` at 56%, the most at which code keeps 4.5:1.
 selection = "#1d3056"
 selection_overlay = "#2142838f"
-accents = ["#538af9", "#a894f6", "#d59637", "#6aaea6", "#6db083", "#f57e84"]
+accents = ["#6396fa", "#a894f6", "#d59637", "#6aaea6", "#6db083", "#f57e84"]
 
 [status]
 conflict = "#de6a66"

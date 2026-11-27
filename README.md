@@ -62,7 +62,7 @@ Then set `theme = Geist Dark`, `theme = Geist Light`, `theme = Ayu Dark Contrast
 
 ### herdr
 
-herdr can't load a separate theme file, so paste the contents of `herdr/geist.toml`, `herdr/ayu.toml`, `herdr/brzz.toml`, or `herdr/islands.toml` into `~/.config/herdr/config.toml`, replacing the `[theme]` table and every `[theme.custom]`, `[theme.custom.dark]` and `[theme.custom.light]` table already there. Keep any other `[theme]` keys you want, such as `name`, under the pasted `[theme]` header. Then run:
+herdr can't load a separate theme file, so paste the contents of `herdr/geist.toml`, `herdr/ayu.toml`, `herdr/brzz.toml`, or `herdr/islands.toml` into `~/.config/herdr/config.toml`, replacing the `[theme]` table and every `[theme.custom]`, `[theme.custom.dark]`, and `[theme.custom.light]` table already there. Keep any other `[theme]` keys you want, such as `name`, under the pasted `[theme]` header. Then run:
 
 ```sh
 herdr server reload-config
