@@ -9,20 +9,20 @@ accent_strong = "#71a1fe"
 background = "#191a1c"
 border = "#33353b"
 border_strong = "#4c4f56"
-border_variant = "#26282c"
+border_variant = "#2f3136"
 cursor = "#ced0d6"
 # Between JetBrains' gray-30 and gray-40, about as far from `panel` as Geist Dark's element is from its panel.
 element = "#2f3136"
 error_fill = "#c54e58"
-# JetBrains' text search fill `#114957` at 40%, and at 58% for the active match, the most at which syntax keeps 4.5:1.
+# JetBrains' text search fill `#114957` at 40%, and at 58% for the active match, the most at which code keeps 4.5:1.
 find = "#162d34"
 find_active = "#14353e"
 find_active_border = "#72d6d6"
 find_border = "#72d6d666"
-find_terminal = "#58b3cf40"
-find_terminal_active = "#50d3f740"
+find_terminal = "#0d667c40"
+find_terminal_active = "#0586a340"
 foreground = "#bcbec4"
-# JetBrains' identifier-under-caret fill `#373b39` at 71%, the most at which syntax keeps 4.5:1.
+# JetBrains' identifier-under-caret fill `#373b39` at 71%, the most at which code keeps 4.5:1.
 highlight = "#2e3131"
 hover = "#1f2024"
 indent = "#323438"
@@ -32,7 +32,7 @@ muted = "#9fa2a8"
 # The main window around the editor, which Islands sets apart.
 panel = "#26282c"
 quiet = "#95989e"
-# JetBrains' `#214283` at 56%, the most at which syntax keeps 4.5:1.
+# JetBrains' `#214283` at 56%, the most at which code keeps 4.5:1.
 selection = "#1d3056"
 selection_overlay = "#2142838f"
 accents = ["#538af9", "#a894f6", "#d59637", "#6aaea6", "#6db083", "#f57e84"]

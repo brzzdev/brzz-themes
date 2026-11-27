@@ -7,12 +7,12 @@ accent_strong = "#2f5eb9"
 background = "#ffffff"
 border = "#dddfe4"
 border_strong = "#b5b7bd"
-border_variant = "#e9eaee"
+border_variant = "#f7f8f9"
 cursor = "#000000"
-# JetBrains' gray-140, a step darker than `panel`, which its own inactive selection, gray-150, matches.
+# JetBrains' gray-140, a step darker than its inactive selection, gray-150, which `panel` takes.
 element = "#dddfe4"
 error_fill = "#c54e58"
-# JetBrains' text search fill `#fcd47e` at 83%, the most at which syntax keeps 4.5:1. The active match is set apart by its border alone, as in Geist Light.
+# JetBrains' text search fill `#fcd47e` at 83%, the most at which code keeps 4.5:1. The active match is set apart by its border alone, as in Geist Light.
 find = "#fddb94"
 find_active = "#fddb94"
 find_active_border = "#c47233"
@@ -29,7 +29,7 @@ muted = "#5f6269"
 # The main window around the editor, which Islands sets apart.
 panel = "#e9eaee"
 quiet = "#606369"
-# JetBrains' `#a6d2ff` at 63%, the most at which syntax keeps 4.5:1.
+# JetBrains' `#a6d2ff` at 63%, the most at which code keeps 4.5:1.
 selection = "#c7e3ff"
 selection_overlay = "#a6d2ffa1"
 accents = ["#3871e1", "#8060db", "#a56906", "#31827b", "#338555", "#c54e58"]

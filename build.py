@@ -1293,7 +1293,7 @@ def vscode_manifest(palettes: list[Palette], description: str) -> dict[str, Any]
         "description": description,
         "version": "1.0.0",
         "publisher": AUTHOR,
-        "license": "MIT",
+        "license": "MIT AND Apache-2.0",
         "repository": REPOSITORY_URL,
         "engines": {"vscode": "^1.81.0"},
         "categories": ["Themes"],

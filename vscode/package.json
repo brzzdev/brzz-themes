@@ -4,7 +4,7 @@
   "description": "Ayu Dark Contrast, built from the colours of ayu's dark theme. Unofficial: not made or endorsed by the ayu project. Brzz Dark, built from the colours of John Sundell's Xcode theme. Unofficial: not made or endorsed by John Sundell. Geist Dark and Geist Light, built from the colours of Vercel's Geist terminal themes. Unofficial: not made or endorsed by Vercel. Islands Dark and Islands Light, built from the colours of JetBrains' Islands themes. Unofficial: not made or endorsed by JetBrains.",
   "version": "1.0.0",
   "publisher": "brzzdev",
-  "license": "MIT",
+  "license": "MIT AND Apache-2.0",
   "repository": "https://github.com/brzzdev/brzz-themes",
   "engines": {
     "vscode": "^1.81.0"
