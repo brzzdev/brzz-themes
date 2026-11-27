@@ -1,0 +1,84 @@
+name = "Islands Light"
+appearance = "light"
+
+[ui]
+# JetBrains' brand blue-80, darkened only as far as 4.5:1 on `panel` needs.
+accent = "#2c64d3"
+accent_strong = "#2f5eb9"
+background = "#ffffff"
+border = "#dddfe4"
+border_strong = "#b5b7bd"
+border_variant = "#f7f8f9"
+cursor = "#000000"
+# JetBrains' gray-140, a step darker than its inactive selection, gray-150, which `panel` takes.
+element = "#dddfe4"
+error_fill = "#c54e58"
+# JetBrains' text search fill `#fcd47e` at 83%, the most at which code keeps 4.5:1. The active match is set apart by its border alone, as in Geist Light.
+find = "#fddb94"
+find_active = "#fddb94"
+find_active_border = "#c47233"
+# Outlined, since its fill barely shows on the grey `panel`: see docs/adr/0002-find-match-contrast.md.
+find_border = "#c4723366"
+find_terminal = "#fbb72a80"
+find_terminal_active = "#fbb72a80"
+foreground = "#080808"
+highlight = "#edebfc"
+hover = "#f5f8fe"
+indent = "#dddfe4"
+indent_active = "#aeb3c2"
+invisible = "#adadad"
+# JetBrains' gray-60, a step darker than its muted text, so it stands apart from `quiet`.
+muted = "#4c4f56"
+# The main window around the editor, which Islands sets apart.
+panel = "#e9eaee"
+quiet = "#606369"
+# JetBrains' `#a6d2ff` at 63%, the most at which code keeps 4.5:1.
+selection = "#c7e3ff"
+selection_overlay = "#a6d2ffa1"
+accents = ["#255cca", "#6d4bc5", "#8a580d", "#176e68", "#1b7143", "#af3946"]
+
+[status]
+conflict = "#d50526"
+created = "#027b15"
+# JetBrains marks deleted files and lines in grey.
+deleted = "#656977"
+error = "#b7414d"
+hidden = "#656977"
+hint = "#636363"
+ignored = "#8c4f00"
+info = "#255cca"
+modified = "#0033b3"
+predictive = "#636363"
+renamed = "#0033b3"
+success = "#1b7143"
+unreachable = "#636363"
+warning = "#935e0d"
+
+# black, red, green, yellow, blue, magenta, cyan, white
+# The Default scheme's console colours, which Islands Light inherits, each darkened only as far as 4.5:1 needs, and bright white as dark as the foreground, as in Geist Light.
+[ansi]
+normal = ["#000000", "#ce0505", "#037313", "#795f09", "#063fdb", "#b000b0", "#0a6e6e", "#767676"]
+bright = ["#656565", "#c51412", "#118921", "#8e7411", "#2d61f0", "#bd15bd", "#158383", "#080808"]
+
+# The New UI Light scheme Islands Light uses, each colour darkened with its hue kept only as far as 4.5:1 needs. JetBrains leaves types, namespaces, and local variables in plain text, and doc comments in the comment colour.
+[syntax]
+attribute = "#72620d"
+comment = "#636363"
+comment_emphasized = "#636363"
+constant = "#871094"
+function = "#00627a"
+function_system = "#00627a"
+keyword = "#0033b3"
+link = "#0b63b7"
+literal = "#080808"
+namespace = "#080808"
+number = "#1750eb"
+plain = "#080808"
+punctuation = "#080808"
+regex = "#244bfc"
+string = "#037313"
+tag = "#0033b3"
+type = "#080808"
+type_parameter = "#016d78"
+type_system = "#080808"
+variable = "#080808"

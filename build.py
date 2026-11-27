@@ -59,17 +59,22 @@ SLACK_BADGE_TEXT = "#ffffff"
 # Each text colour reaches the minimum on the ground it's paired with.
 TEXT_PAIRS = [
     ("ansi.normal.0", "ui.find_active_border"),
-    ("status.hint", "ui.background"),
     ("status.hint", "ui.element"),
     ("status.hint", "ui.hover"),
-    ("status.predictive", "ui.background"),
     ("status.predictive", "ui.hover"),
     (SLACK_BADGE_TEXT, "ui.error_fill"),
+    ("ui.accent", "ui.panel"),
     ("ui.foreground", "tint.accent"),
     ("ui.quiet", "ui.background"),
     ("ui.quiet", "ui.element"),
     ("ui.quiet", "ui.panel"),
 ]
+# Terminal text: every ANSI colour but normal black, which programs use as a fill.
+ANSI_TEXT_PATHS = [f"ansi.bright.{index}" for index in range(len(ANSI_NAMES))] + [
+    f"ansi.normal.{index}" for index in range(1, len(ANSI_NAMES))
+]
+# Grounds every status colour reaches the minimum on.
+STATUS_GROUNDS = ["background", "panel"]
 # Every syntax role reaches the minimum on these, and on every tint.
 SYNTAX_GROUNDS = [
     "background",
@@ -1291,7 +1296,7 @@ def vscode_manifest(palettes: list[Palette], description: str) -> dict[str, Any]
         "description": description,
         "version": "1.0.0",
         "publisher": AUTHOR,
-        "license": "MIT",
+        "license": "MIT AND Apache-2.0",
         "repository": REPOSITORY_URL,
         "engines": {"vscode": "^1.81.0"},
         "categories": ["Themes"],
@@ -1384,6 +1389,19 @@ def contrast_failures(palette: Palette) -> list[str]:
         (f"{path} on {name}", palette_colour(palette, path), ground)
         for name, ground in syntax_grounds(palette).items()
         for path in SYNTAX_LIKE_PATHS
+    ]
+    pairs += [
+        (f"status.{name} on ui.{ground}", colour, palette["ui"][ground])
+        for name, colour in palette["status"].items()
+        for ground in STATUS_GROUNDS
+    ]
+    pairs += [
+        (
+            f"{path} on ui.background",
+            palette_colour(palette, path),
+            palette["ui"]["background"],
+        )
+        for path in ANSI_TEXT_PATHS
     ]
     pairs += claude_code_contrast_pairs(palette)
     pairs += port_contrast_pairs(palette)
