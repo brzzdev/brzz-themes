@@ -414,8 +414,8 @@ VSCODE_DIFF_TOKENS = [
     (["markup.deleted", "punctuation.definition.deleted.diff"], "ansi.bright.1"),
     (["markup.inserted", "punctuation.definition.inserted.diff"], "ansi.normal.2"),
 ]
-# A palette's named heading role: listed after VSCODE_TOKENS so it overrides their bold
-# `markup.heading`, and taking in the `#` markers the `punctuation` rule would match first.
+# A palette's named heading role, appended after the token rules to override their bold
+# `markup.heading`; `#` markers are `punctuation.definition.heading`, which `punctuation` claims.
 VSCODE_HEADING_SCOPES = ["markup.heading", "punctuation.definition.heading"]
 VSCODE_TOKENS = [
     (
@@ -1287,12 +1287,16 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     token_colours = [
         {
             "scope": scopes,
-            "settings": vscode_token_settings(syntax[role], style or styles.get(role)),
+            "settings": vscode_token_settings(
+                *syntax_look(palette, f"syntax.{role}", style)
+            ),
         }
         for scopes, role, style in VSCODE_TOKENS
     ]
     if palette["heading"] is not None:
-        heading = vscode_token_settings(*heading_look(palette))
+        colour, style = heading_look(palette)
+        # An empty style clears the bold an unset one would inherit from the token rules.
+        heading = {"foreground": colour, "fontStyle": style or ""}
         token_colours.append({"scope": VSCODE_HEADING_SCOPES, "settings": heading})
     token_colours += [
         {
