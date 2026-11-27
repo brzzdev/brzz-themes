@@ -1283,12 +1283,17 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     if "vscode" in palette["ports"]:
         return port_theme(palette, "vscode") | {"name": palette["name"]}
     syntax, styles = palette["syntax"], palette["syntax_style"]
+    # Once a role is styled, a rule with no style inherits a broader scope's, as
+    # `string.regexp` would `string`'s; an empty style clears it.
+    unstyled = "" if styles else None
+
+    def settings(colour: str, style: str | None) -> dict[str, str]:
+        return vscode_token_settings(colour, unstyled if style is None else style)
+
     token_colours = [
         {
             "scope": scopes,
-            "settings": vscode_token_settings(
-                *syntax_look(palette, f"syntax.{role}", style)
-            ),
+            "settings": settings(*syntax_look(palette, f"syntax.{role}", style)),
         }
         for scopes, role, style in VSCODE_TOKENS
     ]
@@ -1301,7 +1306,7 @@ def vscode_theme(palette: Palette) -> dict[str, Any]:
     token_colours += [
         {
             "scope": scopes,
-            "settings": vscode_token_settings(palette_colour(palette, path), None),
+            "settings": settings(palette_colour(palette, path), None),
         }
         for scopes, path in VSCODE_DIFF_TOKENS
     ]
