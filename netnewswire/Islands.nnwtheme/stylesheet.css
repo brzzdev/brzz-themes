@@ -4,14 +4,14 @@
 	--background: #191a1c;
 	--border: #33353b;
 	--border-variant: #26282c;
-	--code-background: #212326;
-	--find: #17262b;
+	--code-background: #2f3136;
+	--find: #162d34;
 	--foreground: #bcbec4;
 	--link: #71a1fe;
 	--muted: #9fa2a8;
 	--panel: #26282c;
-	--quiet: #8c8f95;
-	--selection: #1c2943;
+	--quiet: #95989e;
+	--selection: #1d3056;
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,14 +21,14 @@
 		--background: #ffffff;
 		--border: #dddfe4;
 		--border-variant: #e9eaee;
-		--code-background: #e9eaee;
-		--find: #fde8b9;
+		--code-background: #dddfe4;
+		--find: #fddb94;
 		--foreground: #080808;
 		--link: #2f5eb9;
 		--muted: #5f6269;
 		--panel: #e9eaee;
-		--quiet: #66696f;
-		--selection: #d9ecff;
+		--quiet: #606369;
+		--selection: #c7e3ff;
 	}
 }
 

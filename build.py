@@ -58,7 +58,9 @@ MINIMUM_CONTRAST = 4.5
 SLACK_BADGE_TEXT = "#ffffff"
 # Each text colour reaches the minimum on the ground it's paired with.
 TEXT_PAIRS = [
+    ("ansi.bright.7", "ui.background"),
     ("ansi.normal.0", "ui.find_active_border"),
+    ("ansi.normal.7", "ui.background"),
     ("status.hint", "ui.background"),
     ("status.hint", "ui.element"),
     ("status.hint", "ui.hover"),

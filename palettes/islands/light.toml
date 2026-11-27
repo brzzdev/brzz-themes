@@ -9,15 +9,16 @@ border = "#dddfe4"
 border_strong = "#b5b7bd"
 border_variant = "#e9eaee"
 cursor = "#000000"
-element = "#e9eaee"
+# JetBrains' gray-140, a step darker than `panel`, which its own inactive selection, gray-150, matches.
+element = "#dddfe4"
 error_fill = "#c54e58"
-# JetBrains' text search fill `#fcd47e` at 55%, the most at which syntax keeps 4.5:1. The active match is set apart by its border alone, as in Geist Light.
-find = "#fde8b9"
-find_active = "#fde8b9"
+# JetBrains' text search fill `#fcd47e` at 83%, the most at which syntax keeps 4.5:1. The active match is set apart by its border alone, as in Geist Light.
+find = "#fddb94"
+find_active = "#fddb94"
 find_active_border = "#c47233"
 find_border = "#00000000"
-find_terminal = "#fbd17480"
-find_terminal_active = "#fbd17480"
+find_terminal = "#fbb72a80"
+find_terminal_active = "#fbb72a80"
 foreground = "#080808"
 highlight = "#edebfc"
 hover = "#f5f8fe"
@@ -27,10 +28,10 @@ invisible = "#adadad"
 muted = "#5f6269"
 # The main window around the editor, which Islands sets apart.
 panel = "#e9eaee"
-quiet = "#66696f"
-# JetBrains' `#a6d2ff` at 43%, the most at which syntax keeps 4.5:1.
-selection = "#d9ecff"
-selection_overlay = "#a6d2ff6e"
+quiet = "#606369"
+# JetBrains' `#a6d2ff` at 63%, the most at which syntax keeps 4.5:1.
+selection = "#c7e3ff"
+selection_overlay = "#a6d2ffa1"
 accents = ["#3871e1", "#8060db", "#a56906", "#31827b", "#338555", "#c54e58"]
 
 [status]
@@ -38,43 +39,43 @@ conflict = "#de1b2e"
 created = "#067d17"
 # JetBrains marks deleted files and lines in grey.
 deleted = "#6c707e"
-error = "#b6404c"
+error = "#c14a55"
 hidden = "#6c707e"
-hint = "#696969"
+hint = "#636363"
 ignored = "#8c4f00"
-info = "#2b63d2"
+info = "#255cca"
 modified = "#0033b3"
-predictive = "#696969"
+predictive = "#636363"
 renamed = "#0033b3"
-success = "#247849"
-unreachable = "#696969"
-warning = "#935e0c"
+success = "#1b7143"
+unreachable = "#636363"
+warning = "#935e0d"
 
 # black, red, green, yellow, blue, magenta, cyan, white
-# The Light scheme's console colours, with each colour Claude Code draws as text darkened to 4.5:1 on the background.
+# The Light scheme's console colours, each darkened only as far as 4.5:1 needs, and bright white as dark as the foreground, as in Geist Light.
 [ansi]
-normal = ["#000000", "#ce0505", "#017b14", "#826609", "#063fdb", "#b309b3", "#077575", "#929292"]
-bright = ["#656565", "#c61713", "#118921", "#8d730f", "#2d61f0", "#bd15bd", "#158383", "#c9c9c9"]
+normal = ["#000000", "#ce0505", "#037313", "#795f09", "#063fdb", "#b000b0", "#0a6e6e", "#767676"]
+bright = ["#656565", "#c51412", "#118921", "#8e7411", "#2d61f0", "#bd15bd", "#158383", "#080808"]
 
 # The New UI Light scheme Islands Light uses, each colour darkened with its hue kept only as far as 4.5:1 needs. JetBrains leaves types, namespaces, and local variables in plain text, and doc comments in the comment colour.
 [syntax]
-attribute = "#7a690e"
-comment = "#696969"
-comment_emphasized = "#696969"
+attribute = "#72620d"
+comment = "#636363"
+comment_emphasized = "#636363"
 constant = "#871094"
 function = "#00627a"
 function_system = "#00627a"
 keyword = "#0033b3"
-link = "#0969c3"
+link = "#0b63b7"
 literal = "#080808"
 namespace = "#080808"
 number = "#1750eb"
 plain = "#080808"
 punctuation = "#080808"
-regex = "#264eff"
-string = "#017b14"
+regex = "#244bfc"
+string = "#037313"
 tag = "#0033b3"
 type = "#080808"
-type_parameter = "#12747f"
+type_parameter = "#016d78"
 type_system = "#080808"
 variable = "#080808"
