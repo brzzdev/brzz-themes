@@ -38,12 +38,12 @@ selection_overlay = "#2142838f"
 accents = ["#6396fa", "#a894f6", "#d59637", "#6aaea6", "#6db083", "#f57e84"]
 
 [status]
-conflict = "#de6a66"
+conflict = "#df6b67"
 created = "#73bd79"
 # JetBrains marks deleted files and lines in grey.
-deleted = "#6f737a"
+deleted = "#8a8f96"
 error = "#f57e84"
-hidden = "#6f737a"
+hidden = "#8a8f96"
 hint = "#9499a0"
 ignored = "#d69a6b"
 info = "#6396fa"

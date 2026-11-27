@@ -16,15 +16,17 @@ error_fill = "#c54e58"
 find = "#fddb94"
 find_active = "#fddb94"
 find_active_border = "#c47233"
-find_border = "#00000000"
+# Outlined, since its fill barely shows on the grey `panel`: see docs/adr/0002-find-match-contrast.md.
+find_border = "#c4723366"
 find_terminal = "#fbb72a80"
 find_terminal_active = "#fbb72a80"
 foreground = "#080808"
 highlight = "#edebfc"
 hover = "#f5f8fe"
-indent = "#ebecf0"
+indent = "#dddfe4"
 indent_active = "#aeb3c2"
 invisible = "#adadad"
+# JetBrains' gray-60, a step darker than its muted text, so it stands apart from `quiet`.
 muted = "#4c4f56"
 # The main window around the editor, which Islands sets apart.
 panel = "#e9eaee"
@@ -35,12 +37,12 @@ selection_overlay = "#a6d2ffa1"
 accents = ["#255cca", "#6d4bc5", "#8a580d", "#176e68", "#1b7143", "#af3946"]
 
 [status]
-conflict = "#de1b2e"
-created = "#067d17"
+conflict = "#d50526"
+created = "#027b15"
 # JetBrains marks deleted files and lines in grey.
-deleted = "#6c707e"
-error = "#c14a55"
-hidden = "#6c707e"
+deleted = "#656977"
+error = "#b7414d"
+hidden = "#656977"
 hint = "#636363"
 ignored = "#8c4f00"
 info = "#255cca"
@@ -52,7 +54,7 @@ unreachable = "#636363"
 warning = "#935e0d"
 
 # black, red, green, yellow, blue, magenta, cyan, white
-# The Light scheme's console colours, each darkened only as far as 4.5:1 needs, and bright white as dark as the foreground, as in Geist Light.
+# The Default scheme's console colours, which Islands Light inherits, each darkened only as far as 4.5:1 needs, and bright white as dark as the foreground, as in Geist Light.
 [ansi]
 normal = ["#000000", "#ce0505", "#037313", "#795f09", "#063fdb", "#b000b0", "#0a6e6e", "#767676"]
 bright = ["#656565", "#c51412", "#118921", "#8e7411", "#2d61f0", "#bd15bd", "#158383", "#080808"]

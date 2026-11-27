@@ -58,9 +58,7 @@ MINIMUM_CONTRAST = 4.5
 SLACK_BADGE_TEXT = "#ffffff"
 # Each text colour reaches the minimum on the ground it's paired with.
 TEXT_PAIRS = [
-    ("ansi.bright.7", "ui.background"),
     ("ansi.normal.0", "ui.find_active_border"),
-    ("ansi.normal.7", "ui.background"),
     ("status.hint", "ui.background"),
     ("status.hint", "ui.element"),
     ("status.hint", "ui.hover"),
@@ -72,6 +70,12 @@ TEXT_PAIRS = [
     ("ui.quiet", "ui.element"),
     ("ui.quiet", "ui.panel"),
 ]
+# Terminal text: every ANSI colour but black, which programs use as a fill.
+ANSI_TEXT_PATHS = [
+    f"ansi.{kind}.{index}" for kind in ("bright", "normal") for index in range(1, 8)
+]
+# Every status colour reaches the minimum on these, where file names and labels take it.
+STATUS_GROUNDS = ["background", "panel"]
 # Every syntax role reaches the minimum on these, and on every tint.
 SYNTAX_GROUNDS = [
     "background",
@@ -1386,6 +1390,19 @@ def contrast_failures(palette: Palette) -> list[str]:
         (f"{path} on {name}", palette_colour(palette, path), ground)
         for name, ground in syntax_grounds(palette).items()
         for path in SYNTAX_LIKE_PATHS
+    ]
+    pairs += [
+        (f"status.{name} on ui.{ground}", colour, palette["ui"][ground])
+        for name, colour in palette["status"].items()
+        for ground in STATUS_GROUNDS
+    ]
+    pairs += [
+        (
+            f"{path} on ui.background",
+            palette_colour(palette, path),
+            palette["ui"]["background"],
+        )
+        for path in ANSI_TEXT_PATHS
     ]
     pairs += claude_code_contrast_pairs(palette)
     pairs += port_contrast_pairs(palette)
