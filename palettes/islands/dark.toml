@@ -4,7 +4,7 @@ appearance = "dark"
 tint_alpha = "1a"
 
 [ui]
-# JetBrains' blue-90, a step above its brand blue-80, which falls short on the dark background.
+# JetBrains' blue-90, a step above its brand blue-80, lightened only as far as 4.5:1 on `panel` needs.
 accent = "#548bfa"
 accent_strong = "#71a1fe"
 background = "#191a1c"
