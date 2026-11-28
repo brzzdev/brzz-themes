@@ -65,6 +65,7 @@ TEXT_PAIRS = [
     (SLACK_BADGE_TEXT, "ui.error_fill"),
     ("ui.accent", "ui.panel"),
     ("ui.foreground", "tint.accent"),
+    ("ui.line_number", "ui.background"),
     ("ui.quiet", "ui.background"),
     ("ui.quiet", "ui.element"),
     ("ui.quiet", "ui.panel"),
@@ -287,6 +288,10 @@ HERDR_APP_TEXT_PAIRS = [
 # Dark takes the unsuffixed table, the one herdr keeps when auto_switch is off.
 HERDR_TABLES = {"dark": "theme.custom", "light": "theme.custom.light"}
 
+FONT_STYLES = ("bold", "italic")
+# Markdown headings: the role a palette's `syntax.heading` names, or plain bold text.
+HEADING = "heading"
+
 ZED_SYNTAX = {
     "attribute": ("syntax.attribute", None),
     "boolean": ("syntax.constant", None),
@@ -309,7 +314,7 @@ ZED_SYNTAX = {
     "lifetime": ("syntax.type_parameter", None),
     "link_text": ("syntax.link", None),
     "link_uri": ("syntax.link", None),
-    "markup.heading": ("syntax.plain", "bold"),
+    "markup.heading": (HEADING, None),
     "module": ("syntax.namespace", None),
     "namespace": ("syntax.namespace", None),
     "number": ("syntax.number", None),
@@ -325,7 +330,7 @@ ZED_SYNTAX = {
     "string.special.symbol": ("syntax.constant", None),
     "tag": ("syntax.tag", None),
     "text.literal": ("syntax.literal", None),
-    "title": ("syntax.plain", "bold"),
+    "title": (HEADING, None),
     "type": ("syntax.type", None),
     "type.builtin": ("syntax.type_system", None),
     "type.parameter": ("syntax.type_parameter", None),
@@ -409,6 +414,10 @@ VSCODE_DIFF_TOKENS = [
     (["markup.deleted", "punctuation.definition.deleted.diff"], "ansi.bright.1"),
     (["markup.inserted", "punctuation.definition.inserted.diff"], "ansi.normal.2"),
 ]
+# A font style that sets none, clearing one a token would otherwise inherit.
+VSCODE_CLEARED_STYLE = ""
+# Markdown headings and their `#` markers, which the `punctuation` rule would otherwise claim.
+VSCODE_HEADING_SCOPES = ["markup.heading", "punctuation.definition.heading"]
 VSCODE_TOKENS = [
     (
         [
@@ -527,6 +536,24 @@ def palette_colour(palette: Palette, path: str) -> str:
     return value[int(index[0])] if index else value
 
 
+def heading_look(palette: Palette) -> tuple[str, str | None]:
+    syntax, role = palette["syntax"], palette["heading"]
+    if role is None:
+        return syntax["plain"], "bold"
+    return syntax[role], palette["syntax_style"].get(role)
+
+
+def syntax_look(
+    palette: Palette, path: str, style: str | None
+) -> tuple[str, str | None]:
+    if path == HEADING:
+        return heading_look(palette)
+    group, _, role = path.partition(".")
+    if group == "syntax":
+        style = style or palette["syntax_style"].get(role)
+    return palette_colour(palette, path), style
+
+
 def zed_syntax_style(colour: str, style: str | None) -> dict[str, Any]:
     if style == "bold":
         return {"color": colour, "font_weight": 700}
@@ -568,7 +595,7 @@ def zed_style(palette: Palette) -> dict[str, Any]:
         "editor.indent_guide": ui["indent"],
         "editor.indent_guide_active": ui["indent_active"],
         "editor.invisible": ui["invisible"],
-        "editor.line_number": ui["quiet"],
+        "editor.line_number": ui["line_number"],
         "editor.subheader.background": ui["panel"],
         "editor.wrap_guide": ui["border"],
         "element.active": ui["selection"],
@@ -608,7 +635,7 @@ def zed_style(palette: Palette) -> dict[str, Any]:
         "status_bar.background": ui["panel"],
         "surface.background": ui["panel"],
         "syntax": {
-            token: zed_syntax_style(palette_colour(palette, path), font)
+            token: zed_syntax_style(*syntax_look(palette, path, font))
             for token, (path, font) in ZED_SYNTAX.items()
         },
         "tab.active_background": ui["background"],
@@ -1047,7 +1074,7 @@ def vscode_colours(palette: Palette) -> dict[str, str]:
         "editorLightBulb.foreground": status["warning"],
         "editorLightBulbAutoFix.foreground": status["info"],
         "editorLineNumber.activeForeground": ui["foreground"],
-        "editorLineNumber.foreground": ui["quiet"],
+        "editorLineNumber.foreground": ui["line_number"],
         "editorLink.activeForeground": syntax["link"],
         "editorOverviewRuler.border": ui["border"],
         "editorOverviewRuler.errorForeground": status["error"],
@@ -1257,27 +1284,59 @@ def vscode_token_settings(colour: str, style: str | None) -> dict[str, str]:
 def vscode_theme(palette: Palette) -> dict[str, Any]:
     if "vscode" in palette["ports"]:
         return port_theme(palette, "vscode") | {"name": palette["name"]}
-    syntax = palette["syntax"]
+    syntax, styles = palette["syntax"], palette["syntax_style"]
     return {
         "name": palette["name"],
         "type": palette["appearance"],
         "semanticHighlighting": True,
         "colors": vscode_colours(palette),
-        "tokenColors": [
-            {"scope": scopes, "settings": vscode_token_settings(syntax[role], style)}
-            for scopes, role, style in VSCODE_TOKENS
-        ]
-        + [
-            {
-                "scope": scopes,
-                "settings": vscode_token_settings(palette_colour(palette, path), None),
-            }
-            for scopes, path in VSCODE_DIFF_TOKENS
-        ],
+        "tokenColors": vscode_token_colours(palette),
+        # Once a role is styled, an unstyled selector would take a broader selector's
+        # style, or its TextMate scope's, so it clears it.
         "semanticTokenColors": {
-            selector: syntax[role] for selector, role in VSCODE_SEMANTIC.items()
+            selector: vscode_token_settings(
+                syntax[role], styles.get(role, VSCODE_CLEARED_STYLE)
+            )
+            if styles
+            else syntax[role]
+            for selector, role in VSCODE_SEMANTIC.items()
         },
     }
+
+
+def vscode_token_colours(palette: Palette) -> list[dict[str, Any]]:
+    rules = [
+        (scopes, *syntax_look(palette, f"syntax.{role}", style))
+        for scopes, role, style in VSCODE_TOKENS
+    ]
+    if palette["heading"] is not None:
+        colour, style = heading_look(palette)
+        # After the token rules, to override their bold `markup.heading`, which an unset
+        # style would keep.
+        rules.append((VSCODE_HEADING_SCOPES, colour, style or VSCODE_CLEARED_STYLE))
+    rules += [
+        (scopes, palette_colour(palette, path), None)
+        for scopes, path in VSCODE_DIFF_TOKENS
+    ]
+    styled = {scope for scopes, _, style in rules if style for scope in scopes}
+    token_colours = []
+    for scopes, colour, style in rules:
+        # An unset style takes a broader styled scope's, as `string.regexp` would
+        # `string`'s, so those scopes clear it in a rule of their own; the rest keep
+        # the style of the scope they sit in, such as a comment's italics.
+        narrowing = [
+            scope
+            for scope in scopes
+            if style is None
+            and any(scope.startswith(f"{parent}.") for parent in styled)
+        ]
+        if kept := [scope for scope in scopes if scope not in narrowing]:
+            settings = vscode_token_settings(colour, style)
+            token_colours.append({"scope": kept, "settings": settings})
+        if narrowing:
+            settings = vscode_token_settings(colour, VSCODE_CLEARED_STYLE)
+            token_colours.append({"scope": narrowing, "settings": settings})
+    return token_colours
 
 
 def package_description(families: list[Family]) -> str:
@@ -1551,11 +1610,32 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
 def load_family(folder: Path) -> Family:
     family = tomllib.loads((folder / FAMILY_FILE).read_text())
     family["palettes"] = [
-        with_ports(with_tints(tomllib.loads(p.read_text())), folder)
+        with_ports(with_tints(with_defaults(tomllib.loads(p.read_text()))), folder)
         for p in sorted(folder.glob("*.toml"))
         if p.name != FAMILY_FILE
     ]
     return family
+
+
+def with_defaults(palette: Palette) -> Palette:
+    syntax = dict(palette["syntax"])
+    heading = syntax.pop(HEADING, None)
+    styles = palette.get("syntax_style", {})
+    invalid = [
+        f"syntax_style.{role} = {style!r}"
+        for role, style in styles.items()
+        if role not in syntax or style not in FONT_STYLES
+    ]
+    if heading is not None and heading not in syntax:
+        invalid.append(f"syntax.heading = {heading!r}")
+    if invalid:
+        raise SystemExit(f"{palette['name']}: invalid {', '.join(invalid)}")
+    return palette | {
+        "heading": heading,
+        "syntax": syntax,
+        "syntax_style": styles,
+        "ui": {"line_number": palette["ui"]["quiet"]} | palette["ui"],
+    }
 
 
 def with_ports(palette: Palette, folder: Path) -> Palette:

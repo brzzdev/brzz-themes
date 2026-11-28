@@ -27,6 +27,8 @@ hover = "#f5f8fe"
 indent = "#dddfe4"
 indent_active = "#aeb3c2"
 invisible = "#adadad"
+# JetBrains' line-number colour `#aeb3c2`, darkened with its hue kept only as far as 4.5:1 on `background` needs.
+line_number = "#717685"
 # JetBrains' gray-60, a step darker than its muted text, so it stands apart from `quiet`.
 muted = "#4c4f56"
 # The main window around the editor, which Islands sets apart.
@@ -68,6 +70,8 @@ comment_emphasized = "#636363"
 constant = "#871094"
 function = "#00627a"
 function_system = "#00627a"
+# JetBrains' Markdown plugin draws headings as constants.
+heading = "constant"
 keyword = "#0033b3"
 link = "#0b63b7"
 literal = "#080808"
@@ -82,3 +86,7 @@ type = "#080808"
 type_parameter = "#016d78"
 type_system = "#080808"
 variable = "#080808"
+
+# JetBrains draws constants in italics.
+[syntax_style]
+constant = "italic"

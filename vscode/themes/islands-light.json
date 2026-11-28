@@ -113,7 +113,7 @@
     "editorLightBulb.foreground": "#935e0d",
     "editorLightBulbAutoFix.foreground": "#255cca",
     "editorLineNumber.activeForeground": "#080808",
-    "editorLineNumber.foreground": "#606369",
+    "editorLineNumber.foreground": "#717685",
     "editorLink.activeForeground": "#0b63b7",
     "editorOverviewRuler.border": "#dddfe4",
     "editorOverviewRuler.errorForeground": "#b7414d",
@@ -357,7 +357,8 @@
         "variable.other.enummember"
       ],
       "settings": {
-        "foreground": "#871094"
+        "foreground": "#871094",
+        "fontStyle": "italic"
       }
     },
     {
@@ -528,6 +529,16 @@
     },
     {
       "scope": [
+        "markup.heading",
+        "punctuation.definition.heading"
+      ],
+      "settings": {
+        "foreground": "#871094",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
         "markup.changed",
         "punctuation.definition.changed.diff"
       ],
@@ -555,27 +566,93 @@
     }
   ],
   "semanticTokenColors": {
-    "class": "#080808",
-    "class.defaultLibrary": "#080808",
-    "decorator": "#72620d",
-    "enum": "#080808",
-    "enum.defaultLibrary": "#080808",
-    "enumMember": "#871094",
-    "function": "#00627a",
-    "function.defaultLibrary": "#00627a",
-    "interface": "#080808",
-    "interface.defaultLibrary": "#080808",
-    "macro": "#72620d",
-    "method": "#00627a",
-    "method.defaultLibrary": "#00627a",
-    "namespace": "#080808",
-    "parameter": "#080808",
-    "property": "#080808",
-    "struct": "#080808",
-    "struct.defaultLibrary": "#080808",
-    "type": "#080808",
-    "type.defaultLibrary": "#080808",
-    "typeParameter": "#016d78",
-    "variable": "#080808"
+    "class": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "class.defaultLibrary": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "decorator": {
+      "foreground": "#72620d",
+      "fontStyle": ""
+    },
+    "enum": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "enum.defaultLibrary": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "enumMember": {
+      "foreground": "#871094",
+      "fontStyle": "italic"
+    },
+    "function": {
+      "foreground": "#00627a",
+      "fontStyle": ""
+    },
+    "function.defaultLibrary": {
+      "foreground": "#00627a",
+      "fontStyle": ""
+    },
+    "interface": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "interface.defaultLibrary": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "macro": {
+      "foreground": "#72620d",
+      "fontStyle": ""
+    },
+    "method": {
+      "foreground": "#00627a",
+      "fontStyle": ""
+    },
+    "method.defaultLibrary": {
+      "foreground": "#00627a",
+      "fontStyle": ""
+    },
+    "namespace": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "parameter": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "property": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "struct": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "struct.defaultLibrary": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "type": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "type.defaultLibrary": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    },
+    "typeParameter": {
+      "foreground": "#016d78",
+      "fontStyle": ""
+    },
+    "variable": {
+      "foreground": "#080808",
+      "fontStyle": ""
+    }
   }
 }
